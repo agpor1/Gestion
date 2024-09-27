@@ -35,16 +35,7 @@ namespace Presentacion
         private void mostrarPlanillero()
         {
             clsPsensei objetoPsensei = new clsPsensei();
-            DataTable tabla = objetoPsensei.Mostrar();
-
-            if (tabla != null && tabla.Rows.Count > 0)
-            {
-                tblPlanillero.DataSource = tabla;
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron datos o ocurrió un error al cargar los datos.");
-            }
+           
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -116,6 +107,9 @@ namespace Presentacion
         private void btnAtras_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnUsuarios>();
+            ventana.Show();
         }
     }
 }

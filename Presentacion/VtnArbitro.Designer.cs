@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class VtnArbrito
+    partial class VtnArbitro
     {
         /// <summary>
         /// Required designer variable.
@@ -267,6 +267,7 @@
             btnAtras.TabIndex = 36;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = true;
+            btnAtras.Click += btnAtras_Click;
             // 
             // btnListar
             // 
@@ -295,7 +296,7 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // VtnArbrito
+            // VtnArbitro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -321,7 +322,7 @@
             Controls.Add(btnListar);
             Controls.Add(btnModificar);
             Controls.Add(btnEliminar);
-            Name = "VtnArbrito";
+            Name = "VtnArbitro";
             Text = "VtnArbrito";
             ((System.ComponentModel.ISupportInitialize)tblPersona).EndInit();
             panelBarraTitulo.ResumeLayout(false);

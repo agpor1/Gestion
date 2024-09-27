@@ -107,17 +107,17 @@ namespace Presentacion
             }
 
             // Realizar la verificación de login
-            VerificacionLogin user = new VerificacionLogin();
-            bool validLogin = user.Login(txtUsuario.Text.Trim(), txtContraseña.Text);
+            VerificacionLogin usuario = new VerificacionLogin();
+            bool validarLogin = usuario.Login(txtUsuario.Text.Trim(), txtContraseña.Text);
 
-            if (validLogin)
+            if (validarLogin)
             {
                 this.Hide();
                 VtnBienvenida bienvenida = new VtnBienvenida();
                 bienvenida.ShowDialog();
-                VtnPrincipal mainMenu = new VtnPrincipal();
-                mainMenu.Show();
-                mainMenu.FormClosed += Logout;
+                VtnPrincipal menuPrincipal = new VtnPrincipal();
+                menuPrincipal.Show();
+                menuPrincipal.FormClosed += Logout;
                
             }
             else

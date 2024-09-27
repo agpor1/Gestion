@@ -140,8 +140,8 @@ namespace Presentacion
         public void AbrirVentana<MiForm>() where MiForm : Form, new()
         {
             Form ventana;
-            ventana = panelPrincipal.Controls.OfType<MiForm>().FirstOrDefault();        //Busca en la colecion el ventana
-                                                                                        //si la ventana/instancia no existe
+            ventana = panelPrincipal.Controls.OfType<MiForm>().FirstOrDefault();
+
             if (ventana == null)
             {
                 ventana = new MiForm();
@@ -151,13 +151,8 @@ namespace Presentacion
                 panelPrincipal.Controls.Add(ventana);
                 panelPrincipal.Tag = ventana;
                 ventana.Show();
-                ventana.BringToFront();
             }
-            //si la ventana/instancia existe
-            else
-            {
-                ventana.BringToFront();
-            }
+            ventana.BringToFront();
         }
 
         private void CargarUsuarioDatos()

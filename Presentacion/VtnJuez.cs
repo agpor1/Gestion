@@ -16,5 +16,13 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnUsuarios>();
+            ventana.Show();
+        }
     }
 }

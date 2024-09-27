@@ -1,5 +1,4 @@
 ﻿using Entidad;
-using Entidad.Cache;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -13,59 +12,91 @@ namespace Persistencia
 {
     public class clsPsensei : clsPersistencia
     {
-        private clsPersistencia conexion = new clsPersistencia();
-
-        MySqlDataReader leer;
-        DataTable tabla = new DataTable();
-        MySqlCommand comando = new MySqlCommand();
-
-        public DataTable Mostrar()
+        public List<clsEsensei> listarSensei()
         {
-            DataTable tabla = new DataTable();
+            List<clsEsensei> colUsuarios = new List<clsEsensei>();
+            string consultaSQL = "SELECT * FROM senseis INNER JOIN personas ON senseis.cedula = personas.cedula;";
+            MySqlDataReader datos = null;
 
             try
             {
-                AbrirConexion();
-                comando.Connection = con; 
-                comando.CommandText = "SELECT * FROM sensei";
+                datos = ejecutarYdevolver(consultaSQL);
 
-                using (var leer = comando.ExecuteReader())
+                if (datos != null && datos.HasRows)
                 {
-                    tabla.Load(leer);
+                    while (datos.Read())
+                    {
+                        colUsuarios.Add(recrearSensei(datos));
+                    }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error al ejecutar la consulta: " + ex.Message);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error general: " + ex.Message);
+                Console.WriteLine($"Error al listar sensei: {ex.Message}");
             }
             finally
             {
-                if (con != null && con.State == ConnectionState.Open)
+                if (datos != null)
                 {
-                    con.Close();
+                    CerrarLectorYConexion(datos);
                 }
             }
 
-            return tabla;
+            return colUsuarios;
         }
+
+        public List<clsEsensei> obtenerSenseis()
+        {
+            List<clsEsensei> senseis = new List<clsEsensei>();
+            string consultaSQL = "SELECT idSensei, cedula  FROM senseis;"; 
+            MySqlDataReader datos = null;
+
+            try
+            {
+                datos = ejecutarYdevolver(consultaSQL); 
+                if (datos != null && datos.HasRows)
+                {
+                    while (datos.Read())
+                    {
+                        senseis.Add(new clsEsensei
+                        {
+                            IdSensei = Convert.ToInt32(datos["idSensei"]),
+                            Cedula = Convert.ToInt32(datos["cedula"])  
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener senseis: {ex.Message}");
+            }
+            finally
+            {
+                if (datos != null)
+                {
+                    CerrarLectorYConexion(datos); 
+                }
+            }
+
+            return senseis;
+        }
+
 
         public void altaSensei(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "INSERT INTO persona VALUES('" + cedula + "','" + nombre + "','" + apellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
-            string consultaSQL2 = "INSERT INTO sensei  VALUES Cedula= (" + cedula+")";
+            string consultaSQL1 = "INSERT INTO personas VALUES ('" + cedula + "','" + nombre + "','" + apellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
+            string consultaSQL2 = "INSERT INTO senseis  VALUES cedula= " + cedula+ "";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
                  
         }
 
+
+
         public void editarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "UPDATE persona SET  Nombre= '" + nombre + "',  Apellido= '" + apellido + "', Email= '" + email + "', Nacionalidad= '" + nacionalidad + "', Rol= '" + rol + "', Contrasena= '" + contrasena + "' WHERE Cedula= '" + cedula + "'";
-            string consultaSQL2 = "UPDATE sensei SET WHERE Cedula= '" + cedula + "'";
+            string consultaSQL1 = "UPDATE personas SET  nombre= '" + nombre + "',  apellido= '" + apellido + "', email= '" + email + "', nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contraseña= '" + contrasena + "' WHERE cedula= '" + cedula + "'";
+            string consultaSQL2 = "UPDATE senseis SET WHERE cedula= '" + cedula + "'";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
         }
@@ -73,39 +104,23 @@ namespace Persistencia
 
         public void eliminarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consulaSQL1 = "DELETE FROM persona WHERE cedula= '" + cedula + "'";
-            string consulaSQL2 = "DELETE FROM usuario WHERE cedula= '" + cedula + "'";
+            string consulaSQL1 = "DELETE FROM personas WHERE cedula= '" + cedula + "'";
+            string consulaSQL2 = "DELETE FROM senseis WHERE cedula= '" + cedula + "'";
             ejecutarSQL(consulaSQL1);
             ejecutarSQL(consulaSQL2);
         }
 
+       
 
-        public List<clsEusuario> listarSensei()
+        public clsEsensei recrearSensei(MySqlDataReader fila)
         {
-            List<clsEusuario> colUsuarios = new List<clsEusuario>();
-            string consultaSQL = "SELECT * FROM senesei INNER JOIN personas ON sensei.cedulaSensei = personas.cedula;";
-            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
-
-            while (datos.Read())
-            {
-                colUsuarios.Add(recrearUsuario(datos));
-            }
-            CerrarLectorYConexion(datos);
-            return colUsuarios;
-
-        }
-
-        public clsEusuario recrearUsuario(MySqlDataReader fila)
-        {
-            clsEusuario unUsuario = new clsEusuario();
+            clsEsensei unUsuario = new clsEsensei();
 
             unUsuario.Cedula = fila.GetInt32("cedula");
             unUsuario.Apellido = fila.GetString("apellido");
             unUsuario.Nombre = fila.GetString("nombre");
             unUsuario.Email = fila.GetString("email");
             unUsuario.Nacionalidad = fila.GetString("nacionalidad");
-            unUsuario.Rol = fila.GetString("rol");
-
 
             return unUsuario;
 

@@ -1,4 +1,4 @@
-﻿using Entidad.Cache;
+﻿using Entidad;
 using Persistencia;
 using System;
 using System.Collections.Generic;
@@ -12,14 +12,14 @@ namespace Dominio
      public class clsDsensei
      {
         private clsPsensei objetoPsensei = new clsPsensei();
-
-        public DataTable mostrarSensei()
+        public List<clsEsensei> listarSensei()
         {
-            DataTable tabla = new DataTable();
-            tabla = objetoPsensei.Mostrar();
-            return tabla;
+            return objetoPsensei.listarSensei();
         }
-
+        public List<clsEsensei> ObtenerSenseis()
+        {
+            return objetoPsensei.obtenerSenseis();
+        }
         public void insertarSensei(string cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
         {
             objetoPsensei.altaSensei(Convert.ToInt32(cedula),nombre, apellido, email, nacionalidad, rol, contrasena);
@@ -34,11 +34,7 @@ namespace Dominio
             objetoPsensei.eliminarSensei(Convert.ToInt32(cedula), nombre, apellido, email, nacionalidad, rol, contrasena);
         }
 
-        public List<clsEusuario> listarUsuarios()
-        {
-            clsPsensei unPu = new clsPsensei();
-            return unPu.listarSensei();
-        }
+        
 
-    }
+     }
 }

@@ -35,7 +35,6 @@
             panelFormularios = new Panel();
             pictureBox1 = new PictureBox();
             panelMenu = new Panel();
-            btnAtletas = new Button();
             panelPerfil = new Panel();
             pictureBox3 = new PictureBox();
             lblNombre = new Label();
@@ -43,13 +42,12 @@
             lblRol = new Label();
             btnCerrarSesion = new Button();
             btnRanking = new Button();
-            btnPlanilleros = new Button();
             btnUsuarios = new Button();
-            btnSensei = new Button();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
             txtUsuario = new TextBox();
             btnMaximizar = new PictureBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panelPrincipal.SuspendLayout();
@@ -127,37 +125,16 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(37, 47, 66);
-            panelMenu.Controls.Add(btnAtletas);
+            panelMenu.Controls.Add(button1);
             panelMenu.Controls.Add(panelPerfil);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnRanking);
-            panelMenu.Controls.Add(btnPlanilleros);
             panelMenu.Controls.Add(btnUsuarios);
-            panelMenu.Controls.Add(btnSensei);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(209, 650);
             panelMenu.TabIndex = 14;
-            // 
-            // btnAtletas
-            // 
-            btnAtletas.FlatAppearance.BorderSize = 0;
-            btnAtletas.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
-            btnAtletas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnAtletas.FlatStyle = FlatStyle.Flat;
-            btnAtletas.Font = new Font("Arial", 9.75F);
-            btnAtletas.ForeColor = SystemColors.ButtonHighlight;
-            btnAtletas.Image = (Image)resources.GetObject("btnAtletas.Image");
-            btnAtletas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAtletas.Location = new Point(-12, 400);
-            btnAtletas.Name = "btnAtletas";
-            btnAtletas.Size = new Size(143, 55);
-            btnAtletas.TabIndex = 24;
-            btnAtletas.Text = "Atleta";
-            btnAtletas.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnAtletas.UseVisualStyleBackColor = true;
-            btnAtletas.Click += btnAtletas_Click;
             // 
             // panelPerfil
             // 
@@ -242,33 +219,14 @@
             btnRanking.ForeColor = SystemColors.ButtonHighlight;
             btnRanking.Image = (Image)resources.GetObject("btnRanking.Image");
             btnRanking.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRanking.Location = new Point(12, 461);
+            btnRanking.Location = new Point(12, 272);
             btnRanking.Name = "btnRanking";
             btnRanking.Size = new Size(112, 52);
             btnRanking.TabIndex = 22;
-            btnRanking.Text = "Ranking";
+            btnRanking.Text = "   Ranking";
             btnRanking.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnRanking.UseVisualStyleBackColor = true;
             btnRanking.Click += btnRank_Click;
-            // 
-            // btnPlanilleros
-            // 
-            btnPlanilleros.FlatAppearance.BorderSize = 0;
-            btnPlanilleros.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
-            btnPlanilleros.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnPlanilleros.FlatStyle = FlatStyle.Flat;
-            btnPlanilleros.Font = new Font("Arial", 9.75F);
-            btnPlanilleros.ForeColor = SystemColors.ButtonHighlight;
-            btnPlanilleros.Image = (Image)resources.GetObject("btnPlanilleros.Image");
-            btnPlanilleros.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPlanilleros.Location = new Point(3, 323);
-            btnPlanilleros.Name = "btnPlanilleros";
-            btnPlanilleros.Size = new Size(143, 71);
-            btnPlanilleros.TabIndex = 21;
-            btnPlanilleros.Text = "Planilleros";
-            btnPlanilleros.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnPlanilleros.UseVisualStyleBackColor = true;
-            btnPlanilleros.Click += btnPlanilleros_Click;
             // 
             // btnUsuarios
             // 
@@ -280,7 +238,7 @@
             btnUsuarios.ForeColor = SystemColors.ButtonHighlight;
             btnUsuarios.Image = (Image)resources.GetObject("btnUsuarios.Image");
             btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuarios.Location = new Point(3, 170);
+            btnUsuarios.Location = new Point(3, 192);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(142, 74);
             btnUsuarios.TabIndex = 20;
@@ -288,25 +246,6 @@
             btnUsuarios.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnUsuarios.UseVisualStyleBackColor = true;
             btnUsuarios.Click += btnUsuario_Click;
-            // 
-            // btnSensei
-            // 
-            btnSensei.FlatAppearance.BorderSize = 0;
-            btnSensei.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
-            btnSensei.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnSensei.FlatStyle = FlatStyle.Flat;
-            btnSensei.Font = new Font("Arial", 9.75F);
-            btnSensei.ForeColor = SystemColors.ButtonHighlight;
-            btnSensei.Image = (Image)resources.GetObject("btnSensei.Image");
-            btnSensei.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSensei.Location = new Point(3, 250);
-            btnSensei.Name = "btnSensei";
-            btnSensei.Size = new Size(128, 67);
-            btnSensei.TabIndex = 19;
-            btnSensei.Text = "Sensei";
-            btnSensei.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnSensei.UseVisualStyleBackColor = true;
-            btnSensei.Click += btnSensei_Click;
             // 
             // panelBarraTitulo
             // 
@@ -364,6 +303,24 @@
             btnMaximizar.TabStop = false;
             btnMaximizar.Click += btnMaximizar_Click;
             // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 9.75F);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 342);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 52);
+            button1.TabIndex = 24;
+            button1.Text = "   Pools";
+            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button1.UseVisualStyleBackColor = true;
+            // 
             // VtnPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -403,9 +360,7 @@
         private PictureBox btnMaximizar;
         private Button btnCerrarSesion;
         private Button btnRanking;
-        private Button btnPlanilleros;
         private Button btnUsuarios;
-        private Button btnSensei;
         private Label lblNombre;
         private Label lblRol;
         private PictureBox pictureBox3;
@@ -413,7 +368,7 @@
         private Panel panelFormularios;
         private PictureBox pictureBox1;
         private Panel panelPerfil;
-        private Button btnAtletas;
         private TextBox txtUsuario;
+        private Button button1;
     }
 }

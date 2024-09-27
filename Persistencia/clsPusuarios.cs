@@ -1,4 +1,4 @@
-﻿using Entidad.Cache;
+﻿using Entidad;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,11 +11,10 @@ namespace Persistencia
 {
    public class clsPusuarios : clsPersistencia
     {
-        private clsPersistencia conexion = new clsPersistencia();
         public void altaUsuario (int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena) 
         {
            string consultaSQL = "INSERT INTO personas VALUES ('"+cedula+"','" + nombre+"','"+apellido+"','"+email+ "','"+nacionalidad+"','" + rol+"','"+contrasena+"')";
-           ejecutarSQL(consultaSQL);   
+            ejecutarSQL(consultaSQL);
         }
     
         public void editarUsuario(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)

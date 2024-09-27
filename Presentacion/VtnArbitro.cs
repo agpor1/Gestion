@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class VtnPresidente : Form
+    public partial class VtnArbitro : Form
     {
-        public VtnPresidente()
+        public VtnArbitro()
         {
             InitializeComponent();
         }

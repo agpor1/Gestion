@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Persistencia;
-using Entidad.Cache;
+using Entidad;
 
 namespace Presentacion
 {
@@ -33,7 +33,7 @@ namespace Presentacion
             actualizar();
         }
 
-       
+
         public void actualizar()
         {
             clsDusuarios unDu = new clsDusuarios();
@@ -44,7 +44,7 @@ namespace Presentacion
         {
             try
             {
-                objetoUsuario.insertarUsuario(txtCedula.Text, txtNombre.Text, txtApellido.Text,txtEmail.Text,txtNac.Text,cmbCargos.SelectedItem.ToString(),txtContrasena.Text);
+                objetoUsuario.insertarUsuario(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -111,6 +111,39 @@ namespace Presentacion
 
         }
 
-        
+        private void atletasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnAtletas>();
+            ventana.Show();
+        }
+
+        private void senseiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnSensei>();
+            ventana.Show();
+        }
+
+        private void juecesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnJuez>();
+            ventana.Show();
+        }
+
+        private void arbitrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnArbitro>();
+            ventana.Show();
+        }
+
+        private void planillerosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnPlanillero>();
+            ventana.Show();
+        }
     }
 }

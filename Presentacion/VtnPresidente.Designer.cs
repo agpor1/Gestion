@@ -267,6 +267,7 @@
             btnAtras.TabIndex = 36;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = true;
+            btnAtras.Click += btnAtras_Click;
             // 
             // btnListar
             // 

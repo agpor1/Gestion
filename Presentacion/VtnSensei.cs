@@ -1,5 +1,5 @@
 ﻿using Dominio;
-using Entidad.Cache;
+using Entidad;
 using Persistencia;
 using System;
 using System.Collections.Generic;
@@ -16,46 +16,31 @@ namespace Presentacion
     public partial class VtnSensei : Form
     {
         private clsDsensei objetoSensei = new clsDsensei();
-        clsPsensei objetoPsensei = new clsPsensei();
         public VtnSensei()
         {
             InitializeComponent();
-        }
-        private void VtnSensei_Load(object sender, EventArgs e)
-        {
-            //mostrarSensei();
             actualizar();
         }
+
         public void actualizar()
         {
             clsDsensei unDu = new clsDsensei();
-            tblSensei.DataSource = unDu.listarUsuarios();
+            tblSensei.DataSource = unDu.listarSensei();
         }
-        //private void mostrarSensei()
-        //{
-        //    clsPsensei objetoPsensei = new clsPsensei();
-        //    DataTable tabla = objetoPsensei.Mostrar();
-
-        //    if (tabla != null && tabla.Rows.Count > 0)
-        //    {
-        //        tblSensei.DataSource = tabla;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("No se encontraron datos o ocurrió un error al cargar los datos.");
-        //    }
-        //}
+        
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+            VtnPrincipal ventana = new VtnPrincipal();
+            ventana.AbrirVentana<VtnUsuarios>();
+            ventana.Show();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 objetoSensei.insertarSensei(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
-                MessageBox.Show("Se agrego correctamente al nuevo usuario");
-                //mostrarSensei();
+                MessageBox.Show("Se agrego correctamente al nuevo usuario");               
                 actualizar();
                 limpiarCampos();
             }
@@ -70,8 +55,7 @@ namespace Presentacion
             try
             {
                 objetoSensei.actualizarSensei(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
-                MessageBox.Show("Se actualizo correctamente el usuario");
-                //mostrarSensei();
+                MessageBox.Show("Se actualizo correctamente el usuario");               
                 actualizar();
                 limpiarCampos();
             }
@@ -87,7 +71,6 @@ namespace Presentacion
             {
                 objetoSensei.eliminarSensei(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
-                //mostrarSensei();
                 actualizar();
                 limpiarCampos();
             }

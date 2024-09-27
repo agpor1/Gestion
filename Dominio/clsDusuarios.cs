@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidad.Cache;
+using Entidad;
 using Persistencia;
 
 namespace Dominio
