@@ -19,16 +19,17 @@ namespace Dominio
             return unPu.listarUsuarios();
         }
 
-        public void insertarUsuario (string cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena) {
-            objetoPusuario.altaUsuario (Convert.ToInt32(cedula),nombre,apellido,email,nacionalidad,rol,contrasena);
+        public void insertarUsuario (string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena) {
+            objetoPusuario.altaUsuario (Convert.ToInt32(cedula),nombre,segundoNombre,apellido,segundoApellido,email,nacionalidad,rol,contrasena);
         }
 
-        public void actualizarUsuario (string cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena){
-            objetoPusuario.editarUsuario(Convert.ToInt32(cedula),nombre,apellido,email,nacionalidad,rol,contrasena);
-        }
-        public void eliminarUsuarios(string cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void actualizarUsuario (string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            objetoPusuario.eliminarUsuario(Convert.ToInt32(cedula), nombre, apellido, email, nacionalidad, rol, contrasena);
+            objetoPusuario.editarUsuario(Convert.ToInt32(cedula), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
+        }
+        public void eliminarUsuarios(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        {
+            objetoPusuario.eliminarUsuario(Convert.ToInt32(cedula), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
         }
 
     }

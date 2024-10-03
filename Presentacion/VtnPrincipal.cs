@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Linq;
 using Entidad;
+using System.Globalization;
 
 namespace Presentacion
 {
@@ -12,7 +13,7 @@ namespace Presentacion
         public VtnPrincipal()
         {
             InitializeComponent();
-            //principal = new clsPrincipal(panelPrincipal);
+            CambiarIdioma(GestorIdiomas.Idioma);
         }
 
         #region Funcionalidades de la ventana principal
@@ -118,23 +119,9 @@ namespace Presentacion
             AbrirVentana<VtnUsuarios>();
         }
 
-        private void btnSensei_Click(object sender, EventArgs e)
-        {
-            AbrirVentana<VtnSensei>();
-        }
-
-        private void btnPlanilleros_Click(object sender, EventArgs e)
-        {
-            AbrirVentana<VtnPlanillero>();
-        }
-
         private void btnRank_Click(object sender, EventArgs e)
         {
 
-        }
-        private void btnAtletas_Click(object sender, EventArgs e)
-        {
-            AbrirVentana<VtnAtletas>();
         }
 
         public void AbrirVentana<MiForm>() where MiForm : Form, new()
@@ -179,5 +166,18 @@ namespace Presentacion
 
             }
         }
+        private void CambiarIdioma(string idioma)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
+            ActualizarIdioma();
+        }
+
+        private void ActualizarIdioma()
+        {
+            btnCerrarSesion.Text = Lenguajes.CerrarSesion;
+            lblTitulo.Text = Lenguajes.Cuk;
+            btnUsuarios.Text = Lenguajes.Usuarios;
+        }
+
     }
 }

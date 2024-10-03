@@ -3,6 +3,9 @@ using Dominio;
 using Entidad;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Resources;
+using System.Globalization;
+using Presentacion.Properties;
 
 namespace Presentacion
 {
@@ -17,11 +20,6 @@ namespace Presentacion
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
@@ -118,7 +116,7 @@ namespace Presentacion
                 VtnPrincipal menuPrincipal = new VtnPrincipal();
                 menuPrincipal.Show();
                 menuPrincipal.FormClosed += Logout;
-               
+
             }
             else
             {
@@ -151,6 +149,30 @@ namespace Presentacion
             contrasenaVisible = !contrasenaVisible;
             txtContraseña.UseSystemPasswordChar = !contrasenaVisible;
             txtContraseña.ForeColor = contrasenaVisible ? Color.LightGray : Color.LightGray;
+        }
+
+
+        private void VtnLogin_Load(object sender, EventArgs e)
+        {
+            españolToolStripMenuItem.Click += (s, ev) => CambiarIdioma("es");
+            inglesToolStripMenuItem.Click += (s, ev) => CambiarIdioma("en");
+
+            // Idioma por defecto
+            CambiarIdioma(GestorIdiomas.Idioma);
+        }
+
+        private void CambiarIdioma(string idioma)
+        {
+            GestorIdiomas.Idioma = idioma; // Guardar la elección globalmente
+
+            ActualizarIdioma();
+        }
+
+        private void ActualizarIdioma()
+        {
+            txtUsuario.Text = Lenguajes.Usuarios;
+            txtContraseña.Text = Lenguajes.Contrasena;
+            btbIniciar.Text = Lenguajes.Iniciar;
         }
     }
 }

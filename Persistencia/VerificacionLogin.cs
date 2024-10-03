@@ -20,22 +20,22 @@ namespace Persistencia
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = con;
-                    command.CommandText = "SELECT * FROM personas WHERE cedula=@cedula AND contraseña=@contraseña";
-                    command.Parameters.AddWithValue("@cedula", usuario);
-                    command.Parameters.AddWithValue("@contraseña", contra);
+                    command.CommandText = "SELECT * FROM personas WHERE docPersona=@docPersona AND contrasena=@contrasena";
+                    command.Parameters.AddWithValue("@docPersona", usuario);
+                    command.Parameters.AddWithValue("@contrasena", contra);
                     command.CommandType = CommandType.Text;
                     MySqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
-                            LoginUsuarioCache.Cedula = reader.GetInt32(reader.GetOrdinal("cedula"));
-                            LoginUsuarioCache.Nombre = reader.GetString(reader.GetOrdinal("nombre"));
-                            LoginUsuarioCache.Apellido = reader.GetString(reader.GetOrdinal("apellido"));
-                            LoginUsuarioCache.Email = reader.GetString(reader.GetOrdinal("email"));
+                            LoginUsuarioCache.Cedula = reader.GetInt32(reader.GetOrdinal("docPersona"));
+                            LoginUsuarioCache.Nombre = reader.GetString(reader.GetOrdinal("primerNombre"));
+                            LoginUsuarioCache.Apellido = reader.GetString(reader.GetOrdinal("primerApellido"));
+                            LoginUsuarioCache.Email = reader.GetString(reader.GetOrdinal("correo"));
                             LoginUsuarioCache.Nacionalidad = reader.GetString(reader.GetOrdinal("nacionalidad"));
                             LoginUsuarioCache.Rol = reader.GetString(reader.GetOrdinal("rol"));
-                            LoginUsuarioCache.Contrasena = reader.GetString(reader.GetOrdinal("contraseña"));
+                            LoginUsuarioCache.Contrasena = reader.GetString(reader.GetOrdinal("contrasena"));
 
                     }
                         return true;

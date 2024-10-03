@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using Presentacion.Properties;
 
 namespace Presentacion
 {
@@ -40,9 +42,23 @@ namespace Presentacion
 
         private void VtnBienvenida_Load(object sender, EventArgs e)
         {
+            CambiarIdioma(GestorIdiomas.Idioma);
             lblNombre.Text = LoginUsuarioCache.Nombre + ",  " + LoginUsuarioCache.Apellido;
             this.Opacity = 0.0;
             timer1.Start();
         }
+
+        private void CambiarIdioma(string idioma)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
+            ActualizarIdioma();
+        }
+
+        private void ActualizarIdioma()
+        {
+            lblBienvenida.Text = Lenguajes.Bienvenido;
+            lblTitulo.Text = Lenguajes.Cuk;
+        }
+
     }
 }

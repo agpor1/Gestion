@@ -39,7 +39,6 @@
             btnMaximizar = new PictureBox();
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
-            lblCargo = new Label();
             txtContrasena = new TextBox();
             lblContrasena = new Label();
             txtApellido = new TextBox();
@@ -53,7 +52,6 @@
             lblNacionalidad = new Label();
             txtEmail = new TextBox();
             lblEmail = new Label();
-            cmbCargos = new ComboBox();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -170,15 +168,6 @@
             btnCerrar.TabIndex = 12;
             btnCerrar.TabStop = false;
             // 
-            // lblCargo
-            // 
-            lblCargo.AutoSize = true;
-            lblCargo.Location = new Point(146, 235);
-            lblCargo.Name = "lblCargo";
-            lblCargo.Size = new Size(39, 15);
-            lblCargo.TabIndex = 35;
-            lblCargo.Text = "Cargo";
-            // 
             // txtContrasena
             // 
             txtContrasena.Location = new Point(219, 203);
@@ -291,27 +280,16 @@
             lblEmail.TabIndex = 38;
             lblEmail.Text = "Email";
             // 
-            // cmbCargos
-            // 
-            cmbCargos.FormattingEnabled = true;
-            cmbCargos.Items.AddRange(new object[] { "Sensei" });
-            cmbCargos.Location = new Point(219, 235);
-            cmbCargos.Name = "cmbCargos";
-            cmbCargos.Size = new Size(121, 23);
-            cmbCargos.TabIndex = 42;
-            // 
             // VtnSensei
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
-            Controls.Add(cmbCargos);
             Controls.Add(txtNac);
             Controls.Add(lblNacionalidad);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
             Controls.Add(tblSensei);
-            Controls.Add(lblCargo);
             Controls.Add(txtContrasena);
             Controls.Add(lblContrasena);
             Controls.Add(txtApellido);
@@ -327,6 +305,7 @@
             Controls.Add(btnModificar);
             Controls.Add(btnGuardar);
             Name = "VtnSensei";
+            Load += VtnSensei_Load;
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
@@ -349,7 +328,6 @@
         private PictureBox btnMaximizar;
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
-        private Label lblCargo;
         private TextBox txtContrasena;
         private Label lblContrasena;
         private TextBox txtApellido;
@@ -363,6 +341,5 @@
         private Label lblNacionalidad;
         private TextBox txtEmail;
         private Label lblEmail;
-        private ComboBox cmbCargos;
     }
 }

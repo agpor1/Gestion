@@ -11,21 +11,23 @@ namespace Persistencia
 {
    public class clsPusuarios : clsPersistencia
     {
-        public void altaUsuario (int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena) 
+        public void altaUsuario (int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena) 
         {
-           string consultaSQL = "INSERT INTO personas VALUES ('"+cedula+"','" + nombre+"','"+apellido+"','"+email+ "','"+nacionalidad+"','" + rol+"','"+contrasena+"')";
+           string consultaSQL = "INSERT INTO personas VALUES ( docPersona='" + cedula + "', primerNombre= '" + nombre + "', segundoNombre='" + segundoNombre + "',  primerApellido= '" + apellido + "', correo= '" + email + "'" +
+                ", nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "')";
             ejecutarSQL(consultaSQL);
         }
     
-        public void editarUsuario(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void editarUsuario(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL = "UPDATE personas SET  nombre= '" + nombre + "',  apellido= '" + apellido + "', email= '" + email + "', nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contraseña= '" + contrasena + "' WHERE cedula= '" + cedula+"'";
+            string consultaSQL = "UPDATE personas SET  primerNombre= '" + nombre + "',  segundoNombre= '" + apellido + "', primerApellido= '" + apellido + "', apellido= '" + apellido + "', " +
+                "correo= '" + email + "', nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "' WHERE docPersona= '" + cedula+"'";
             ejecutarSQL(consultaSQL);
         }
 
-        public void eliminarUsuario(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void eliminarUsuario(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL = "DELETE FROM personas WHERE cedula= '" + cedula + "'";
+            string consultaSQL = "DELETE FROM personas WHERE docPerona= '" + cedula + "'";
             ejecutarSQL(consultaSQL);
         }
 
@@ -47,10 +49,10 @@ namespace Persistencia
         {
             clsEusuario unUsuario = new clsEusuario();
 
-            unUsuario.Cedula = fila.GetInt32("cedula");
-            unUsuario.Nombre = fila.GetString("nombre");
-            unUsuario.Apellido = fila.GetString("apellido");
-            unUsuario.Email = fila.GetString("email");
+            unUsuario.Cedula = fila.GetInt32("docPersona");
+            unUsuario.Nombre = fila.GetString("primerNombre");
+            unUsuario.Apellido = fila.GetString("primerApellido");
+            unUsuario.Email = fila.GetString("correo");
             unUsuario.Nacionalidad = fila.GetString("nacionalidad");
             unUsuario.Rol = fila.GetString("rol");
 

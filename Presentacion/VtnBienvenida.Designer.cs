@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VtnBienvenida));
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
-            txtUsuario = new TextBox();
+            lblTitulo = new TextBox();
             btnMaximizar = new PictureBox();
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
@@ -56,7 +56,7 @@
             // 
             panelBarraTitulo.BackColor = Color.FromArgb(37, 47, 66);
             panelBarraTitulo.Controls.Add(btnRestaurar);
-            panelBarraTitulo.Controls.Add(txtUsuario);
+            panelBarraTitulo.Controls.Add(lblTitulo);
             panelBarraTitulo.Controls.Add(btnMaximizar);
             panelBarraTitulo.Controls.Add(btnMinimiza);
             panelBarraTitulo.Controls.Add(btnCerrar);
@@ -78,19 +78,19 @@
             btnRestaurar.TabStop = false;
             btnRestaurar.Visible = false;
             // 
-            // txtUsuario
+            // lblTitulo
             // 
-            txtUsuario.BackColor = Color.FromArgb(37, 47, 66);
-            txtUsuario.BorderStyle = BorderStyle.None;
-            txtUsuario.Enabled = false;
-            txtUsuario.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtUsuario.ForeColor = Color.White;
-            txtUsuario.Location = new Point(12, 8);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(370, 26);
-            txtUsuario.TabIndex = 18;
-            txtUsuario.Text = "Confederacion Uruguaya de Karate";
-            txtUsuario.TextAlign = HorizontalAlignment.Center;
+            lblTitulo.BackColor = Color.FromArgb(37, 47, 66);
+            lblTitulo.BorderStyle = BorderStyle.None;
+            lblTitulo.Enabled = false;
+            lblTitulo.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(12, 8);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(370, 26);
+            lblTitulo.TabIndex = 18;
+            lblTitulo.Text = "Confederacion Uruguaya de Karate";
+            lblTitulo.TextAlign = HorizontalAlignment.Center;
             // 
             // btnMaximizar
             // 
@@ -224,7 +224,7 @@
         private PictureBox btnCerrar;
         private PictureBox pictureBox2;
         private Label lblBienvenida;
-        private TextBox txtUsuario;
+        private TextBox lblTitulo;
         private Label lblNombre;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;

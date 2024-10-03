@@ -82,9 +82,9 @@ namespace Persistencia
         }
 
 
-        public void altaSensei(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void altaSensei(int cedula, string nombre, string apellido, string email, string nacionalidad,string contrasena)
         {
-            string consultaSQL1 = "INSERT INTO personas VALUES ('" + cedula + "','" + nombre + "','" + apellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
+            string consultaSQL1 = "INSERT INTO personas VALUES ('" + cedula + "','" + nombre + "','" + apellido + "','" + email + "','" + nacionalidad + "','" + contrasena + "')";
             string consultaSQL2 = "INSERT INTO senseis  VALUES cedula= " + cedula+ "";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
@@ -93,16 +93,16 @@ namespace Persistencia
 
 
 
-        public void editarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void editarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad,string contrasena)
         {
-            string consultaSQL1 = "UPDATE personas SET  nombre= '" + nombre + "',  apellido= '" + apellido + "', email= '" + email + "', nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contraseña= '" + contrasena + "' WHERE cedula= '" + cedula + "'";
+            string consultaSQL1 = "UPDATE personas SET  nombre= '" + nombre + "',  apellido= '" + apellido + "', email= '" + email + "', nacionalidad= '" + nacionalidad + "', contraseña= '" + contrasena + "' WHERE cedula= '" + cedula + "'";
             string consultaSQL2 = "UPDATE senseis SET WHERE cedula= '" + cedula + "'";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
         }
 
 
-        public void eliminarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void eliminarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad,string contrasena)
         {
             string consulaSQL1 = "DELETE FROM personas WHERE cedula= '" + cedula + "'";
             string consulaSQL2 = "DELETE FROM senseis WHERE cedula= '" + cedula + "'";

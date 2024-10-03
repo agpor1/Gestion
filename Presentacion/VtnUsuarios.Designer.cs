@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnEliminar = new Button();
             btnModificar = new Button();
             btnListar = new Button();
@@ -45,17 +45,18 @@
             juecesToolStripMenuItem = new ToolStripMenuItem();
             arbitrosToolStripMenuItem = new ToolStripMenuItem();
             planillerosToolStripMenuItem = new ToolStripMenuItem();
+            presidenteToolStripMenuItem = new ToolStripMenuItem();
             tblPersona = new DataGridView();
             clsUsuariosBindingSource1 = new BindingSource(components);
-            label1 = new Label();
+            lblCedula = new Label();
             txtCedula = new TextBox();
             txtNombre = new TextBox();
-            label2 = new Label();
+            lblNombre = new Label();
             txtApellido = new TextBox();
-            label3 = new Label();
+            lblApellido = new Label();
             txtContrasena = new TextBox();
-            label4 = new Label();
-            label5 = new Label();
+            lblContrasena = new Label();
+            lblCargo = new Label();
             btnGuardar = new Button();
             clsUsuariosBindingSource = new BindingSource(components);
             cargosBindingSource = new BindingSource(components);
@@ -67,6 +68,11 @@
             lblEmail = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             toolStripContainer1 = new ToolStripContainer();
+            txtBuscar = new TextBox();
+            txtSegundoName = new TextBox();
+            lblSegundoNombre = new Label();
+            txtSegundoApellido = new TextBox();
+            lblSegundoApellido = new Label();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -113,7 +119,7 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(1162, 607);
+            btnAtras.Location = new Point(1150, 607);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(75, 23);
             btnAtras.TabIndex = 4;
@@ -183,11 +189,11 @@
             // 
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.GripStyle = ToolStripGripStyle.Visible;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { atletasToolStripMenuItem, senseiToolStripMenuItem, juecesToolStripMenuItem, arbitrosToolStripMenuItem, planillerosToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { atletasToolStripMenuItem, senseiToolStripMenuItem, juecesToolStripMenuItem, arbitrosToolStripMenuItem, planillerosToolStripMenuItem, presidenteToolStripMenuItem });
             menuStrip1.Location = new Point(9, 48);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(306, 24);
+            menuStrip1.Size = new Size(380, 24);
             menuStrip1.TabIndex = 16;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -226,14 +232,21 @@
             planillerosToolStripMenuItem.Text = "Planilleros";
             planillerosToolStripMenuItem.Click += planillerosToolStripMenuItem_Click;
             // 
+            // presidenteToolStripMenuItem
+            // 
+            presidenteToolStripMenuItem.Name = "presidenteToolStripMenuItem";
+            presidenteToolStripMenuItem.Size = new Size(74, 20);
+            presidenteToolStripMenuItem.Text = "Presidente";
+            presidenteToolStripMenuItem.Click += presidenteToolStripMenuItem_Click;
+            // 
             // tblPersona
             // 
             tblPersona.AllowUserToAddRows = false;
             tblPersona.AllowUserToDeleteRows = false;
             tblPersona.AllowUserToResizeColumns = false;
             tblPersona.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblPersona.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblPersona.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             tblPersona.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblPersona.Location = new Point(457, 109);
             tblPersona.Name = "tblPersona";
@@ -246,14 +259,14 @@
             // 
             clsUsuariosBindingSource1.DataSource = typeof(Dominio.clsDusuarios);
             // 
-            // label1
+            // lblCedula
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(145, 112);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 15);
-            label1.TabIndex = 17;
-            label1.Text = "Cedula";
+            lblCedula.AutoSize = true;
+            lblCedula.Location = new Point(166, 112);
+            lblCedula.Name = "lblCedula";
+            lblCedula.Size = new Size(44, 15);
+            lblCedula.TabIndex = 17;
+            lblCedula.Text = "Cedula";
             // 
             // txtCedula
             // 
@@ -269,55 +282,55 @@
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 20;
             // 
-            // label2
+            // lblNombre
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(145, 141);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 15);
-            label2.TabIndex = 19;
-            label2.Text = "Nombre";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(121, 142);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(89, 15);
+            lblNombre.TabIndex = 19;
+            lblNombre.Text = "Primer Nombre";
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(219, 167);
+            txtApellido.Location = new Point(219, 201);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(232, 23);
             txtApellido.TabIndex = 22;
             // 
-            // label3
+            // lblApellido
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(145, 171);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 15);
-            label3.TabIndex = 21;
-            label3.Text = "Apellido";
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(121, 204);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(89, 15);
+            lblApellido.TabIndex = 21;
+            lblApellido.Text = "Primer Apellido";
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(219, 268);
+            txtContrasena.Location = new Point(219, 326);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(232, 23);
             txtContrasena.TabIndex = 24;
             // 
-            // label4
+            // lblContrasena
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(145, 271);
-            label4.Name = "label4";
-            label4.Size = new Size(67, 15);
-            label4.TabIndex = 23;
-            label4.Text = "Contraseña";
+            lblContrasena.AutoSize = true;
+            lblContrasena.Location = new Point(146, 329);
+            lblContrasena.Name = "lblContrasena";
+            lblContrasena.Size = new Size(67, 15);
+            lblContrasena.TabIndex = 23;
+            lblContrasena.Text = "Contraseña";
             // 
-            // label5
+            // lblCargo
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(145, 300);
-            label5.Name = "label5";
-            label5.Size = new Size(39, 15);
-            label5.TabIndex = 25;
-            label5.Text = "Cargo";
+            lblCargo.AutoSize = true;
+            lblCargo.Location = new Point(163, 358);
+            lblCargo.Name = "lblCargo";
+            lblCargo.Size = new Size(39, 15);
+            lblCargo.TabIndex = 25;
+            lblCargo.Text = "Cargo";
             // 
             // btnGuardar
             // 
@@ -341,7 +354,7 @@
             // 
             cmbCargos.FormattingEnabled = true;
             cmbCargos.Items.AddRange(new object[] { "Administrador", "Estandar" });
-            cmbCargos.Location = new Point(219, 300);
+            cmbCargos.Location = new Point(219, 358);
             cmbCargos.Name = "cmbCargos";
             cmbCargos.Size = new Size(121, 23);
             cmbCargos.TabIndex = 28;
@@ -352,7 +365,7 @@
             // 
             // txtNac
             // 
-            txtNac.Location = new Point(219, 229);
+            txtNac.Location = new Point(219, 287);
             txtNac.Name = "txtNac";
             txtNac.Size = new Size(232, 23);
             txtNac.TabIndex = 32;
@@ -360,7 +373,7 @@
             // lblNacionalidad
             // 
             lblNacionalidad.AutoSize = true;
-            lblNacionalidad.Location = new Point(145, 232);
+            lblNacionalidad.Location = new Point(145, 290);
             lblNacionalidad.Name = "lblNacionalidad";
             lblNacionalidad.Size = new Size(77, 15);
             lblNacionalidad.TabIndex = 31;
@@ -368,7 +381,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(219, 200);
+            txtEmail.Location = new Point(219, 258);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(232, 23);
             txtEmail.TabIndex = 30;
@@ -376,7 +389,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(145, 203);
+            lblEmail.Location = new Point(166, 261);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 29;
@@ -394,11 +407,55 @@
             toolStripContainer1.TabIndex = 33;
             toolStripContainer1.Text = "toolStripContainer1";
             // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(457, 80);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(232, 23);
+            txtBuscar.TabIndex = 34;
+            // 
+            // txtSegundoName
+            // 
+            txtSegundoName.Location = new Point(219, 172);
+            txtSegundoName.Name = "txtSegundoName";
+            txtSegundoName.Size = new Size(232, 23);
+            txtSegundoName.TabIndex = 36;
+            // 
+            // lblSegundoNombre
+            // 
+            lblSegundoNombre.AutoSize = true;
+            lblSegundoNombre.Location = new Point(121, 175);
+            lblSegundoNombre.Name = "lblSegundoNombre";
+            lblSegundoNombre.Size = new Size(101, 15);
+            lblSegundoNombre.TabIndex = 35;
+            lblSegundoNombre.Text = "Segundo Nombre";
+            // 
+            // txtSegundoApellido
+            // 
+            txtSegundoApellido.Location = new Point(219, 230);
+            txtSegundoApellido.Name = "txtSegundoApellido";
+            txtSegundoApellido.Size = new Size(232, 23);
+            txtSegundoApellido.TabIndex = 38;
+            // 
+            // lblSegundoApellido
+            // 
+            lblSegundoApellido.AutoSize = true;
+            lblSegundoApellido.Location = new Point(121, 233);
+            lblSegundoApellido.Name = "lblSegundoApellido";
+            lblSegundoApellido.Size = new Size(101, 15);
+            lblSegundoApellido.TabIndex = 37;
+            lblSegundoApellido.Text = "Segundo Apellido";
+            // 
             // VtnUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 642);
+            Controls.Add(txtSegundoApellido);
+            Controls.Add(lblSegundoApellido);
+            Controls.Add(txtSegundoName);
+            Controls.Add(lblSegundoNombre);
+            Controls.Add(txtBuscar);
             Controls.Add(menuStrip1);
             Controls.Add(toolStripContainer1);
             Controls.Add(txtNac);
@@ -407,15 +464,15 @@
             Controls.Add(lblEmail);
             Controls.Add(cmbCargos);
             Controls.Add(btnGuardar);
-            Controls.Add(label5);
+            Controls.Add(lblCargo);
             Controls.Add(txtContrasena);
-            Controls.Add(label4);
+            Controls.Add(lblContrasena);
             Controls.Add(txtApellido);
-            Controls.Add(label3);
+            Controls.Add(lblApellido);
             Controls.Add(txtNombre);
-            Controls.Add(label2);
+            Controls.Add(lblNombre);
             Controls.Add(txtCedula);
-            Controls.Add(label1);
+            Controls.Add(lblCedula);
             Controls.Add(tblPersona);
             Controls.Add(panelBarraTitulo);
             Controls.Add(btnAtras);
@@ -454,15 +511,15 @@
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
         private DataGridView tblPersona;
-        private Label label1;
+        private Label lblCedula;
         private TextBox txtCedula;
         private TextBox txtNombre;
-        private Label label2;
+        private Label lblNombre;
         private TextBox txtApellido;
-        private Label label3;
+        private Label lblApellido;
         private TextBox txtContrasena;
-        private Label label4;
-        private Label label5;
+        private Label lblContrasena;
+        private Label lblCargo;
         private Button btnGuardar;
         private BindingSource cargosBindingSource;
         private BindingSource clsUsuariosBindingSource;
@@ -481,5 +538,11 @@
         private ToolStripMenuItem planillerosToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ToolStripContainer toolStripContainer1;
+        private TextBox txtBuscar;
+        private ToolStripMenuItem presidenteToolStripMenuItem;
+        private TextBox txtSegundoName;
+        private Label lblSegundoNombre;
+        private TextBox txtSegundoApellido;
+        private Label lblSegundoApellido;
     }
 }

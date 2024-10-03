@@ -41,11 +41,16 @@
             btnCerrar = new PictureBox();
             lblMensajeError = new Label();
             pictureBox1 = new PictureBox();
+            menuStrip1 = new MenuStrip();
+            Idiomas = new ToolStripMenuItem();
+            españolToolStripMenuItem = new ToolStripMenuItem();
+            inglesToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -106,7 +111,6 @@
             label1.Size = new Size(95, 34);
             label1.TabIndex = 3;
             label1.Text = "LOGIN";
-            label1.Click += label1_Click;
             // 
             // btbIniciar
             // 
@@ -197,12 +201,52 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = SystemColors.ControlDark;
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.GripMargin = new Padding(0);
+            menuStrip1.GripStyle = ToolStripGripStyle.Visible;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { Idiomas });
+            menuStrip1.Location = new Point(309, 18);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
+            menuStrip1.Size = new Size(66, 24);
+            menuStrip1.TabIndex = 17;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // Idiomas
+            // 
+            Idiomas.BackColor = SystemColors.ControlDark;
+            Idiomas.DropDownItems.AddRange(new ToolStripItem[] { españolToolStripMenuItem, inglesToolStripMenuItem });
+            Idiomas.ForeColor = SystemColors.Info;
+            Idiomas.Name = "Idiomas";
+            Idiomas.Size = new Size(56, 20);
+            Idiomas.Text = "Idioma";
+            // 
+            // españolToolStripMenuItem
+            // 
+            españolToolStripMenuItem.BackColor = SystemColors.ControlDark;
+            españolToolStripMenuItem.ForeColor = SystemColors.Menu;
+            españolToolStripMenuItem.Name = "españolToolStripMenuItem";
+            españolToolStripMenuItem.Size = new Size(115, 22);
+            españolToolStripMenuItem.Text = "Español";
+            // 
+            // inglesToolStripMenuItem
+            // 
+            inglesToolStripMenuItem.BackColor = SystemColors.ControlDark;
+            inglesToolStripMenuItem.ForeColor = SystemColors.Menu;
+            inglesToolStripMenuItem.Name = "inglesToolStripMenuItem";
+            inglesToolStripMenuItem.Size = new Size(115, 22);
+            inglesToolStripMenuItem.Text = "Ingles";
+            // 
             // VtnLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(780, 330);
+            Controls.Add(menuStrip1);
             Controls.Add(pictureBox1);
             Controls.Add(lblMensajeError);
             Controls.Add(btnMinimiza);
@@ -219,12 +263,15 @@
             Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "9";
+            Load += VtnLogin_Load;
             MouseDown += Form1_MouseDown;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,5 +290,9 @@
         private PictureBox btnCerrar;
         private Label lblMensajeError;
         private PictureBox pictureBox1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem Idiomas;
+        private ToolStripMenuItem españolToolStripMenuItem;
+        private ToolStripMenuItem inglesToolStripMenuItem;
     }
 }

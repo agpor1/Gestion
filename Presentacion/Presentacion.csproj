@@ -18,6 +18,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Lenguajes.en.Designer.cs">
+      <DependentUpon>Lenguajes.en.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Lenguajes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lenguajes.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -26,6 +36,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Lenguajes.en.resx">
+      <LastGenOutput>Lenguajes.en.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Lenguajes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lenguajes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

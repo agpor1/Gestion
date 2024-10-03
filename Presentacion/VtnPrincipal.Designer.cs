@@ -35,6 +35,7 @@
             panelFormularios = new Panel();
             pictureBox1 = new PictureBox();
             panelMenu = new Panel();
+            btnPools = new Button();
             panelPerfil = new Panel();
             pictureBox3 = new PictureBox();
             lblNombre = new Label();
@@ -45,9 +46,8 @@
             btnUsuarios = new Button();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
-            txtUsuario = new TextBox();
+            lblTitulo = new TextBox();
             btnMaximizar = new PictureBox();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panelPrincipal.SuspendLayout();
@@ -125,7 +125,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(37, 47, 66);
-            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(btnPools);
             panelMenu.Controls.Add(panelPerfil);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnRanking);
@@ -135,6 +135,24 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(209, 650);
             panelMenu.TabIndex = 14;
+            // 
+            // btnPools
+            // 
+            btnPools.FlatAppearance.BorderSize = 0;
+            btnPools.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnPools.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnPools.FlatStyle = FlatStyle.Flat;
+            btnPools.Font = new Font("Arial", 9.75F);
+            btnPools.ForeColor = SystemColors.ButtonHighlight;
+            btnPools.Image = (Image)resources.GetObject("btnPools.Image");
+            btnPools.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPools.Location = new Point(12, 342);
+            btnPools.Name = "btnPools";
+            btnPools.Size = new Size(112, 52);
+            btnPools.TabIndex = 24;
+            btnPools.Text = "   Pools";
+            btnPools.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnPools.UseVisualStyleBackColor = true;
             // 
             // panelPerfil
             // 
@@ -251,7 +269,7 @@
             // 
             panelBarraTitulo.BackColor = Color.FromArgb(37, 47, 66);
             panelBarraTitulo.Controls.Add(btnRestaurar);
-            panelBarraTitulo.Controls.Add(txtUsuario);
+            panelBarraTitulo.Controls.Add(lblTitulo);
             panelBarraTitulo.Controls.Add(btnMaximizar);
             panelBarraTitulo.Controls.Add(btnMinimiza);
             panelBarraTitulo.Controls.Add(btnCerrar);
@@ -276,19 +294,19 @@
             btnRestaurar.Visible = false;
             btnRestaurar.Click += btnRestaurar_Click;
             // 
-            // txtUsuario
+            // lblTitulo
             // 
-            txtUsuario.BackColor = Color.FromArgb(37, 47, 66);
-            txtUsuario.BorderStyle = BorderStyle.None;
-            txtUsuario.Enabled = false;
-            txtUsuario.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtUsuario.ForeColor = Color.White;
-            txtUsuario.Location = new Point(20, 11);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(370, 26);
-            txtUsuario.TabIndex = 13;
-            txtUsuario.Text = "Confederacion Uruguaya de Karate";
-            txtUsuario.TextAlign = HorizontalAlignment.Center;
+            lblTitulo.BackColor = Color.FromArgb(37, 47, 66);
+            lblTitulo.BorderStyle = BorderStyle.None;
+            lblTitulo.Enabled = false;
+            lblTitulo.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(20, 11);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(370, 26);
+            lblTitulo.TabIndex = 13;
+            lblTitulo.Text = "Confederacion Uruguaya de Karate";
+            lblTitulo.TextAlign = HorizontalAlignment.Center;
             // 
             // btnMaximizar
             // 
@@ -302,24 +320,6 @@
             btnMaximizar.TabIndex = 14;
             btnMaximizar.TabStop = false;
             btnMaximizar.Click += btnMaximizar_Click;
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 9.75F);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(12, 342);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 52);
-            button1.TabIndex = 24;
-            button1.Text = "   Pools";
-            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button1.UseVisualStyleBackColor = true;
             // 
             // VtnPrincipal
             // 
@@ -365,10 +365,10 @@
         private Label lblRol;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
+        private Panel panelPerfil;
+        private TextBox lblTitulo;
+        private Button btnPools;
         private Panel panelFormularios;
         private PictureBox pictureBox1;
-        private Panel panelPerfil;
-        private TextBox txtUsuario;
-        private Button button1;
     }
 }

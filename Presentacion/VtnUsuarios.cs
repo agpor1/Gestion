@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Dominio;
 using Persistencia;
 using Entidad;
+using System.Globalization;
 
 namespace Presentacion
 {
@@ -25,14 +26,43 @@ namespace Presentacion
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void VtnUsuarios_Load(object sender, EventArgs e)
         {
             actualizar();
+            CambiarIdioma(GestorIdiomas.Idioma);
         }
 
+        private void CambiarIdioma(string idioma)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
+            ActualizarIdioma();
+        }
+
+        private void ActualizarIdioma()
+        {
+            btnGuardar.Text = Lenguajes.Guardar;
+            btnEliminar.Text = Lenguajes.Eliminar;
+            btnModificar.Text = Lenguajes.Modificar;
+            btnListar.Text = Lenguajes.Rellenar;
+            btnAtras.Text = Lenguajes.Atras;
+            lblCedula.Text = Lenguajes.Cedula;
+            lblNombre.Text = Lenguajes.PrimerNombre;
+            lblSegundoNombre.Text = Lenguajes.SegundoNombre;
+            lblApellido.Text = Lenguajes.PrimerApellido;
+            lblEmail.Text = Lenguajes.Email;
+            lblContrasena.Text = Lenguajes.Contrasena;
+            lblSegundoApellido.Text = Lenguajes.SegundoApellido;
+            lblCargo.Text = Lenguajes.Cargo;
+            presidenteToolStripMenuItem.Text = Lenguajes.Presidente;
+            planillerosToolStripMenuItem.Text = Lenguajes.Planillero;
+            atletasToolStripMenuItem.Text = Lenguajes.Atletas;
+            juecesToolStripMenuItem.Text = Lenguajes.Jueces;
+            arbitrosToolStripMenuItem.Text = Lenguajes.Arbitros;
+            senseiToolStripMenuItem.Text = Lenguajes.Sensei;
+        }
 
         public void actualizar()
         {
@@ -44,7 +74,7 @@ namespace Presentacion
         {
             try
             {
-                objetoUsuario.insertarUsuario(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                objetoUsuario.insertarUsuario(txtCedula.Text, txtNombre.Text,txtSegundoName.Text,txtApellido.Text,txtSegundoApellido.Text,txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -59,7 +89,7 @@ namespace Presentacion
         {
             try
             {
-                objetoUsuario.actualizarUsuario(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                objetoUsuario.actualizarUsuario(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -74,7 +104,7 @@ namespace Presentacion
         {
             try
             {
-                objetoUsuario.eliminarUsuarios(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                objetoUsuario.eliminarUsuarios(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -110,39 +140,47 @@ namespace Presentacion
             cmbCargos.Text = "";
 
         }
-
+       
+        VtnPrincipal ventana = new VtnPrincipal();
         private void atletasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VtnPrincipal ventana = new VtnPrincipal();
+            this.Hide();
             ventana.AbrirVentana<VtnAtletas>();
             ventana.Show();
         }
 
         private void senseiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VtnPrincipal ventana = new VtnPrincipal();
+            this.Hide();
             ventana.AbrirVentana<VtnSensei>();
             ventana.Show();
         }
 
         private void juecesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VtnPrincipal ventana = new VtnPrincipal();
+            this.Hide();
             ventana.AbrirVentana<VtnJuez>();
             ventana.Show();
         }
 
         private void arbitrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VtnPrincipal ventana = new VtnPrincipal();
+            this.Hide();
             ventana.AbrirVentana<VtnArbitro>();
             ventana.Show();
         }
 
         private void planillerosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VtnPrincipal ventana = new VtnPrincipal();
+            this.Hide();
             ventana.AbrirVentana<VtnPlanillero>();
+            ventana.Show();
+        }
+
+        private void presidenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ventana.AbrirVentana<VtnPresidente>();
             ventana.Show();
         }
     }
