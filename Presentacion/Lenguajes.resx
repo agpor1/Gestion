@@ -132,6 +132,9 @@
   <data name="Bienvenido" xml:space="preserve">
     <value>Bienvenido/a</value>
   </data>
+  <data name="Buscar" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
   <data name="Cargo" xml:space="preserve">
     <value>Permisos</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="Email" xml:space="preserve">
     <value>Correo</value>
+  </data>
+  <data name="Escuela" xml:space="preserve">
+    <value>Escuela</value>
   </data>
   <data name="Guardar" xml:space="preserve">
     <value>Guardar</value>

@@ -18,21 +18,19 @@ namespace Presentacion
     {
         private clsDusuarios objetoUsuario = new clsDusuarios();
         clsPusuarios objetoPusuario = new clsPusuarios();
-
         public VtnUsuarios()
         {
             InitializeComponent();
-        }
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+            this.Resize += VtnUsuarios_Resize;
+            ConfigurarControles();
+           
         }
 
         private void VtnUsuarios_Load(object sender, EventArgs e)
         {
             actualizar();
             CambiarIdioma(GestorIdiomas.Idioma);
+
         }
 
         private void CambiarIdioma(string idioma)
@@ -47,7 +45,6 @@ namespace Presentacion
             btnEliminar.Text = Lenguajes.Eliminar;
             btnModificar.Text = Lenguajes.Modificar;
             btnListar.Text = Lenguajes.Rellenar;
-            btnAtras.Text = Lenguajes.Atras;
             lblCedula.Text = Lenguajes.Cedula;
             lblNombre.Text = Lenguajes.PrimerNombre;
             lblSegundoNombre.Text = Lenguajes.SegundoNombre;
@@ -62,6 +59,8 @@ namespace Presentacion
             juecesToolStripMenuItem.Text = Lenguajes.Jueces;
             arbitrosToolStripMenuItem.Text = Lenguajes.Arbitros;
             senseiToolStripMenuItem.Text = Lenguajes.Sensei;
+            lblBuscar.Text = Lenguajes.Buscar;
+            lblNacionalidad.Text = Lenguajes.Nacionalidad; 
         }
 
         public void actualizar()
@@ -74,7 +73,7 @@ namespace Presentacion
         {
             try
             {
-                objetoUsuario.insertarUsuario(txtCedula.Text, txtNombre.Text,txtSegundoName.Text,txtApellido.Text,txtSegundoApellido.Text,txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                objetoUsuario.insertarUsuario(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -140,7 +139,38 @@ namespace Presentacion
             cmbCargos.Text = "";
 
         }
-       
+
+
+        public void AjustarTabla()
+        {
+            if (tblPersona.InvokeRequired)
+            {
+                tblPersona.Invoke(new Action(AjustarTabla));
+                return;
+            }
+
+            // Calcular el ancho disponible
+            int margenIzquierdo = 400; // Espacio para el menú lateral
+            int margenDerecho = 350;
+
+            // Ajustar posición y tamaño de la tabla
+            tblPersona.Location = new Point(margenIzquierdo, tblPersona.Location.Y);
+            tblPersona.Width = this.ClientSize.Width - margenIzquierdo - margenDerecho;
+
+        }
+        private void ConfigurarControles()
+        {
+            // Configurar la tabla
+            tblPersona.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom;
+
+
+            AjustarTabla();
+        }
+        private void VtnUsuarios_Resize(object sender, EventArgs e)
+        {
+            AjustarTabla();
+        }
+
         VtnPrincipal ventana = new VtnPrincipal();
         private void atletasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -183,5 +213,6 @@ namespace Presentacion
             ventana.AbrirVentana<VtnPresidente>();
             ventana.Show();
         }
+
     }
 }

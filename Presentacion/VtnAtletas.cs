@@ -101,7 +101,15 @@ namespace Presentacion
             ventana.AbrirVentana<VtnUsuarios>();
             ventana.Show();
         }
-
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            // Si el formulario se está cerrando, asegurarse de limpiarlo correctamente
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                this.Dispose();
+            }
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try

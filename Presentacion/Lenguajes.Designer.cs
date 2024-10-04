@@ -106,6 +106,15 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Buscar.
+        /// </summary>
+        internal static string Buscar {
+            get {
+                return ResourceManager.GetString("Buscar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Permisos.
         /// </summary>
         internal static string Cargo {
@@ -165,6 +174,15 @@ namespace Presentacion {
         internal static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Escuela.
+        /// </summary>
+        internal static string Escuela {
+            get {
+                return ResourceManager.GetString("Escuela", resourceCulture);
             }
         }
         

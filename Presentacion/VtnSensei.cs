@@ -38,13 +38,18 @@ namespace Presentacion
             btnGuardar.Text = Lenguajes.Guardar;
             btnEliminar.Text = Lenguajes.Eliminar;
             btnModificar.Text = Lenguajes.Modificar;
-            btnAtras.Text = Lenguajes.Atras;
             btnListar.Text = Lenguajes.Rellenar;
             lblCedula.Text = Lenguajes.Cedula;
-            lblNombre.Text = Lenguajes.Nombre;
-            lblApellido.Text = Lenguajes.Apellido;
+            lblNombre.Text = Lenguajes.PrimerNombre;
+            lblSegundoNombre.Text = Lenguajes.SegundoNombre;
+            lblApellido.Text = Lenguajes.PrimerApellido;
             lblEmail.Text = Lenguajes.Email;
             lblContrasena.Text = Lenguajes.Contrasena;
+            lblSegundoApellido.Text = Lenguajes.SegundoApellido;
+            lblEscuela.Text = Lenguajes.Cargo;
+            lblBuscar.Text = Lenguajes.Buscar;
+            lblNacionalidad.Text = Lenguajes.Nacionalidad;
+            btnAtras.Text = Lenguajes.Atras;
         }
 
         public void actualizar()
@@ -55,7 +60,7 @@ namespace Presentacion
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             VtnPrincipal ventana = new VtnPrincipal();
             ventana.AbrirVentana<VtnUsuarios>();
             ventana.Show();

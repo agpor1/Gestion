@@ -29,12 +29,23 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            cmbCargos = new ComboBox();
+            tblPlanillero = new DataGridView();
+            panelBarraTitulo = new Panel();
+            btnRestaurar = new PictureBox();
+            btnMaximizar = new PictureBox();
+            btnMinimiza = new PictureBox();
+            btnCerrar = new PictureBox();
+            btnAtras = new Button();
+            txtSegundoApellido = new TextBox();
+            lblSegundoApellido = new Label();
+            txtSegundoName = new TextBox();
+            lblSegundoNombre = new Label();
             txtNac = new TextBox();
             lblNacionalidad = new Label();
             txtEmail = new TextBox();
             lblEmail = new Label();
-            tblPlanillero = new DataGridView();
+            cmbCargos = new ComboBox();
+            btnGuardar = new Button();
             lblCargo = new Label();
             txtContrasena = new TextBox();
             lblContrasena = new Label();
@@ -44,16 +55,11 @@
             lblNombre = new Label();
             txtCedula = new TextBox();
             lblCedula = new Label();
-            panelBarraTitulo = new Panel();
-            btnRestaurar = new PictureBox();
-            btnMaximizar = new PictureBox();
-            btnMinimiza = new PictureBox();
-            btnCerrar = new PictureBox();
-            btnAtras = new Button();
             btnListar = new Button();
-            btnEliminar = new Button();
             btnModificar = new Button();
-            btnGuardar = new Button();
+            btnEliminar = new Button();
+            lblBuscar = new Label();
+            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)tblPlanillero).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
@@ -61,47 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
-            // 
-            // cmbCargos
-            // 
-            cmbCargos.FormattingEnabled = true;
-            cmbCargos.Items.AddRange(new object[] { "Planillero" });
-            cmbCargos.Location = new Point(219, 241);
-            cmbCargos.Name = "cmbCargos";
-            cmbCargos.Size = new Size(121, 23);
-            cmbCargos.TabIndex = 63;
-            // 
-            // txtNac
-            // 
-            txtNac.Location = new Point(219, 173);
-            txtNac.Name = "txtNac";
-            txtNac.Size = new Size(232, 23);
-            txtNac.TabIndex = 62;
-            // 
-            // lblNacionalidad
-            // 
-            lblNacionalidad.AutoSize = true;
-            lblNacionalidad.Location = new Point(145, 176);
-            lblNacionalidad.Name = "lblNacionalidad";
-            lblNacionalidad.Size = new Size(77, 15);
-            lblNacionalidad.TabIndex = 61;
-            lblNacionalidad.Text = "Nacionalidad";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(219, 144);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(232, 23);
-            txtEmail.TabIndex = 60;
-            // 
-            // lblEmail
-            // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(145, 147);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(36, 15);
-            lblEmail.TabIndex = 59;
-            lblEmail.Text = "Email";
             // 
             // tblPlanillero
             // 
@@ -112,85 +77,12 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             tblPlanillero.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             tblPlanillero.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblPlanillero.Location = new Point(495, 57);
+            tblPlanillero.Location = new Point(495, 106);
             tblPlanillero.Name = "tblPlanillero";
             tblPlanillero.ReadOnly = true;
             tblPlanillero.RightToLeft = RightToLeft.No;
             tblPlanillero.Size = new Size(730, 326);
             tblPlanillero.TabIndex = 58;
-            // 
-            // lblCargo
-            // 
-            lblCargo.AutoSize = true;
-            lblCargo.Location = new Point(146, 241);
-            lblCargo.Name = "lblCargo";
-            lblCargo.Size = new Size(39, 15);
-            lblCargo.TabIndex = 57;
-            lblCargo.Text = "Cargo";
-            // 
-            // txtContrasena
-            // 
-            txtContrasena.Location = new Point(219, 209);
-            txtContrasena.Name = "txtContrasena";
-            txtContrasena.Size = new Size(232, 23);
-            txtContrasena.TabIndex = 56;
-            // 
-            // lblContrasena
-            // 
-            lblContrasena.AutoSize = true;
-            lblContrasena.Location = new Point(146, 212);
-            lblContrasena.Name = "lblContrasena";
-            lblContrasena.Size = new Size(67, 15);
-            lblContrasena.TabIndex = 55;
-            lblContrasena.Text = "Contraseña";
-            // 
-            // txtApellido
-            // 
-            txtApellido.Location = new Point(219, 115);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(232, 23);
-            txtApellido.TabIndex = 54;
-            // 
-            // lblApellido
-            // 
-            lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(146, 118);
-            lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(51, 15);
-            lblApellido.TabIndex = 53;
-            lblApellido.Text = "Apellido";
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(219, 86);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(232, 23);
-            txtNombre.TabIndex = 52;
-            // 
-            // lblNombre
-            // 
-            lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(146, 89);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
-            lblNombre.TabIndex = 51;
-            lblNombre.Text = "Nombre";
-            // 
-            // txtCedula
-            // 
-            txtCedula.Location = new Point(219, 57);
-            txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(232, 23);
-            txtCedula.TabIndex = 50;
-            // 
-            // lblCedula
-            // 
-            lblCedula.AutoSize = true;
-            lblCedula.Location = new Point(146, 60);
-            lblCedula.Name = "lblCedula";
-            lblCedula.Size = new Size(44, 15);
-            lblCedula.TabIndex = 49;
-            lblCedula.Text = "Cedula";
             // 
             // panelBarraTitulo
             // 
@@ -260,53 +152,221 @@
             btnAtras.UseVisualStyleBackColor = true;
             btnAtras.Click += btnAtras_Click_1;
             // 
-            // btnListar
+            // txtSegundoApellido
             // 
-            btnListar.Location = new Point(12, 139);
-            btnListar.Name = "btnListar";
-            btnListar.Size = new Size(75, 23);
-            btnListar.TabIndex = 46;
-            btnListar.Text = "Rellenar";
-            btnListar.UseVisualStyleBackColor = true;
+            txtSegundoApellido.Location = new Point(109, 227);
+            txtSegundoApellido.Name = "txtSegundoApellido";
+            txtSegundoApellido.Size = new Size(232, 23);
+            txtSegundoApellido.TabIndex = 104;
             // 
-            // btnEliminar
+            // lblSegundoApellido
             // 
-            btnEliminar.Location = new Point(12, 110);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
-            btnEliminar.TabIndex = 45;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            lblSegundoApellido.AutoSize = true;
+            lblSegundoApellido.Location = new Point(11, 230);
+            lblSegundoApellido.Name = "lblSegundoApellido";
+            lblSegundoApellido.Size = new Size(101, 15);
+            lblSegundoApellido.TabIndex = 103;
+            lblSegundoApellido.Text = "Segundo Apellido";
             // 
-            // btnModificar
+            // txtSegundoName
             // 
-            btnModificar.Location = new Point(12, 81);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(75, 23);
-            btnModificar.TabIndex = 44;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
+            txtSegundoName.Location = new Point(109, 169);
+            txtSegundoName.Name = "txtSegundoName";
+            txtSegundoName.Size = new Size(232, 23);
+            txtSegundoName.TabIndex = 102;
+            // 
+            // lblSegundoNombre
+            // 
+            lblSegundoNombre.AutoSize = true;
+            lblSegundoNombre.Location = new Point(11, 172);
+            lblSegundoNombre.Name = "lblSegundoNombre";
+            lblSegundoNombre.Size = new Size(101, 15);
+            lblSegundoNombre.TabIndex = 101;
+            lblSegundoNombre.Text = "Segundo Nombre";
+            // 
+            // txtNac
+            // 
+            txtNac.Location = new Point(109, 284);
+            txtNac.Name = "txtNac";
+            txtNac.Size = new Size(232, 23);
+            txtNac.TabIndex = 100;
+            // 
+            // lblNacionalidad
+            // 
+            lblNacionalidad.AutoSize = true;
+            lblNacionalidad.Location = new Point(11, 287);
+            lblNacionalidad.Name = "lblNacionalidad";
+            lblNacionalidad.Size = new Size(77, 15);
+            lblNacionalidad.TabIndex = 99;
+            lblNacionalidad.Text = "Nacionalidad";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(109, 255);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(232, 23);
+            txtEmail.TabIndex = 98;
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(11, 258);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(36, 15);
+            lblEmail.TabIndex = 97;
+            lblEmail.Text = "Email";
+            // 
+            // cmbCargos
+            // 
+            cmbCargos.FormattingEnabled = true;
+            cmbCargos.Items.AddRange(new object[] { "Administrador", "Estandar" });
+            cmbCargos.Location = new Point(109, 355);
+            cmbCargos.Name = "cmbCargos";
+            cmbCargos.Size = new Size(121, 23);
+            cmbCargos.TabIndex = 96;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(12, 52);
+            btnGuardar.Location = new Point(11, 390);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 43;
+            btnGuardar.TabIndex = 95;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // lblCargo
+            // 
+            lblCargo.AutoSize = true;
+            lblCargo.Location = new Point(16, 355);
+            lblCargo.Name = "lblCargo";
+            lblCargo.Size = new Size(39, 15);
+            lblCargo.TabIndex = 94;
+            lblCargo.Text = "Cargo";
+            // 
+            // txtContrasena
+            // 
+            txtContrasena.Location = new Point(109, 323);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.Size = new Size(232, 23);
+            txtContrasena.TabIndex = 93;
+            // 
+            // lblContrasena
+            // 
+            lblContrasena.AutoSize = true;
+            lblContrasena.Location = new Point(11, 326);
+            lblContrasena.Name = "lblContrasena";
+            lblContrasena.Size = new Size(67, 15);
+            lblContrasena.TabIndex = 92;
+            lblContrasena.Text = "Contraseña";
+            // 
+            // txtApellido
+            // 
+            txtApellido.Location = new Point(109, 198);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(232, 23);
+            txtApellido.TabIndex = 91;
+            // 
+            // lblApellido
+            // 
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(11, 201);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(89, 15);
+            lblApellido.TabIndex = 90;
+            lblApellido.Text = "Primer Apellido";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(109, 135);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(232, 23);
+            txtNombre.TabIndex = 89;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(11, 139);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(89, 15);
+            lblNombre.TabIndex = 88;
+            lblNombre.Text = "Primer Nombre";
+            // 
+            // txtCedula
+            // 
+            txtCedula.Location = new Point(109, 106);
+            txtCedula.Name = "txtCedula";
+            txtCedula.Size = new Size(232, 23);
+            txtCedula.TabIndex = 87;
+            // 
+            // lblCedula
+            // 
+            lblCedula.AutoSize = true;
+            lblCedula.Location = new Point(13, 109);
+            lblCedula.Name = "lblCedula";
+            lblCedula.Size = new Size(44, 15);
+            lblCedula.TabIndex = 86;
+            lblCedula.Text = "Cedula";
+            // 
+            // btnListar
+            // 
+            btnListar.Location = new Point(173, 390);
+            btnListar.Name = "btnListar";
+            btnListar.Size = new Size(75, 23);
+            btnListar.TabIndex = 85;
+            btnListar.Text = "Rellenar";
+            btnListar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(92, 390);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 84;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(254, 390);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 83;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // lblBuscar
+            // 
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(445, 80);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(42, 15);
+            lblBuscar.TabIndex = 106;
+            lblBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(495, 77);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(232, 23);
+            txtBuscar.TabIndex = 105;
             // 
             // VtnPlanillero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
-            Controls.Add(cmbCargos);
+            Controls.Add(lblBuscar);
+            Controls.Add(txtBuscar);
+            Controls.Add(txtSegundoApellido);
+            Controls.Add(lblSegundoApellido);
+            Controls.Add(txtSegundoName);
+            Controls.Add(lblSegundoNombre);
             Controls.Add(txtNac);
             Controls.Add(lblNacionalidad);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
-            Controls.Add(tblPlanillero);
+            Controls.Add(cmbCargos);
+            Controls.Add(btnGuardar);
             Controls.Add(lblCargo);
             Controls.Add(txtContrasena);
             Controls.Add(lblContrasena);
@@ -316,14 +376,15 @@
             Controls.Add(lblNombre);
             Controls.Add(txtCedula);
             Controls.Add(lblCedula);
+            Controls.Add(btnListar);
+            Controls.Add(btnModificar);
+            Controls.Add(btnEliminar);
+            Controls.Add(tblPlanillero);
             Controls.Add(panelBarraTitulo);
             Controls.Add(btnAtras);
-            Controls.Add(btnListar);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnModificar);
-            Controls.Add(btnGuardar);
             Name = "VtnPlanillero";
             Text = "VtnPlanillero";
+            Load += VtnPlanillero_Load;
             ((System.ComponentModel.ISupportInitialize)tblPlanillero).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
@@ -335,13 +396,23 @@
         }
 
         #endregion
-
-        private ComboBox cmbCargos;
+        private DataGridView tblPlanillero;
+        private Panel panelBarraTitulo;
+        private PictureBox btnRestaurar;
+        private PictureBox btnMaximizar;
+        private PictureBox btnMinimiza;
+        private PictureBox btnCerrar;
+        private Button btnAtras;
+        private TextBox txtSegundoApellido;
+        private Label lblSegundoApellido;
+        private TextBox txtSegundoName;
+        private Label lblSegundoNombre;
         private TextBox txtNac;
         private Label lblNacionalidad;
         private TextBox txtEmail;
         private Label lblEmail;
-        private DataGridView tblPlanillero;
+        private ComboBox cmbCargos;
+        private Button btnGuardar;
         private Label lblCargo;
         private TextBox txtContrasena;
         private Label lblContrasena;
@@ -351,15 +422,10 @@
         private Label lblNombre;
         private TextBox txtCedula;
         private Label lblCedula;
-        private Panel panelBarraTitulo;
-        private PictureBox btnRestaurar;
-        private PictureBox btnMaximizar;
-        private PictureBox btnMinimiza;
-        private PictureBox btnCerrar;
-        private Button btnAtras;
         private Button btnListar;
-        private Button btnEliminar;
         private Button btnModificar;
-        private Button btnGuardar;
+        private Button btnEliminar;
+        private Label lblBuscar;
+        private TextBox txtBuscar;
     }
 }

@@ -28,17 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            btnGuardar = new Button();
-            btnModificar = new Button();
-            btnEliminar = new Button();
-            btnListar = new Button();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnAtras = new Button();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
             btnMaximizar = new PictureBox();
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
+            tblSensei = new DataGridView();
+            txtSegundoApellido = new TextBox();
+            lblSegundoApellido = new Label();
+            txtSegundoName = new TextBox();
+            lblSegundoNombre = new Label();
+            txtNac = new TextBox();
+            lblNacionalidad = new Label();
+            txtEmail = new TextBox();
+            lblEmail = new Label();
+            cmbCargos = new ComboBox();
+            btnGuardar = new Button();
+            lblEscuela = new Label();
             txtContrasena = new TextBox();
             lblContrasena = new Label();
             txtApellido = new TextBox();
@@ -47,11 +55,11 @@
             lblNombre = new Label();
             txtCedula = new TextBox();
             lblCedula = new Label();
-            tblSensei = new DataGridView();
-            txtNac = new TextBox();
-            lblNacionalidad = new Label();
-            txtEmail = new TextBox();
-            lblEmail = new Label();
+            btnListar = new Button();
+            btnModificar = new Button();
+            btnEliminar = new Button();
+            lblBuscar = new Label();
+            txtBuscar = new TextBox();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -59,46 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tblSensei).BeginInit();
             SuspendLayout();
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(12, 46);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 0;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnModificar
-            // 
-            btnModificar.Location = new Point(12, 75);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(75, 23);
-            btnModificar.TabIndex = 1;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(12, 104);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
-            btnEliminar.TabIndex = 2;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnListar
-            // 
-            btnListar.Location = new Point(12, 133);
-            btnListar.Name = "btnListar";
-            btnListar.Size = new Size(75, 23);
-            btnListar.TabIndex = 3;
-            btnListar.Text = "Rellenar";
-            btnListar.UseVisualStyleBackColor = true;
-            btnListar.Click += btnListar_Click;
             // 
             // btnAtras
             // 
@@ -168,128 +136,237 @@
             btnCerrar.TabIndex = 12;
             btnCerrar.TabStop = false;
             // 
-            // txtContrasena
-            // 
-            txtContrasena.Location = new Point(219, 203);
-            txtContrasena.Name = "txtContrasena";
-            txtContrasena.Size = new Size(232, 23);
-            txtContrasena.TabIndex = 34;
-            // 
-            // lblContrasena
-            // 
-            lblContrasena.AutoSize = true;
-            lblContrasena.Location = new Point(146, 206);
-            lblContrasena.Name = "lblContrasena";
-            lblContrasena.Size = new Size(67, 15);
-            lblContrasena.TabIndex = 33;
-            lblContrasena.Text = "Contraseña";
-            // 
-            // txtApellido
-            // 
-            txtApellido.Location = new Point(219, 109);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(232, 23);
-            txtApellido.TabIndex = 32;
-            // 
-            // lblApellido
-            // 
-            lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(146, 112);
-            lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(51, 15);
-            lblApellido.TabIndex = 31;
-            lblApellido.Text = "Apellido";
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(219, 80);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(232, 23);
-            txtNombre.TabIndex = 30;
-            // 
-            // lblNombre
-            // 
-            lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(146, 83);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
-            lblNombre.TabIndex = 29;
-            lblNombre.Text = "Nombre";
-            // 
-            // txtCedula
-            // 
-            txtCedula.Location = new Point(219, 51);
-            txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(232, 23);
-            txtCedula.TabIndex = 28;
-            // 
-            // lblCedula
-            // 
-            lblCedula.AutoSize = true;
-            lblCedula.Location = new Point(146, 54);
-            lblCedula.Name = "lblCedula";
-            lblCedula.Size = new Size(44, 15);
-            lblCedula.TabIndex = 27;
-            lblCedula.Text = "Cedula";
-            // 
             // tblSensei
             // 
             tblSensei.AllowUserToAddRows = false;
             tblSensei.AllowUserToDeleteRows = false;
             tblSensei.AllowUserToResizeColumns = false;
             tblSensei.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblSensei.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblSensei.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             tblSensei.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblSensei.Location = new Point(495, 51);
+            tblSensei.Location = new Point(495, 86);
             tblSensei.Name = "tblSensei";
             tblSensei.ReadOnly = true;
             tblSensei.RightToLeft = RightToLeft.No;
             tblSensei.Size = new Size(730, 326);
             tblSensei.TabIndex = 37;
             // 
+            // txtSegundoApellido
+            // 
+            txtSegundoApellido.Location = new Point(107, 204);
+            txtSegundoApellido.Name = "txtSegundoApellido";
+            txtSegundoApellido.Size = new Size(232, 23);
+            txtSegundoApellido.TabIndex = 104;
+            // 
+            // lblSegundoApellido
+            // 
+            lblSegundoApellido.AutoSize = true;
+            lblSegundoApellido.Location = new Point(9, 207);
+            lblSegundoApellido.Name = "lblSegundoApellido";
+            lblSegundoApellido.Size = new Size(101, 15);
+            lblSegundoApellido.TabIndex = 103;
+            lblSegundoApellido.Text = "Segundo Apellido";
+            // 
+            // txtSegundoName
+            // 
+            txtSegundoName.Location = new Point(107, 146);
+            txtSegundoName.Name = "txtSegundoName";
+            txtSegundoName.Size = new Size(232, 23);
+            txtSegundoName.TabIndex = 102;
+            // 
+            // lblSegundoNombre
+            // 
+            lblSegundoNombre.AutoSize = true;
+            lblSegundoNombre.Location = new Point(9, 149);
+            lblSegundoNombre.Name = "lblSegundoNombre";
+            lblSegundoNombre.Size = new Size(101, 15);
+            lblSegundoNombre.TabIndex = 101;
+            lblSegundoNombre.Text = "Segundo Nombre";
+            // 
             // txtNac
             // 
-            txtNac.Location = new Point(219, 167);
+            txtNac.Location = new Point(107, 261);
             txtNac.Name = "txtNac";
             txtNac.Size = new Size(232, 23);
-            txtNac.TabIndex = 41;
+            txtNac.TabIndex = 100;
             // 
             // lblNacionalidad
             // 
             lblNacionalidad.AutoSize = true;
-            lblNacionalidad.Location = new Point(145, 170);
+            lblNacionalidad.Location = new Point(9, 264);
             lblNacionalidad.Name = "lblNacionalidad";
             lblNacionalidad.Size = new Size(77, 15);
-            lblNacionalidad.TabIndex = 40;
+            lblNacionalidad.TabIndex = 99;
             lblNacionalidad.Text = "Nacionalidad";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(219, 138);
+            txtEmail.Location = new Point(107, 232);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(232, 23);
-            txtEmail.TabIndex = 39;
+            txtEmail.TabIndex = 98;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(145, 141);
+            lblEmail.Location = new Point(9, 235);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
-            lblEmail.TabIndex = 38;
+            lblEmail.TabIndex = 97;
             lblEmail.Text = "Email";
+            // 
+            // cmbCargos
+            // 
+            cmbCargos.FormattingEnabled = true;
+            cmbCargos.Location = new Point(107, 332);
+            cmbCargos.Name = "cmbCargos";
+            cmbCargos.Size = new Size(121, 23);
+            cmbCargos.TabIndex = 96;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(9, 367);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 95;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // lblEscuela
+            // 
+            lblEscuela.AutoSize = true;
+            lblEscuela.Location = new Point(14, 332);
+            lblEscuela.Name = "lblEscuela";
+            lblEscuela.Size = new Size(46, 15);
+            lblEscuela.TabIndex = 94;
+            lblEscuela.Text = "Escuela";
+            // 
+            // txtContrasena
+            // 
+            txtContrasena.Location = new Point(107, 300);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.Size = new Size(232, 23);
+            txtContrasena.TabIndex = 93;
+            // 
+            // lblContrasena
+            // 
+            lblContrasena.AutoSize = true;
+            lblContrasena.Location = new Point(9, 303);
+            lblContrasena.Name = "lblContrasena";
+            lblContrasena.Size = new Size(67, 15);
+            lblContrasena.TabIndex = 92;
+            lblContrasena.Text = "Contraseña";
+            // 
+            // txtApellido
+            // 
+            txtApellido.Location = new Point(107, 175);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(232, 23);
+            txtApellido.TabIndex = 91;
+            // 
+            // lblApellido
+            // 
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(9, 178);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(89, 15);
+            lblApellido.TabIndex = 90;
+            lblApellido.Text = "Primer Apellido";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(107, 112);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(232, 23);
+            txtNombre.TabIndex = 89;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(9, 116);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(89, 15);
+            lblNombre.TabIndex = 88;
+            lblNombre.Text = "Primer Nombre";
+            // 
+            // txtCedula
+            // 
+            txtCedula.Location = new Point(107, 83);
+            txtCedula.Name = "txtCedula";
+            txtCedula.Size = new Size(232, 23);
+            txtCedula.TabIndex = 87;
+            // 
+            // lblCedula
+            // 
+            lblCedula.AutoSize = true;
+            lblCedula.Location = new Point(11, 86);
+            lblCedula.Name = "lblCedula";
+            lblCedula.Size = new Size(44, 15);
+            lblCedula.TabIndex = 86;
+            lblCedula.Text = "Cedula";
+            // 
+            // btnListar
+            // 
+            btnListar.Location = new Point(171, 367);
+            btnListar.Name = "btnListar";
+            btnListar.Size = new Size(75, 23);
+            btnListar.TabIndex = 85;
+            btnListar.Text = "Rellenar";
+            btnListar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(90, 367);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 84;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(252, 367);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 83;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // lblBuscar
+            // 
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(447, 60);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(42, 15);
+            lblBuscar.TabIndex = 106;
+            lblBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(495, 57);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(232, 23);
+            txtBuscar.TabIndex = 105;
             // 
             // VtnSensei
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
+            Controls.Add(lblBuscar);
+            Controls.Add(txtBuscar);
+            Controls.Add(txtSegundoApellido);
+            Controls.Add(lblSegundoApellido);
+            Controls.Add(txtSegundoName);
+            Controls.Add(lblSegundoNombre);
             Controls.Add(txtNac);
             Controls.Add(lblNacionalidad);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
-            Controls.Add(tblSensei);
+            Controls.Add(cmbCargos);
+            Controls.Add(btnGuardar);
+            Controls.Add(lblEscuela);
             Controls.Add(txtContrasena);
             Controls.Add(lblContrasena);
             Controls.Add(txtApellido);
@@ -298,12 +375,12 @@
             Controls.Add(lblNombre);
             Controls.Add(txtCedula);
             Controls.Add(lblCedula);
+            Controls.Add(btnListar);
+            Controls.Add(btnModificar);
+            Controls.Add(btnEliminar);
+            Controls.Add(tblSensei);
             Controls.Add(panelBarraTitulo);
             Controls.Add(btnAtras);
-            Controls.Add(btnListar);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnModificar);
-            Controls.Add(btnGuardar);
             Name = "VtnSensei";
             Load += VtnSensei_Load;
             panelBarraTitulo.ResumeLayout(false);
@@ -317,17 +394,24 @@
         }
 
         #endregion
-
-        private Button btnGuardar;
-        private Button btnModificar;
-        private Button btnEliminar;
-        private Button btnListar;
         private Button btnAtras;
         private Panel panelBarraTitulo;
         private PictureBox btnRestaurar;
         private PictureBox btnMaximizar;
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
+        private DataGridView tblSensei;
+        private TextBox txtSegundoApellido;
+        private Label lblSegundoApellido;
+        private TextBox txtSegundoName;
+        private Label lblSegundoNombre;
+        private TextBox txtNac;
+        private Label lblNacionalidad;
+        private TextBox txtEmail;
+        private Label lblEmail;
+        private ComboBox cmbCargos;
+        private Button btnGuardar;
+        private Label lblEscuela;
         private TextBox txtContrasena;
         private Label lblContrasena;
         private TextBox txtApellido;
@@ -336,10 +420,10 @@
         private Label lblNombre;
         private TextBox txtCedula;
         private Label lblCedula;
-        private DataGridView tblSensei;
-        private TextBox txtNac;
-        private Label lblNacionalidad;
-        private TextBox txtEmail;
-        private Label lblEmail;
+        private Button btnListar;
+        private Button btnModificar;
+        private Button btnEliminar;
+        private Label lblBuscar;
+        private TextBox txtBuscar;
     }
 }

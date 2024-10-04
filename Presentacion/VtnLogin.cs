@@ -113,6 +113,7 @@ namespace Presentacion
                 this.Hide();
                 VtnBienvenida bienvenida = new VtnBienvenida();
                 bienvenida.ShowDialog();
+
                 VtnPrincipal menuPrincipal = new VtnPrincipal();
                 menuPrincipal.Show();
                 menuPrincipal.FormClosed += Logout;

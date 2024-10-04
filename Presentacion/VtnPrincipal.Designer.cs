@@ -33,11 +33,10 @@
             btnCerrar = new PictureBox();
             panelPrincipal = new Panel();
             panelFormularios = new Panel();
-            pictureBox1 = new PictureBox();
+            logo = new PictureBox();
             panelMenu = new Panel();
             btnPools = new Button();
             panelPerfil = new Panel();
-            pictureBox3 = new PictureBox();
             lblNombre = new Label();
             pictureBox2 = new PictureBox();
             lblRol = new Label();
@@ -52,10 +51,9 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panelPrincipal.SuspendLayout();
             panelFormularios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             panelMenu.SuspendLayout();
             panelPerfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
@@ -103,24 +101,24 @@
             // panelFormularios
             // 
             panelFormularios.BackColor = SystemColors.ButtonFace;
-            panelFormularios.Controls.Add(pictureBox1);
+            panelFormularios.Controls.Add(logo);
             panelFormularios.Dock = DockStyle.Fill;
             panelFormularios.Location = new Point(209, 0);
             panelFormularios.Name = "panelFormularios";
             panelFormularios.Size = new Size(1244, 650);
             panelFormularios.TabIndex = 15;
             // 
-            // pictureBox1
+            // logo
             // 
-            pictureBox1.BackColor = SystemColors.Control;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(444, 167);
-            pictureBox1.MinimumSize = new Size(30, 30);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(389, 317);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 14;
-            pictureBox1.TabStop = false;
+            logo.BackColor = SystemColors.Control;
+            logo.Image = (Image)resources.GetObject("logo.Image");
+            logo.Location = new Point(444, 167);
+            logo.MinimumSize = new Size(30, 30);
+            logo.Name = "logo";
+            logo.Size = new Size(389, 317);
+            logo.SizeMode = PictureBoxSizeMode.Zoom;
+            logo.TabIndex = 14;
+            logo.TabStop = false;
             // 
             // panelMenu
             // 
@@ -157,7 +155,6 @@
             // panelPerfil
             // 
             panelPerfil.BackColor = Color.Peru;
-            panelPerfil.Controls.Add(pictureBox3);
             panelPerfil.Controls.Add(lblNombre);
             panelPerfil.Controls.Add(pictureBox2);
             panelPerfil.Controls.Add(lblRol);
@@ -166,15 +163,6 @@
             panelPerfil.Size = new Size(217, 121);
             panelPerfil.TabIndex = 15;
             panelPerfil.Paint += panelPerfil_Paint;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(171, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(32, 29);
-            pictureBox3.TabIndex = 25;
-            pictureBox3.TabStop = false;
             // 
             // lblNombre
             // 
@@ -337,11 +325,10 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             panelPrincipal.ResumeLayout(false);
             panelFormularios.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             panelMenu.ResumeLayout(false);
             panelPerfil.ResumeLayout(false);
             panelPerfil.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             panelBarraTitulo.PerformLayout();
@@ -363,12 +350,11 @@
         private Button btnUsuarios;
         private Label lblNombre;
         private Label lblRol;
-        private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private Panel panelPerfil;
         private TextBox lblTitulo;
         private Button btnPools;
         private Panel panelFormularios;
-        private PictureBox pictureBox1;
+        private PictureBox logo;
     }
 }

@@ -13,8 +13,10 @@ namespace Presentacion
         public VtnPrincipal()
         {
             InitializeComponent();
-            CambiarIdioma(GestorIdiomas.Idioma);
+            CambiarIdioma(GestorIdiomas.Idioma);    
+            
         }
+
 
         #region Funcionalidades de la ventana principal
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION 
@@ -38,28 +40,7 @@ namespace Presentacion
                     break;
             }
         }
-        //DIBUJAR RECTANGULO / EXCLUIR ESQUINA PANEL 
-        protected override void OnSizeChanged(EventArgs e)
-        {
-            base.OnSizeChanged(e);
-            var region = new Region(new Rectangle(0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height));
-
-            sizeGripRectangle = new Rectangle(this.ClientRectangle.Width - tolerance, this.ClientRectangle.Height - tolerance, tolerance, tolerance);
-
-            region.Exclude(sizeGripRectangle);
-            this.panelPrincipal.Region = region;
-            this.Invalidate();
-        }
-        //COLOR Y GRIP DE RECTANGULO INFERIOR
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(244, 244, 244));
-            e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
-
-            base.OnPaint(e);
-            ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
-        }
-
+       
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro que quieres cerrar la aplicacion", "",
@@ -79,6 +60,10 @@ namespace Presentacion
             btnRestaurar.Visible = true;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+
+            btnCerrarSesion.Top = this.ClientSize.Height - btnCerrarSesion.Height - 10;
+            logo.Location = new Point(617, 200);
+
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e)
@@ -87,6 +72,25 @@ namespace Presentacion
             btnRestaurar.Visible = false;
             this.Size = new Size(th, ta);
             this.Location = new Point(lx, ly);
+
+            btnCerrarSesion.Location = new Point(10, this.ClientSize.Height - btnCerrarSesion.Height - 10);
+            logo.Location = new Point(444, 167);
+
+        }
+
+
+        private void VtnPrincipal_Resize(object sender, EventArgs e)
+        {
+            btnCerrarSesion.Top = this.ClientSize.Height - btnCerrarSesion.Height - 10;
+
+            // Notificar a todos los formularios hijos abiertos
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is VtnUsuarios)
+                {
+                    ((VtnUsuarios)form).AjustarTabla();
+                }
+            }
         }
 
         private void btnMinimiza_Click(object sender, EventArgs e)
@@ -116,18 +120,18 @@ namespace Presentacion
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            AbrirVentana<VtnUsuarios>();
+            AbrirVentana <VtnUsuarios>();
         }
 
         private void btnRank_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public void AbrirVentana<MiForm>() where MiForm : Form, new()
         {
             Form ventana;
-            ventana = panelPrincipal.Controls.OfType<MiForm>().FirstOrDefault();
+            ventana = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();
 
             if (ventana == null)
             {
@@ -135,8 +139,8 @@ namespace Presentacion
                 ventana.TopLevel = false;
                 ventana.FormBorderStyle = FormBorderStyle.None;
                 ventana.Dock = DockStyle.Fill;
-                panelPrincipal.Controls.Add(ventana);
-                panelPrincipal.Tag = ventana;
+                panelFormularios.Controls.Add(ventana);
+                panelFormularios.Tag = ventana;
                 ventana.Show();
             }
             ventana.BringToFront();

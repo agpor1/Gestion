@@ -129,7 +129,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(12, 66);
+            btnGuardar.Location = new Point(54, 481);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 42;
@@ -139,7 +139,7 @@
             // 
             // txtPeso
             // 
-            txtPeso.Location = new Point(385, 150);
+            txtPeso.Location = new Point(112, 150);
             txtPeso.Name = "txtPeso";
             txtPeso.Size = new Size(232, 23);
             txtPeso.TabIndex = 40;
@@ -147,7 +147,7 @@
             // lblPeso
             // 
             lblPeso.AutoSize = true;
-            lblPeso.Location = new Point(321, 153);
+            lblPeso.Location = new Point(12, 153);
             lblPeso.Name = "lblPeso";
             lblPeso.Size = new Size(32, 15);
             lblPeso.TabIndex = 39;
@@ -155,7 +155,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(385, 121);
+            txtApellido.Location = new Point(112, 121);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(232, 23);
             txtApellido.TabIndex = 38;
@@ -163,7 +163,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(321, 124);
+            label3.Location = new Point(12, 124);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 37;
@@ -171,7 +171,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(385, 92);
+            txtNombre.Location = new Point(112, 92);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 36;
@@ -179,7 +179,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(321, 95);
+            label2.Location = new Point(12, 95);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 35;
@@ -187,7 +187,7 @@
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(385, 63);
+            txtCedula.Location = new Point(112, 63);
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(232, 23);
             txtCedula.TabIndex = 34;
@@ -195,7 +195,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(321, 66);
+            label1.Location = new Point(12, 66);
             label1.Name = "label1";
             label1.Size = new Size(44, 15);
             label1.TabIndex = 33;
@@ -211,7 +211,7 @@
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(12, 154);
+            btnListar.Location = new Point(54, 569);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(75, 23);
             btnListar.TabIndex = 31;
@@ -221,7 +221,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(12, 125);
+            btnModificar.Location = new Point(54, 540);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
             btnModificar.TabIndex = 30;
@@ -231,7 +231,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(12, 96);
+            btnEliminar.Location = new Point(54, 511);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 29;
@@ -251,7 +251,7 @@
             // 
             // txtCarnetF
             // 
-            txtCarnetF.Location = new Point(385, 266);
+            txtCarnetF.Location = new Point(112, 266);
             txtCarnetF.Name = "txtCarnetF";
             txtCarnetF.Size = new Size(232, 23);
             txtCarnetF.TabIndex = 51;
@@ -259,7 +259,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(285, 269);
+            label5.Location = new Point(12, 269);
             label5.Name = "label5";
             label5.Size = new Size(94, 15);
             label5.TabIndex = 50;
@@ -267,7 +267,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(385, 237);
+            txtCorreo.Location = new Point(112, 237);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(232, 23);
             txtCorreo.TabIndex = 49;
@@ -275,7 +275,7 @@
             // llblCorreo
             // 
             llblCorreo.AutoSize = true;
-            llblCorreo.Location = new Point(321, 240);
+            llblCorreo.Location = new Point(12, 240);
             llblCorreo.Name = "llblCorreo";
             llblCorreo.Size = new Size(43, 15);
             llblCorreo.TabIndex = 48;
@@ -283,7 +283,7 @@
             // 
             // txtPais
             // 
-            txtPais.Location = new Point(385, 208);
+            txtPais.Location = new Point(112, 208);
             txtPais.Name = "txtPais";
             txtPais.Size = new Size(232, 23);
             txtPais.TabIndex = 47;
@@ -291,7 +291,7 @@
             // lblPais
             // 
             lblPais.AutoSize = true;
-            lblPais.Location = new Point(321, 211);
+            lblPais.Location = new Point(12, 211);
             lblPais.Name = "lblPais";
             lblPais.Size = new Size(28, 15);
             lblPais.TabIndex = 46;
@@ -299,7 +299,7 @@
             // 
             // txtSexo
             // 
-            txtSexo.Location = new Point(385, 179);
+            txtSexo.Location = new Point(112, 179);
             txtSexo.Name = "txtSexo";
             txtSexo.Size = new Size(232, 23);
             txtSexo.TabIndex = 45;
@@ -307,7 +307,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(321, 182);
+            label8.Location = new Point(12, 182);
             label8.Name = "label8";
             label8.Size = new Size(32, 15);
             label8.TabIndex = 44;
@@ -315,7 +315,7 @@
             // 
             // txtFechanac
             // 
-            txtFechanac.Location = new Point(385, 295);
+            txtFechanac.Location = new Point(112, 295);
             txtFechanac.Name = "txtFechanac";
             txtFechanac.Size = new Size(232, 23);
             txtFechanac.TabIndex = 53;
@@ -323,7 +323,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(285, 298);
+            label12.Location = new Point(12, 298);
             label12.Name = "label12";
             label12.Size = new Size(103, 15);
             label12.TabIndex = 52;
@@ -332,7 +332,7 @@
             // cmbCategorias
             // 
             cmbCategorias.FormattingEnabled = true;
-            cmbCategorias.Location = new Point(385, 333);
+            cmbCategorias.Location = new Point(112, 333);
             cmbCategorias.Name = "cmbCategorias";
             cmbCategorias.Size = new Size(121, 23);
             cmbCategorias.TabIndex = 55;
@@ -340,7 +340,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(321, 333);
+            label4.Location = new Point(48, 333);
             label4.Name = "label4";
             label4.Size = new Size(58, 15);
             label4.TabIndex = 54;
@@ -349,7 +349,7 @@
             // cmbSensei
             // 
             cmbSensei.FormattingEnabled = true;
-            cmbSensei.Location = new Point(385, 366);
+            cmbSensei.Location = new Point(112, 366);
             cmbSensei.Name = "cmbSensei";
             cmbSensei.Size = new Size(121, 23);
             cmbSensei.TabIndex = 57;
@@ -357,7 +357,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(321, 366);
+            label6.Location = new Point(48, 366);
             label6.Name = "label6";
             label6.Size = new Size(40, 15);
             label6.TabIndex = 56;
