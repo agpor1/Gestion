@@ -25,7 +25,6 @@ namespace Presentacion
         {
             actualizar();
             CargarCategorias();
-            CargarSenseis();
         }
 
         public void actualizar()
@@ -43,12 +42,12 @@ namespace Presentacion
                 List<clsEcategoria> categorias = categoriaDatos.ObtenerCategorias();
 
                 if (categorias != null)
-                {                 
+                {
                     clsEcategoria categoriaVacia = new clsEcategoria { IdCategoria = 0, Nombre = "" };
                     categorias.Insert(0, categoriaVacia);
 
                     cmbCategorias.DataSource = categorias;
-                    cmbCategorias.DisplayMember = "nombre"; 
+                    cmbCategorias.DisplayMember = "nombre";
                     cmbCategorias.ValueMember = "IdCategoria";
 
                     cmbCategorias.SelectedIndex = 0;
@@ -60,39 +59,11 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-          
+
                 MessageBox.Show("Error al cargar las categorías: " + ex.Message);
             }
         }
-        private void CargarSenseis()
-        {
-            try
-            { 
-                clsDsensei senseiDatos = new clsDsensei();
-  
-                List<clsEsensei> sensei = senseiDatos.ObtenerSenseis();
-
-                if (sensei != null && sensei.Count > 0)
-                {
-                    clsEsensei senseiVacio = new clsEsensei { IdSensei = 0, Cedula = 0 }; 
-                    sensei.Insert(0, senseiVacio);
-
-                    cmbSensei.DataSource = sensei;
-                    cmbSensei.DisplayMember = "Cedula";  
-                    cmbSensei.ValueMember = "IdSensei"; 
-
-                    cmbSensei.SelectedIndex = 0;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontraron senseis.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los senseis: " + ex.Message);
-            }
-        }
+       
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -101,20 +72,12 @@ namespace Presentacion
             ventana.AbrirVentana<VtnUsuarios>();
             ventana.Show();
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-            // Si el formulario se está cerrando, asegurarse de limpiarlo correctamente
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                this.Dispose();
-            }
-        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                objetoAtletas.insertarAtletas(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtPais.Text, txtCorreo.Text, txtCarnetF.Text, txtFechanac.Text);
+                objetoAtletas.insertarAtletas(txtCedula.Text, cmbCategorias.SelectedItem.ToString(), txtNombre.Text, txtPais.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"));
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -130,7 +93,7 @@ namespace Presentacion
         {
             try
             {
-                objetoAtletas.eliminarAtletas(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtPais.Text, txtCorreo.Text, txtCarnetF.Text, txtFechanac.Text);
+                objetoAtletas.eliminarAtletas(txtCedula.Text, cmbCategorias.SelectedItem.ToString(), txtNombre.Text, txtPais.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"));
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -146,7 +109,7 @@ namespace Presentacion
         {
             try
             {
-                objetoAtletas.actualizarAtletas(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtPais.Text, txtCorreo.Text, txtCarnetF.Text, txtFechanac.Text);
+                objetoAtletas.actualizarAtletas(txtCedula.Text, cmbCategorias.SelectedItem.ToString(), txtNombre.Text, txtPais.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"));
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -162,12 +125,16 @@ namespace Presentacion
         {
             if (tblAtletas.SelectedRows.Count > 0)
             {
-                txtCedula.Text = tblAtletas.CurrentRow.Cells["cedula"].Value.ToString();
-                txtNombre.Text = tblAtletas.CurrentRow.Cells["nombre"].Value.ToString();
-                txtApellido.Text = tblAtletas.CurrentRow.Cells["apellido"].Value.ToString();
-                txtCorreo.Text = tblAtletas.CurrentRow.Cells["correo"].Value.ToString();
-                txtPais.Text = tblAtletas.CurrentRow.Cells["pais"].Value.ToString();
-                txtPeso.Text = tblAtletas.CurrentRow.Cells["peso"].Value.ToString();
+                txtCedula.Text = tblAtletas.CurrentRow.Cells["Cedula"].Value.ToString();
+                txtNombre.Text = tblAtletas.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtApellido.Text = tblAtletas.CurrentRow.Cells["Apellido"].Value.ToString();
+                txtCarnetF.Text = tblAtletas.CurrentRow.Cells["CarnetFederado"].Value.ToString();
+                txtPais.Text = tblAtletas.CurrentRow.Cells["Nacionalidad"].Value.ToString();
+                txtPeso.Text = tblAtletas.CurrentRow.Cells["Peso"].Value.ToString();
+                txtSexo.Text = tblAtletas.CurrentRow.Cells["Sexo"].Value.ToString();
+                dtFecha.Text = tblAtletas.CurrentRow.Cells["FechaNac"].Value.ToString();
+                cmbCategorias.Text = tblAtletas.CurrentRow.Cells["idCategoria"].Value.ToString();
+
             }
             else
                 MessageBox.Show("Selecione una fila por favor");
@@ -178,16 +145,14 @@ namespace Presentacion
             txtCedula.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
-            txtCorreo.Clear();
             txtPeso.Clear();
             txtSexo.Clear();
             txtCarnetF.Clear();
             txtPais.Clear();
             txtPeso.Clear();
-            txtFechanac.Clear();
             cmbCategorias.Text = "";
-            cmbSensei.Text = "";
         }
 
+       
     }
 }

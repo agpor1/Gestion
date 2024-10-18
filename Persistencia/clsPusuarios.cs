@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Persistencia
 {
    public class clsPusuarios : clsPersistencia
-    {
+   {
         public void altaUsuario (int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena) 
         {
            string consultaSQL = "INSERT INTO personas VALUES ( docPersona='" + cedula + "', primerNombre= '" + nombre + "', segundoNombre='" + segundoNombre + "',  primerApellido= '" + apellido + "', correo= '" + email + "'" +
@@ -61,5 +61,5 @@ namespace Persistencia
 
 
 
-    }
+   }
 }

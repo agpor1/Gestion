@@ -13,8 +13,8 @@ namespace Presentacion
         public VtnPrincipal()
         {
             InitializeComponent();
-            CambiarIdioma(GestorIdiomas.Idioma);    
-            
+            CambiarIdioma(GestorIdiomas.Idioma);
+
         }
 
 
@@ -40,7 +40,7 @@ namespace Presentacion
                     break;
             }
         }
-       
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro que quieres cerrar la aplicacion", "",
@@ -120,14 +120,25 @@ namespace Presentacion
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            AbrirVentana <VtnUsuarios>();
+            AbrirVentana<VtnUsuarios>();
         }
 
         private void btnRank_Click(object sender, EventArgs e)
         {
-            
-        }
 
+        }
+        private void btnEscuela_Click(object sender, EventArgs e)
+        {
+            AbrirVentana<VtnEscuelas>();
+        }
+        private void btnTorneo_Click(object sender, EventArgs e)
+        {
+            AbrirVentana<VtnTorneo>();
+        }
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirVentana<VtnCategoria>();
+        }
         public void AbrirVentana<MiForm>() where MiForm : Form, new()
         {
             Form ventana;
@@ -181,7 +192,8 @@ namespace Presentacion
             btnCerrarSesion.Text = Lenguajes.CerrarSesion;
             lblTitulo.Text = Lenguajes.Cuk;
             btnUsuarios.Text = Lenguajes.Usuarios;
+            btnCategorias.Text = Lenguajes.Categorias;
+            btnEscuela.Text = Lenguajes.Escuela;
         }
-
     }
 }

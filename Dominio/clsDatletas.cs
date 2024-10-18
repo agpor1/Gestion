@@ -18,20 +18,26 @@ namespace Dominio
             return unPu.listarAtleta();
         }
 
-
-
-
-        public void insertarAtletas(string cedula, string nombre, string apellido, string peso, string sexo, string nacionalidad, string email, string carnetF, string fechaNac)
+        public void insertarAtletas(string cedula, string idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            objetoPatletas.altaAtleta(Convert.ToInt32(cedula), nombre, apellido, peso, sexo, nacionalidad, email, carnetF, fechaNac);
+            if (int.TryParse(cedula, out int cedulaInt) && int.TryParse(idCategoria, out int idCategoriaInt) && DateTime.TryParse(fechaNac, out DateTime fechaNac1))
+            {
+                objetoPatletas.altaAtleta(cedulaInt, idCategoriaInt, carnetF, fechaNac1, peso, sexo, pais, nombre,apellido);
+            }
         }
-        public void actualizarAtletas(string cedula, string nombre, string apellido, string peso, string sexo, string nacionalidad, string email, string carnetF, string fechaNac)
+        public void actualizarAtletas(string cedula, string idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            objetoPatletas.editarAtleta(Convert.ToInt32(cedula), nombre, apellido, peso, sexo, nacionalidad, email, carnetF, fechaNac);
+            if (int.TryParse(cedula, out int cedulaInt) && int.TryParse(idCategoria, out int idCategoriaInt) && DateTime.TryParse(fechaNac, out DateTime fechaNac1))
+            {
+                objetoPatletas.editarAtleta(cedulaInt, idCategoriaInt, carnetF, fechaNac1, peso, sexo, pais, nombre, apellido);
+            }
         }
-        public void eliminarAtletas(string cedula, string nombre, string apellido, string peso, string sexo, string nacionalidad, string email, string carnetF, string fechaNac)
+        public void eliminarAtletas(string cedula, string idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            objetoPatletas.eliminarAtleta(Convert.ToInt32(cedula), nombre, apellido, peso, sexo, nacionalidad, email, carnetF, fechaNac);
+            if (int.TryParse(cedula, out int cedulaInt) && int.TryParse(idCategoria, out int idCategoriaInt) && DateTime.TryParse(fechaNac, out DateTime fechaNac1))
+            {
+                objetoPatletas.eliminarAtleta(cedulaInt, idCategoriaInt, carnetF, fechaNac1, peso, sexo, pais, nombre, apellido);
+            }
         }
     }
 }

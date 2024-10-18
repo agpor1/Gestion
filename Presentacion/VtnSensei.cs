@@ -25,6 +25,7 @@ namespace Presentacion
         private void VtnSensei_Load(object sender, EventArgs e)
         {
             CambiarIdioma(GestorIdiomas.Idioma);
+            actualizar();
         }
 
         private void CambiarIdioma(string idioma)
@@ -69,7 +70,7 @@ namespace Presentacion
         {
             try
             {
-                objetoSensei.insertarSensei(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, txtContrasena.Text);
+                objetoSensei.insertarSensei(txtCedula.Text, txtNombre.Text,txtSegundoName.Text, txtApellido.Text,txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -84,7 +85,7 @@ namespace Presentacion
         {
             try
             {
-                objetoSensei.actualizarSensei(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text,txtContrasena.Text);
+                objetoSensei.actualizarSensei(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -127,7 +128,7 @@ namespace Presentacion
             txtNac.Clear();
             txtNombre.Clear();
             txtContrasena.Clear();
-           
+            cmbRol.Text = "";
         }
     }
 }

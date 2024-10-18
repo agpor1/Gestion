@@ -16,6 +16,24 @@ namespace Dominio
         {
             return categoria.ObtenerCategorias();
         }
+        public List<clsEcategoria> listarCategoria()
+        {
+            return categoria.listarCategoria();
+        }
+
+        public void insertarCategoria(string id, string nombre, string sexo, string edad, string peso)
+        {
+            categoria.altaCategoria(Convert.ToInt32(id), nombre, sexo, Convert.ToInt32(edad), peso);
+        }
+
+        public void actualizarCategoria(string id, string nombre, string sexo, string edad, string peso)
+        {
+            categoria.editarCategoria(Convert.ToInt32(id), nombre, sexo, Convert.ToInt32(edad), peso);
+        }
+        public void eliminarCategoria(string id, string nombre, string sexo, string edad, string peso)
+        {
+            categoria.eliminarCategoria(Convert.ToInt32(id), nombre, sexo, Convert.ToInt32(edad), peso);
+        }
 
     }
 }

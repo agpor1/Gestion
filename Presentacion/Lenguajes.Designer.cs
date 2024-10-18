@@ -124,6 +124,15 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Categorias.
+        /// </summary>
+        internal static string Categorias {
+            get {
+                return ResourceManager.GetString("Categorias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Documento.
         /// </summary>
         internal static string Cedula {
@@ -156,6 +165,15 @@ namespace Presentacion {
         internal static string Cuk {
             get {
                 return ResourceManager.GetString("Cuk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Edad.
+        /// </summary>
+        internal static string Edad {
+            get {
+                return ResourceManager.GetString("Edad", resourceCulture);
             }
         }
         
@@ -237,6 +255,15 @@ namespace Presentacion {
         internal static string Nombre {
             get {
                 return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Peso.
+        /// </summary>
+        internal static string Peso {
+            get {
+                return ResourceManager.GetString("Peso", resourceCulture);
             }
         }
         
@@ -327,6 +354,15 @@ namespace Presentacion {
         internal static string Sensei {
             get {
                 return ResourceManager.GetString("Sensei", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sexo.
+        /// </summary>
+        internal static string Sexo {
+            get {
+                return ResourceManager.GetString("Sexo", resourceCulture);
             }
         }
         

@@ -171,8 +171,8 @@ namespace Presentacion
 
         private void ActualizarIdioma()
         {
-            txtUsuario.Text = Lenguajes.Usuarios;
-            txtContraseña.Text = Lenguajes.Contrasena;
+            //txtUsuario.Text = Lenguajes.Usuarios;
+            //txtContraseña.Text = Lenguajes.Contrasena;
             btbIniciar.Text = Lenguajes.Iniciar;
         }
     }

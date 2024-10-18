@@ -138,6 +138,9 @@
   <data name="Cargo" xml:space="preserve">
     <value>Permisos</value>
   </data>
+  <data name="Categorias" xml:space="preserve">
+    <value>Categorias</value>
+  </data>
   <data name="Cedula" xml:space="preserve">
     <value>Documento</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="Cuk" xml:space="preserve">
     <value>Confederacion Uruguaya de Karate</value>
+  </data>
+  <data name="Edad" xml:space="preserve">
+    <value>Edad</value>
   </data>
   <data name="Eliminar" xml:space="preserve">
     <value>Eliminar</value>
@@ -176,6 +182,9 @@
   </data>
   <data name="Nombre" xml:space="preserve">
     <value>Nombre</value>
+  </data>
+  <data name="Peso" xml:space="preserve">
+    <value>Peso</value>
   </data>
   <data name="Planillero" xml:space="preserve">
     <value>Planilleros</value>
@@ -206,6 +215,9 @@
   </data>
   <data name="Sensei" xml:space="preserve">
     <value>Senseis</value>
+  </data>
+  <data name="Sexo" xml:space="preserve">
+    <value>Sexo</value>
   </data>
   <data name="Usuarios" xml:space="preserve">
     <value>Usuarios</value>

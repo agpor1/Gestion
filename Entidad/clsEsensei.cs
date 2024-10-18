@@ -10,10 +10,13 @@ namespace Entidad
     {
         public int Cedula { get; set; }
         public string Nombre { get; set; }
+        public string segundoNombre { get; set; }
         public string Apellido { get; set; }
+        public string segundoApellido { get; set; }
         public string Contrasena { get; set; }
+        public string Rol { get; set; }
         public string Nacionalidad { get; set; }
         public string Email { get; set; }
-        public int IdSensei { get; set; }
+       
     }
 }

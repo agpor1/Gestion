@@ -49,18 +49,16 @@
             btnAtras = new Button();
             txtCarnetF = new TextBox();
             label5 = new Label();
-            txtCorreo = new TextBox();
-            llblCorreo = new Label();
             txtPais = new TextBox();
             lblPais = new Label();
             txtSexo = new TextBox();
             label8 = new Label();
-            txtFechanac = new TextBox();
             label12 = new Label();
             cmbCategorias = new ComboBox();
             label4 = new Label();
-            cmbSensei = new ComboBox();
-            label6 = new Label();
+            lblBuscar = new Label();
+            txtBuscar = new TextBox();
+            dtFecha = new DateTimePicker();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -129,7 +127,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(54, 481);
+            btnGuardar.Location = new Point(12, 417);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 42;
@@ -139,7 +137,7 @@
             // 
             // txtPeso
             // 
-            txtPeso.Location = new Point(112, 150);
+            txtPeso.Location = new Point(112, 167);
             txtPeso.Name = "txtPeso";
             txtPeso.Size = new Size(232, 23);
             txtPeso.TabIndex = 40;
@@ -147,7 +145,7 @@
             // lblPeso
             // 
             lblPeso.AutoSize = true;
-            lblPeso.Location = new Point(12, 153);
+            lblPeso.Location = new Point(12, 170);
             lblPeso.Name = "lblPeso";
             lblPeso.Size = new Size(32, 15);
             lblPeso.TabIndex = 39;
@@ -155,7 +153,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(112, 121);
+            txtApellido.Location = new Point(112, 138);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(232, 23);
             txtApellido.TabIndex = 38;
@@ -163,7 +161,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 124);
+            label3.Location = new Point(12, 141);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 37;
@@ -171,7 +169,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(112, 92);
+            txtNombre.Location = new Point(112, 109);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 36;
@@ -179,7 +177,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 95);
+            label2.Location = new Point(12, 112);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 35;
@@ -187,7 +185,7 @@
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(112, 63);
+            txtCedula.Location = new Point(112, 80);
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(232, 23);
             txtCedula.TabIndex = 34;
@@ -195,7 +193,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 66);
+            label1.Location = new Point(12, 83);
             label1.Name = "label1";
             label1.Size = new Size(44, 15);
             label1.TabIndex = 33;
@@ -204,14 +202,14 @@
             // tblAtletas
             // 
             tblAtletas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblAtletas.Location = new Point(649, 63);
+            tblAtletas.Location = new Point(562, 83);
             tblAtletas.Name = "tblAtletas";
             tblAtletas.Size = new Size(576, 326);
             tblAtletas.TabIndex = 32;
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(54, 569);
+            btnListar.Location = new Point(174, 417);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(75, 23);
             btnListar.TabIndex = 31;
@@ -221,7 +219,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(54, 540);
+            btnModificar.Location = new Point(93, 417);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
             btnModificar.TabIndex = 30;
@@ -231,7 +229,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(54, 511);
+            btnEliminar.Location = new Point(255, 417);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 29;
@@ -241,7 +239,7 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(1150, 607);
+            btnAtras.Location = new Point(12, 607);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(75, 23);
             btnAtras.TabIndex = 43;
@@ -251,7 +249,7 @@
             // 
             // txtCarnetF
             // 
-            txtCarnetF.Location = new Point(112, 266);
+            txtCarnetF.Location = new Point(112, 254);
             txtCarnetF.Name = "txtCarnetF";
             txtCarnetF.Size = new Size(232, 23);
             txtCarnetF.TabIndex = 51;
@@ -259,31 +257,15 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 269);
+            label5.Location = new Point(12, 257);
             label5.Name = "label5";
             label5.Size = new Size(94, 15);
             label5.TabIndex = 50;
             label5.Text = "Carnet Federado";
             // 
-            // txtCorreo
-            // 
-            txtCorreo.Location = new Point(112, 237);
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(232, 23);
-            txtCorreo.TabIndex = 49;
-            // 
-            // llblCorreo
-            // 
-            llblCorreo.AutoSize = true;
-            llblCorreo.Location = new Point(12, 240);
-            llblCorreo.Name = "llblCorreo";
-            llblCorreo.Size = new Size(43, 15);
-            llblCorreo.TabIndex = 48;
-            llblCorreo.Text = "Correo";
-            // 
             // txtPais
             // 
-            txtPais.Location = new Point(112, 208);
+            txtPais.Location = new Point(112, 225);
             txtPais.Name = "txtPais";
             txtPais.Size = new Size(232, 23);
             txtPais.TabIndex = 47;
@@ -291,7 +273,7 @@
             // lblPais
             // 
             lblPais.AutoSize = true;
-            lblPais.Location = new Point(12, 211);
+            lblPais.Location = new Point(12, 228);
             lblPais.Name = "lblPais";
             lblPais.Size = new Size(28, 15);
             lblPais.TabIndex = 46;
@@ -299,7 +281,7 @@
             // 
             // txtSexo
             // 
-            txtSexo.Location = new Point(112, 179);
+            txtSexo.Location = new Point(112, 196);
             txtSexo.Name = "txtSexo";
             txtSexo.Size = new Size(232, 23);
             txtSexo.TabIndex = 45;
@@ -307,23 +289,16 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(12, 182);
+            label8.Location = new Point(12, 199);
             label8.Name = "label8";
             label8.Size = new Size(32, 15);
             label8.TabIndex = 44;
             label8.Text = "Sexo";
             // 
-            // txtFechanac
-            // 
-            txtFechanac.Location = new Point(112, 295);
-            txtFechanac.Name = "txtFechanac";
-            txtFechanac.Size = new Size(232, 23);
-            txtFechanac.TabIndex = 53;
-            // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(12, 298);
+            label12.Location = new Point(12, 286);
             label12.Name = "label12";
             label12.Size = new Size(103, 15);
             label12.TabIndex = 52;
@@ -332,7 +307,7 @@
             // cmbCategorias
             // 
             cmbCategorias.FormattingEnabled = true;
-            cmbCategorias.Location = new Point(112, 333);
+            cmbCategorias.Location = new Point(112, 321);
             cmbCategorias.Name = "cmbCategorias";
             cmbCategorias.Size = new Size(121, 23);
             cmbCategorias.TabIndex = 55;
@@ -340,44 +315,48 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(48, 333);
+            label4.Location = new Point(48, 321);
             label4.Name = "label4";
             label4.Size = new Size(58, 15);
             label4.TabIndex = 54;
             label4.Text = "Categoria";
             // 
-            // cmbSensei
+            // lblBuscar
             // 
-            cmbSensei.FormattingEnabled = true;
-            cmbSensei.Location = new Point(112, 366);
-            cmbSensei.Name = "cmbSensei";
-            cmbSensei.Size = new Size(121, 23);
-            cmbSensei.TabIndex = 57;
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(514, 54);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(42, 15);
+            lblBuscar.TabIndex = 108;
+            lblBuscar.Text = "Buscar";
             // 
-            // label6
+            // txtBuscar
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(48, 366);
-            label6.Name = "label6";
-            label6.Size = new Size(40, 15);
-            label6.TabIndex = 56;
-            label6.Text = "Sensei";
+            txtBuscar.Location = new Point(562, 51);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(232, 23);
+            txtBuscar.TabIndex = 107;
+            // 
+            // dtFecha
+            // 
+            dtFecha.Location = new Point(112, 283);
+            dtFecha.Name = "dtFecha";
+            dtFecha.Size = new Size(232, 23);
+            dtFecha.TabIndex = 155;
             // 
             // VtnAtletas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 642);
-            Controls.Add(cmbSensei);
-            Controls.Add(label6);
+            Controls.Add(dtFecha);
+            Controls.Add(lblBuscar);
+            Controls.Add(txtBuscar);
             Controls.Add(cmbCategorias);
             Controls.Add(label4);
-            Controls.Add(txtFechanac);
             Controls.Add(label12);
             Controls.Add(txtCarnetF);
             Controls.Add(label5);
-            Controls.Add(txtCorreo);
-            Controls.Add(llblCorreo);
             Controls.Add(txtPais);
             Controls.Add(lblPais);
             Controls.Add(txtSexo);
@@ -432,17 +411,15 @@
         private Button btnAtras;
         private TextBox txtCarnetF;
         private Label label5;
-        private TextBox txtCorreo;
-        private Label llblCorreo;
         private TextBox txtPais;
         private Label lblPais;
         private TextBox txtSexo;
         private Label label8;
-        private TextBox txtFechanac;
         private Label label12;
         private ComboBox cmbCategorias;
         private Label label4;
-        private ComboBox cmbSensei;
-        private Label label6;
+        private Label lblBuscar;
+        private TextBox txtBuscar;
+        private DateTimePicker dtFecha;
     }
 }

@@ -10,21 +10,24 @@ namespace Persistencia
 {
     public class clsPatletas: clsPersistencia
     {
-        public void altaAtleta(int cedula, string nombre, string apellido, string peso, string sexo, string nacionalidad, string email, string carnetF, string fechaNac)
+        public void altaAtleta(int cedula, int idCategoria, string carnetF, DateTime fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            string consultaSQL = "INSERT INTO atletas VALUES ('" + cedula + "','" + nombre + "','" + apellido + "','" + peso + "','" + sexo + "','" + nacionalidad + "','" + email + "','" + carnetF + "','" + fechaNac +"',)";
+            string consultaSQL = "INSERT INTO atletas VALUES ( docAtleta='" + cedula + "', idCategoria= '" + idCategoria + "', carneFederado='" + carnetF + "',  fechaNacimiento= '" + fechaNac + "', peso= '" + peso + "'" +
+                ", sexo= '" + sexo + "', pais= '" + pais + "', nombre= '" + nombre + "',apellido='" +apellido+ "')";
+
             ejecutarSQL(consultaSQL);
         }
 
-        public void editarAtleta(int cedula, string nombre, string apellido, string peso, string sexo, string nacionalidad, string email, string carnetF, string fechaNac)
+        public void editarAtleta(int cedula, int idCategoria, string carnetF, DateTime fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            string consultaSQL = "UPDATE atletas SET  nombre= '" + nombre + "',  apellido= '" + apellido + "', peso= '" + peso + "', sexo= '" + sexo + "', pais= '" + nacionalidad + "', correo= '" + email + "', carnertFederado='" + carnetF + "', fechaNacimiento= '" +fechaNac + "' WHERE ciAtleta= '" + cedula + "'";
+            string consultaSQL = "UPDATE atletas SET idCategoria= '" + idCategoria + "', carneFederado='" + carnetF + "', fechaNacimiento= '" + fechaNac + "', peso= '" + peso + "'" +
+                ", sexo= '" + sexo + "', pais= '" + pais + "', nombre= '" + nombre + "',apellido='" + apellido + "' WHERE docAtleta= '" + cedula + "'";
             ejecutarSQL(consultaSQL);
         }
 
-        public void eliminarAtleta(int cedula, string nombre, string apellido, string peso, string sexo, string nacionalidad, string email, string carnetF, string fechaNac)
+        public void eliminarAtleta(int cedula, int idCategoria, string carnetF, DateTime fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            string consultaSQL = "DELETE FROM atletas WHERE ciAtleta= '" + cedula + "'";
+            string consultaSQL = "DELETE FROM atletas WHERE docAtleta= '" + cedula + "'";
             ejecutarSQL(consultaSQL);
         }
 
@@ -64,17 +67,19 @@ namespace Persistencia
 
         public clsEatletas recrearAtletas(MySqlDataReader fila)
         {
-            clsEatletas unUsuario = new clsEatletas();
+            clsEatletas unA = new clsEatletas();
 
-            unUsuario.Cedula = fila.GetInt32("cedula");
-            unUsuario.Nombre = fila.GetString("nombre");
-            unUsuario.Apellido = fila.GetString("apellido");
-            unUsuario.Email = fila.GetString("correo");
-            unUsuario.Nacionalidad = fila.GetString("pais");
-            unUsuario.Peso = fila.GetString("peso");
-            unUsuario.Sexo = fila.GetString("sexo");
+            unA.Cedula = fila.GetInt32("docAtleta");
+            unA.Nombre = fila.GetString("nombre");
+            unA.Apellido = fila.GetString("apellido");
+            unA.Nacionalidad = fila.GetString("pais");
+            unA.Peso = fila.GetString("peso");
+            unA.Sexo = fila.GetString("sexo");
+            unA.CarnetFederado = fila.GetString("carneFederado");
+            unA.FechaNac = fila.GetDateTime("fechaNacimiento");
+            unA.idCategoria = fila.GetInt32("idCategoria");
 
-            return unUsuario;
+            return unA;
         }
     }
 }

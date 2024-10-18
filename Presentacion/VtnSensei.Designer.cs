@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnAtras = new Button();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
@@ -60,6 +60,8 @@
             btnEliminar = new Button();
             lblBuscar = new Label();
             txtBuscar = new TextBox();
+            cmbRol = new ComboBox();
+            lblRol = new Label();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -70,7 +72,7 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(1150, 576);
+            btnAtras.Location = new Point(9, 576);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(75, 23);
             btnAtras.TabIndex = 5;
@@ -142,8 +144,8 @@
             tblSensei.AllowUserToDeleteRows = false;
             tblSensei.AllowUserToResizeColumns = false;
             tblSensei.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblSensei.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblSensei.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             tblSensei.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblSensei.Location = new Point(495, 86);
             tblSensei.Name = "tblSensei";
@@ -219,14 +221,14 @@
             // cmbCargos
             // 
             cmbCargos.FormattingEnabled = true;
-            cmbCargos.Location = new Point(107, 332);
+            cmbCargos.Location = new Point(107, 348);
             cmbCargos.Name = "cmbCargos";
             cmbCargos.Size = new Size(121, 23);
             cmbCargos.TabIndex = 96;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(9, 367);
+            btnGuardar.Location = new Point(11, 385);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 95;
@@ -236,7 +238,7 @@
             // lblEscuela
             // 
             lblEscuela.AutoSize = true;
-            lblEscuela.Location = new Point(14, 332);
+            lblEscuela.Location = new Point(14, 348);
             lblEscuela.Name = "lblEscuela";
             lblEscuela.Size = new Size(46, 15);
             lblEscuela.TabIndex = 94;
@@ -244,7 +246,7 @@
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(107, 300);
+            txtContrasena.Location = new Point(107, 290);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(232, 23);
             txtContrasena.TabIndex = 93;
@@ -252,7 +254,7 @@
             // lblContrasena
             // 
             lblContrasena.AutoSize = true;
-            lblContrasena.Location = new Point(9, 303);
+            lblContrasena.Location = new Point(9, 293);
             lblContrasena.Name = "lblContrasena";
             lblContrasena.Size = new Size(67, 15);
             lblContrasena.TabIndex = 92;
@@ -308,7 +310,7 @@
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(171, 367);
+            btnListar.Location = new Point(173, 385);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(75, 23);
             btnListar.TabIndex = 85;
@@ -317,7 +319,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(90, 367);
+            btnModificar.Location = new Point(92, 385);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
             btnModificar.TabIndex = 84;
@@ -326,7 +328,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(252, 367);
+            btnEliminar.Location = new Point(254, 385);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 83;
@@ -349,11 +351,30 @@
             txtBuscar.Size = new Size(232, 23);
             txtBuscar.TabIndex = 105;
             // 
+            // cmbRol
+            // 
+            cmbRol.FormattingEnabled = true;
+            cmbRol.Location = new Point(107, 319);
+            cmbRol.Name = "cmbRol";
+            cmbRol.Size = new Size(121, 23);
+            cmbRol.TabIndex = 108;
+            // 
+            // lblRol
+            // 
+            lblRol.AutoSize = true;
+            lblRol.Location = new Point(14, 322);
+            lblRol.Name = "lblRol";
+            lblRol.Size = new Size(55, 15);
+            lblRol.TabIndex = 107;
+            lblRol.Text = "Permisos";
+            // 
             // VtnSensei
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
+            Controls.Add(cmbRol);
+            Controls.Add(lblRol);
             Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(txtSegundoApellido);
@@ -425,5 +446,7 @@
         private Button btnEliminar;
         private Label lblBuscar;
         private TextBox txtBuscar;
+        private ComboBox cmbRol;
+        private Label lblRol;
     }
 }

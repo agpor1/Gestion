@@ -35,6 +35,9 @@
             panelFormularios = new Panel();
             logo = new PictureBox();
             panelMenu = new Panel();
+            logoEscuelas = new PictureBox();
+            btnEscuela = new Button();
+            btnCategorias = new Button();
             btnPools = new Button();
             panelPerfil = new Panel();
             lblNombre = new Label();
@@ -47,12 +50,14 @@
             btnRestaurar = new PictureBox();
             lblTitulo = new TextBox();
             btnMaximizar = new PictureBox();
+            btnTorneo = new Button();
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panelPrincipal.SuspendLayout();
             panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoEscuelas).BeginInit();
             panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelBarraTitulo.SuspendLayout();
@@ -123,6 +128,10 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(37, 47, 66);
+            panelMenu.Controls.Add(btnTorneo);
+            panelMenu.Controls.Add(logoEscuelas);
+            panelMenu.Controls.Add(btnEscuela);
+            panelMenu.Controls.Add(btnCategorias);
             panelMenu.Controls.Add(btnPools);
             panelMenu.Controls.Add(panelPerfil);
             panelMenu.Controls.Add(btnCerrarSesion);
@@ -133,6 +142,55 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(209, 650);
             panelMenu.TabIndex = 14;
+            // 
+            // logoEscuelas
+            // 
+            logoEscuelas.BackColor = Color.FromArgb(37, 47, 66);
+            logoEscuelas.Image = (Image)resources.GetObject("logoEscuelas.Image");
+            logoEscuelas.Location = new Point(20, 458);
+            logoEscuelas.MinimumSize = new Size(30, 30);
+            logoEscuelas.Name = "logoEscuelas";
+            logoEscuelas.Size = new Size(39, 52);
+            logoEscuelas.SizeMode = PictureBoxSizeMode.Zoom;
+            logoEscuelas.TabIndex = 15;
+            logoEscuelas.TabStop = false;
+            // 
+            // btnEscuela
+            // 
+            btnEscuela.FlatAppearance.BorderSize = 0;
+            btnEscuela.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnEscuela.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnEscuela.FlatStyle = FlatStyle.Flat;
+            btnEscuela.Font = new Font("Arial", 9.75F);
+            btnEscuela.ForeColor = SystemColors.ButtonHighlight;
+            btnEscuela.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEscuela.Location = new Point(56, 458);
+            btnEscuela.Name = "btnEscuela";
+            btnEscuela.Size = new Size(98, 52);
+            btnEscuela.TabIndex = 26;
+            btnEscuela.Text = "      Escuelas";
+            btnEscuela.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnEscuela.UseVisualStyleBackColor = true;
+            btnEscuela.Click += btnEscuela_Click;
+            // 
+            // btnCategorias
+            // 
+            btnCategorias.FlatAppearance.BorderSize = 0;
+            btnCategorias.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnCategorias.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnCategorias.FlatStyle = FlatStyle.Flat;
+            btnCategorias.Font = new Font("Arial", 9.75F);
+            btnCategorias.ForeColor = SystemColors.ButtonHighlight;
+            btnCategorias.Image = (Image)resources.GetObject("btnCategorias.Image");
+            btnCategorias.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCategorias.Location = new Point(12, 400);
+            btnCategorias.Name = "btnCategorias";
+            btnCategorias.Size = new Size(133, 52);
+            btnCategorias.TabIndex = 25;
+            btnCategorias.Text = "    Categorias";
+            btnCategorias.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnCategorias.UseVisualStyleBackColor = true;
+            btnCategorias.Click += btnCategorias_Click;
             // 
             // btnPools
             // 
@@ -309,6 +367,25 @@
             btnMaximizar.TabStop = false;
             btnMaximizar.Click += btnMaximizar_Click;
             // 
+            // btnTorneo
+            // 
+            btnTorneo.FlatAppearance.BorderSize = 0;
+            btnTorneo.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnTorneo.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnTorneo.FlatStyle = FlatStyle.Flat;
+            btnTorneo.Font = new Font("Arial", 9.75F);
+            btnTorneo.ForeColor = SystemColors.ButtonHighlight;
+            btnTorneo.Image = (Image)resources.GetObject("btnTorneo.Image");
+            btnTorneo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTorneo.Location = new Point(12, 516);
+            btnTorneo.Name = "btnTorneo";
+            btnTorneo.Size = new Size(112, 52);
+            btnTorneo.TabIndex = 27;
+            btnTorneo.Text = "   Torneos";
+            btnTorneo.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnTorneo.UseVisualStyleBackColor = true;
+            btnTorneo.Click += btnTorneo_Click;
+            // 
             // VtnPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -327,6 +404,7 @@
             panelFormularios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)logoEscuelas).EndInit();
             panelPerfil.ResumeLayout(false);
             panelPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -356,5 +434,9 @@
         private Button btnPools;
         private Panel panelFormularios;
         private PictureBox logo;
+        private Button btnCategorias;
+        private Button btnEscuela;
+        private PictureBox logoEscuelas;
+        private Button btnTorneo;
     }
 }

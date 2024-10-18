@@ -144,7 +144,7 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(1150, 582);
+            btnAtras.Location = new Point(11, 576);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(75, 23);
             btnAtras.TabIndex = 47;

@@ -162,8 +162,6 @@ namespace Presentacion
         {
             // Configurar la tabla
             tblPersona.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom;
-
-
             AjustarTabla();
         }
         private void VtnUsuarios_Resize(object sender, EventArgs e)

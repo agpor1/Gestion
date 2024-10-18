@@ -14,9 +14,9 @@ namespace Entidad
         public string Peso { get; set; }
         public string Sexo { get; set; }
         public string Nacionalidad { get; set; }
-        public string Email { get; set; }
         public string CarnetFederado { get; set; }
-        public string FechaNac { get; set; }
+        public DateTime FechaNac { get; set; }
+        public int idCategoria { get; set; }
 
-    }
+}
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             tblPersona = new DataGridView();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
@@ -74,8 +74,8 @@
             tblPersona.AllowUserToDeleteRows = false;
             tblPersona.AllowUserToResizeColumns = false;
             tblPersona.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblPersona.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblPersona.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             tblPersona.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblPersona.Location = new Point(461, 80);
             tblPersona.Name = "tblPersona";
@@ -144,7 +144,7 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(1162, 613);
+            btnAtras.Location = new Point(6, 607);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(75, 23);
             btnAtras.TabIndex = 36;

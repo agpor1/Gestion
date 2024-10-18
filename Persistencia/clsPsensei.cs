@@ -15,7 +15,7 @@ namespace Persistencia
         public List<clsEsensei> listarSensei()
         {
             List<clsEsensei> colUsuarios = new List<clsEsensei>();
-            string consultaSQL = "SELECT * FROM senseis INNER JOIN personas ON senseis.cedula = personas.cedula;";
+            string consultaSQL = "SELECT * FROM senseis INNER JOIN personas ON senseis.docSensei = personas.docPersona;";
             MySqlDataReader datos = null;
 
             try
@@ -48,21 +48,24 @@ namespace Persistencia
         public List<clsEsensei> obtenerSenseis()
         {
             List<clsEsensei> senseis = new List<clsEsensei>();
-            string consultaSQL = "SELECT idSensei, cedula  FROM senseis;"; 
+            string consultaSQL = "SELECT docSensei FROM senseis;";
             MySqlDataReader datos = null;
 
             try
             {
-                datos = ejecutarYdevolver(consultaSQL); 
+                datos = ejecutarYdevolver(consultaSQL);
                 if (datos != null && datos.HasRows)
                 {
                     while (datos.Read())
                     {
-                        senseis.Add(new clsEsensei
+                        int docSensei;
+                        if (int.TryParse(datos["docSensei"].ToString(), out docSensei))
                         {
-                            IdSensei = Convert.ToInt32(datos["idSensei"]),
-                            Cedula = Convert.ToInt32(datos["cedula"])  
-                        });
+                            senseis.Add(new clsEsensei
+                            {
+                                Cedula = docSensei
+                            });
+                        }
                     }
                 }
             }
@@ -74,7 +77,7 @@ namespace Persistencia
             {
                 if (datos != null)
                 {
-                    CerrarLectorYConexion(datos); 
+                    CerrarLectorYConexion(datos);
                 }
             }
 
@@ -82,10 +85,11 @@ namespace Persistencia
         }
 
 
-        public void altaSensei(int cedula, string nombre, string apellido, string email, string nacionalidad,string contrasena)
+        public void altaSensei(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "INSERT INTO personas VALUES ('" + cedula + "','" + nombre + "','" + apellido + "','" + email + "','" + nacionalidad + "','" + contrasena + "')";
-            string consultaSQL2 = "INSERT INTO senseis  VALUES cedula= " + cedula+ "";
+            string consultaSQL1 = "INSERT INTO personas VALUES ( docPersona='" + cedula + "', primerNombre= '" + nombre + "', segundoNombre='" + segundoNombre + "',  primerApellido= '" + apellido + "', correo= '" + email + "'" +
+                        ", nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "')";
+            string consultaSQL2 = "INSERT INTO senseis  VALUES docSensei= " + cedula+ "";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
                  
@@ -93,10 +97,11 @@ namespace Persistencia
 
 
 
-        public void editarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad,string contrasena)
+        public void editarSensei(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "UPDATE personas SET  nombre= '" + nombre + "',  apellido= '" + apellido + "', email= '" + email + "', nacionalidad= '" + nacionalidad + "', contraseña= '" + contrasena + "' WHERE cedula= '" + cedula + "'";
-            string consultaSQL2 = "UPDATE senseis SET WHERE cedula= '" + cedula + "'";
+            string consultaSQL1 = "UPDATE personas SET  primerNombre= '" + nombre + "',  segundoNombre= '" + apellido + "', primerApellido= '" + apellido + "', apellido= '" + apellido + "', " +
+                        "correo= '" + email + "', nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "' WHERE docPersona= '" + cedula + "'";
+            string consultaSQL2 = "UPDATE senseis SET WHERE docSensei= '" + cedula + "'";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
         }
@@ -104,8 +109,8 @@ namespace Persistencia
 
         public void eliminarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad,string contrasena)
         {
-            string consulaSQL1 = "DELETE FROM personas WHERE cedula= '" + cedula + "'";
-            string consulaSQL2 = "DELETE FROM senseis WHERE cedula= '" + cedula + "'";
+            string consulaSQL1 = "DELETE FROM personas WHERE docPersona= '" + cedula + "'";
+            string consulaSQL2 = "DELETE FROM senseis WHERE docSensei= '" + cedula + "'";
             ejecutarSQL(consulaSQL1);
             ejecutarSQL(consulaSQL2);
         }

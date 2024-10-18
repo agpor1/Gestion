@@ -10,6 +10,51 @@ namespace Persistencia
 {
     public class clsPcategoria: clsPersistencia
     {
+        public void altaCategoria(int id, string nombre, string sexo, int edad, string peso)
+        {
+            string consultaSQL = "INSERT INTO `categorias` (`idCategoria`, `nombre`, `sexo`, `edad`, `peso`) VALUES ('"+id+"', '"+nombre+"', '"+sexo+"', '"+edad+"', '"+peso+"')";
+            ejecutarSQL(consultaSQL);
+        }
+
+        public void editarCategoria(int id, string nombre, string sexo, int edad, string peso)
+        {
+            string consultaSQL = "UPDATE categorias SET  nombre= '" + nombre + "', sexo='" + sexo + "', edad= '" + edad + "', peso= '" +peso+ "' WHERE idCategoria= '" + id+ "'";
+            ejecutarSQL(consultaSQL);
+        }
+
+        public void eliminarCategoria(int id, string nombre, string sexo, int edad, string peso)
+        {
+            string consultaSQL = "DELETE FROM categorias WHERE idCategoria= '" + id + "'";
+            ejecutarSQL(consultaSQL);
+        }
+
+        public List<clsEcategoria> listarCategoria()
+        {
+            List<clsEcategoria> colCategoria = new List<clsEcategoria>();
+            string consultaSQL = "SELECT * FROM  categorias;";
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
+
+            while (datos.Read())
+            {
+                colCategoria.Add(recrearCategoria(datos));
+            }
+            CerrarLectorYConexion(datos);
+            return colCategoria;
+        }
+
+        public clsEcategoria recrearCategoria(MySqlDataReader fila)
+        {
+            clsEcategoria unUsuario = new clsEcategoria();
+
+            unUsuario.IdCategoria = fila.GetInt32("idCategoria");
+            unUsuario.Nombre = fila.GetString("nombre");
+            unUsuario.Sexo = fila.GetString("sexo");
+            unUsuario.Edad = fila.GetInt32("edad");
+            unUsuario.Peso = fila.GetString("peso");
+
+            return unUsuario;
+        }
+
         public List<clsEcategoria> ObtenerCategorias()
         {
             List<clsEcategoria> categorias = new List<clsEcategoria>();
