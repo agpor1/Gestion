@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Entidad;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,70 +12,89 @@ namespace Persistencia
     public class clsPplanillero : clsPersistencia
     {
 
-        private clsPersistencia conexion = new clsPersistencia();
-
-        MySqlDataReader leer;
-        DataTable tabla = new DataTable();
-        MySqlCommand comando = new MySqlCommand();
-
-        public DataTable Mostrar()
+        public List<clsEplanillero> listarPlanillero()
         {
-            DataTable tabla = new DataTable();
+            List<clsEplanillero> colPlanillero = new List<clsEplanillero>();
+            string consultaSQL = "SELECT * FROM planilleros INNER JOIN personas ON planilleros.docPlanillero = personas.docPersona;";
+            MySqlDataReader datos = null;
 
             try
             {
-                AbrirConexion();
-                comando.Connection = con;
-                comando.CommandText = "SELECT * FROM planillero";
+                datos = ejecutarYdevolver(consultaSQL);
 
-                using (var leer = comando.ExecuteReader())
+                if (datos != null && datos.HasRows)
                 {
-                    tabla.Load(leer);
+                    while (datos.Read())
+                    {
+                        colPlanillero.Add(recrearPlanillero(datos));
+                    }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error al ejecutar la consulta: " + ex.Message);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error general: " + ex.Message);
+                Console.WriteLine($"Error al listar sensei: {ex.Message}");
             }
             finally
             {
-                if (con != null && con.State == ConnectionState.Open)
+                if (datos != null)
                 {
-                    con.Close();
+                    CerrarLectorYConexion(datos);
                 }
             }
 
-            return tabla;
+            return colPlanillero;
         }
 
-        public void altaPlanillero(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+       
+
+
+        public void altaPlanillero(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "INSERT INTO persona VALUES('" + cedula + "','" + nombre + "','" + apellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
-            string consultaSQL2 = "INSERT INTO planillero VALUES Cedula= (" + cedula + ")";
+            string consultaSQL1 = "INSERT INTO `personas`(`docPersona`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `correo`, `nacionalidad`, `rol`, `contrasena`) " +
+                "VALUES ('" + cedula + "','" + nombre + "','" + segundoNombre + "','" + apellido + "','" + segundoApellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
+            string consultaSQL2 = "INSERT INTO `planilleros`(`docPlanillero`) VALUES ('"+cedula +"')";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
 
         }
 
-        public void editarPlanillero(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+
+
+        public void editarPlanillero(int cedula,string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "UPDATE persona SET  Nombre= '" + nombre + "',  Apellido= '" + apellido + "', Email= '" + email + "', Nacionalidad= '" + nacionalidad + "', Rol= '" + rol + "', Contrasena= '" + contrasena + "' WHERE Cedula= '" + cedula + "'";
-            string consultaSQL2 = "UPDATE planillero SET WHERE Cedula= '" + cedula + "'";
+            string consultaSQL1 = "UPDATE `personas` SET `primerNombre`='" + nombre + "',`segundoNombre`='" + segundoNombre + "',`primerApellido`='" + apellido + "'," +
+                "`segundoApellido`='" + segundoApellido + "',`correo`='" + email + "',`nacionalidad`='" + nacionalidad + "',`rol`='" + rol + "',`contrasena`='" + contrasena + "' WHERE docPersona = " + cedula + ";'";
+            string consultaSQL2 = "UPDATE `planilleros` SET `docPlanillero`='" + cedula + "' WHERE `docPlanillero`='" + cedula + "'";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
         }
 
 
-        public void eliminarPlanillero(int cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void eliminarPlanillero(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string contrasena)
         {
-            string consulaSQL1 = "DELETE FROM persona WHERE cedula= '" + cedula + "'";
-            string consulaSQL2 = "DELETE FROM planillero WHERE cedula= '" + cedula + "'";
+            string consulaSQL1 = "DELETE FROM personas WHERE docPersona= '" + cedula + "'";
+            string consulaSQL2 = "DELETE FROM planilleros WHERE docPlanillero= '" + cedula + "'";
             ejecutarSQL(consulaSQL1);
             ejecutarSQL(consulaSQL2);
+        }
+
+
+
+        public clsEplanillero recrearPlanillero(MySqlDataReader fila)
+        {
+            clsEplanillero unP = new clsEplanillero();
+
+            unP.Cedula = fila.GetInt32("docPlanillero");
+            unP.Nombre = fila.GetString("primerNombre");
+            unP.segundoNombre = fila.IsDBNull(fila.GetOrdinal("segundoNombre")) ? "" : fila.GetString("segundoNombre");
+            unP.Apellido = fila.GetString("primerApellido");
+            unP.segundoApellido = fila.IsDBNull(fila.GetOrdinal("segundoApellido")) ? "" : fila.GetString("segundoApellido");
+            unP.Email = fila.GetString("correo");
+            unP.Nacionalidad = fila.GetString("nacionalidad");
+            unP.Rol = fila.GetString("rol");
+            unP.Contrasena = fila.GetString("contrasena");
+
+            return unP;
         }
     }
 }

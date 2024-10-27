@@ -173,7 +173,7 @@ namespace Presentacion
         {
             //txtUsuario.Text = Lenguajes.Usuarios;
             //txtContraseña.Text = Lenguajes.Contrasena;
-            btbIniciar.Text = Lenguajes.Iniciar;
+            btnIniciar.Text = Lenguajes.Iniciar;
         }
     }
 }

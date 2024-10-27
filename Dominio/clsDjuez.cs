@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    internal class clsDjuez
+    public class clsDjuez
     {
+
+
     }
 }

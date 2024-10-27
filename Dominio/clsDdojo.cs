@@ -17,18 +17,18 @@ namespace Dominio
             return dojo.listarDojos();
         }
 
-        public void insertarDojo(string idDojo, string idEscuela, string docAtleta, string nombre, string cantInsriptos)
+        public void insertarDojo(string idDojo, int idEscuela, int docAtleta, string nombre, string cantInscriptos)
         {
-            dojo.altaDojo(Convert.ToInt32(idDojo), Convert.ToInt32(idEscuela), Convert.ToInt32(docAtleta), nombre, Convert.ToInt32(cantInsriptos));
+            dojo.altaDojo(Convert.ToInt32(idDojo), idEscuela, docAtleta, nombre, Convert.ToInt32(cantInscriptos));
         }
 
-        public void actualizarDojo(string idDojo, string idEscuela, string docAtleta, string nombre, string cantInsriptos)
+        public void actualizarDojo(string idDojo, int idEscuela, int docAtleta, string nombre, string cantInscriptos)
         {
-            dojo.editarDojo(Convert.ToInt32(idDojo), Convert.ToInt32(idEscuela), Convert.ToInt32(docAtleta), nombre, Convert.ToInt32(cantInsriptos));
+            dojo.editarDojo(Convert.ToInt32(idDojo), idEscuela, docAtleta, nombre, Convert.ToInt32(cantInscriptos));
         }
-        public void eliminarDojo(string idDojo, string idEscuela, string docAtleta, string nombre, string cantInsriptos)
+        public void eliminarDojo(string idDojo, int idEscuela, int docAtleta, string nombre, string cantIncsriptos)
         {
-            dojo.eliminarDojo(Convert.ToInt32(idDojo), Convert.ToInt32(idEscuela), Convert.ToInt32(docAtleta), nombre, Convert.ToInt32(cantInsriptos));
+            dojo.eliminarDojo(Convert.ToInt32(idDojo), idEscuela, docAtleta, nombre, Convert.ToInt32(cantIncsriptos));
         }
 
 

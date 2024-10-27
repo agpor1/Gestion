@@ -2,6 +2,7 @@
 using Persistencia;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,30 +15,23 @@ namespace Dominio
 
         public List<clsEatletas> listarAtletas()
         {
-            clsPatletas unPu = new clsPatletas();
-            return unPu.listarAtleta();
+            return objetoPatletas.listarAtleta();
         }
-
-        public void insertarAtletas(string cedula, string idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
+        public List<clsEatletas> ObtenerAtletas()
         {
-            if (int.TryParse(cedula, out int cedulaInt) && int.TryParse(idCategoria, out int idCategoriaInt) && DateTime.TryParse(fechaNac, out DateTime fechaNac1))
-            {
-                objetoPatletas.altaAtleta(cedulaInt, idCategoriaInt, carnetF, fechaNac1, peso, sexo, pais, nombre,apellido);
-            }
+            return objetoPatletas.ObtenerAtletas();
         }
-        public void actualizarAtletas(string cedula, string idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
+        public void insertarAtletas(string cedula, int idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            if (int.TryParse(cedula, out int cedulaInt) && int.TryParse(idCategoria, out int idCategoriaInt) && DateTime.TryParse(fechaNac, out DateTime fechaNac1))
-            {
-                objetoPatletas.editarAtleta(cedulaInt, idCategoriaInt, carnetF, fechaNac1, peso, sexo, pais, nombre, apellido);
-            }
+            objetoPatletas.altaAtleta(Convert.ToInt32(cedula), idCategoria,carnetF,Convert.ToDateTime(fechaNac), peso, sexo, pais, nombre, apellido);
         }
-        public void eliminarAtletas(string cedula, string idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
+        public void actualizarAtletas(string cedula, int idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
-            if (int.TryParse(cedula, out int cedulaInt) && int.TryParse(idCategoria, out int idCategoriaInt) && DateTime.TryParse(fechaNac, out DateTime fechaNac1))
-            {
-                objetoPatletas.eliminarAtleta(cedulaInt, idCategoriaInt, carnetF, fechaNac1, peso, sexo, pais, nombre, apellido);
-            }
+            objetoPatletas.editarAtleta(Convert.ToInt32(cedula), idCategoria, carnetF, Convert.ToDateTime(fechaNac), peso, sexo, pais, nombre, apellido);
+        }
+        public void eliminarAtletas(string cedula, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
+        {
+            objetoPatletas.eliminarAtleta(Convert.ToInt32(cedula),carnetF, Convert.ToDateTime(fechaNac), peso, sexo, pais, nombre, apellido);
         }
     }
 }

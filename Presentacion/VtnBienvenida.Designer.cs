@@ -63,14 +63,15 @@
             panelBarraTitulo.Dock = DockStyle.Top;
             panelBarraTitulo.Location = new Point(0, 0);
             panelBarraTitulo.Name = "panelBarraTitulo";
-            panelBarraTitulo.Size = new Size(1000, 45);
+            panelBarraTitulo.Size = new Size(781, 45);
             panelBarraTitulo.TabIndex = 16;
+            panelBarraTitulo.Paint += panelBarraTitulo_Paint;
             // 
             // btnRestaurar
             // 
             btnRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnRestaurar.Cursor = Cursors.Hand;
-            btnRestaurar.Location = new Point(3221, 12);
+            btnRestaurar.Location = new Point(3002, 12);
             btnRestaurar.Name = "btnRestaurar";
             btnRestaurar.Size = new Size(28, 18);
             btnRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -84,19 +85,20 @@
             lblTitulo.BorderStyle = BorderStyle.None;
             lblTitulo.Enabled = false;
             lblTitulo.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.White;
+            lblTitulo.ForeColor = SystemColors.MenuHighlight;
             lblTitulo.Location = new Point(12, 8);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(370, 26);
             lblTitulo.TabIndex = 18;
             lblTitulo.Text = "Confederacion Uruguaya de Karate";
             lblTitulo.TextAlign = HorizontalAlignment.Center;
+            lblTitulo.TextChanged += lblTitulo_TextChanged;
             // 
             // btnMaximizar
             // 
             btnMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMaximizar.Cursor = Cursors.Hand;
-            btnMaximizar.Location = new Point(3187, 12);
+            btnMaximizar.Location = new Point(2968, 12);
             btnMaximizar.Name = "btnMaximizar";
             btnMaximizar.Size = new Size(28, 18);
             btnMaximizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -107,7 +109,7 @@
             // 
             btnMinimiza.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMinimiza.Cursor = Cursors.Hand;
-            btnMinimiza.Location = new Point(3221, 12);
+            btnMinimiza.Location = new Point(3002, 12);
             btnMinimiza.Name = "btnMinimiza";
             btnMinimiza.Size = new Size(28, 18);
             btnMinimiza.SizeMode = PictureBoxSizeMode.Zoom;
@@ -118,7 +120,7 @@
             // 
             btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.Location = new Point(3255, 12);
+            btnCerrar.Location = new Point(3036, 12);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(23, 18);
             btnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -138,10 +140,10 @@
             // lblBienvenida
             // 
             lblBienvenida.AutoSize = true;
-            lblBienvenida.BackColor = Color.FromArgb(37, 47, 66);
+            lblBienvenida.BackColor = Color.White;
             lblBienvenida.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBienvenida.ForeColor = SystemColors.ControlLightLight;
-            lblBienvenida.Location = new Point(524, 130);
+            lblBienvenida.ForeColor = SystemColors.MenuHighlight;
+            lblBienvenida.Location = new Point(273, 172);
             lblBienvenida.Name = "lblBienvenida";
             lblBienvenida.Size = new Size(282, 56);
             lblBienvenida.TabIndex = 25;
@@ -150,10 +152,10 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.BackColor = Color.FromArgb(37, 47, 66);
+            lblNombre.BackColor = Color.White;
             lblNombre.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNombre.ForeColor = SystemColors.ControlLightLight;
-            lblNombre.Location = new Point(557, 268);
+            lblNombre.ForeColor = SystemColors.MenuHighlight;
+            lblNombre.Location = new Point(293, 280);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(89, 24);
             lblNombre.TabIndex = 26;
@@ -162,7 +164,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(856, 45);
+            pictureBox1.Location = new Point(637, 45);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(144, 141);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -181,7 +183,7 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(473, 431);
+            progressBar1.Location = new Point(206, 451);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(412, 23);
             progressBar1.TabIndex = 28;
@@ -190,8 +192,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(1000, 500);
+            BackColor = Color.White;
+            ClientSize = new Size(781, 500);
             Controls.Add(progressBar1);
             Controls.Add(pictureBox1);
             Controls.Add(lblNombre);

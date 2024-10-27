@@ -1,4 +1,5 @@
-﻿using Persistencia;
+﻿using Entidad;
+using Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,25 +13,23 @@ namespace Dominio
     {
         private clsPplanillero objetoPplanillero = new clsPplanillero();
 
-        public DataTable mostrarPlanillero()
+        public List<clsEplanillero> listarPlanillero()
         {
-            DataTable tabla = new DataTable();
-            tabla = objetoPplanillero.Mostrar();
-            return tabla;
+            return objetoPplanillero.listarPlanillero();
         }
 
-        public void insertarPlanillero(string cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void insertarPlanillero(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            objetoPplanillero.altaPlanillero(Convert.ToInt32(cedula), nombre, apellido, email, nacionalidad, rol, contrasena);
+            objetoPplanillero.altaPlanillero(Convert.ToInt32(cedula), nombre,segundoNombre, apellido,segundoApellido ,email, nacionalidad, rol, contrasena);
         }
 
-        public void actualizarPlanillero(string cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void actualizarPlanillero(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            objetoPplanillero.editarPlanillero(Convert.ToInt32(cedula), nombre, apellido, email, nacionalidad, rol, contrasena);
+            objetoPplanillero.editarPlanillero(Convert.ToInt32(cedula), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
         }
-        public void eliminarPlanillero(string cedula, string nombre, string apellido, string email, string nacionalidad, string rol, string contrasena)
+        public void eliminarPlanillero(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string contrasena)
         {
-            objetoPplanillero.eliminarPlanillero(Convert.ToInt32(cedula), nombre, apellido, email, nacionalidad, rol, contrasena);
+            objetoPplanillero.eliminarPlanillero(Convert.ToInt32(cedula), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, contrasena);
         }
     }
 }

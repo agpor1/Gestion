@@ -20,14 +20,15 @@ namespace Dominio
         {
             return objetoPsensei.obtenerSenseis();
         }
-        public void insertarSensei(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void insertarSensei(string cedula, int idEscuela, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            objetoPsensei.altaSensei(Convert.ToInt32(cedula),nombre,segundoNombre, apellido,segundoApellido, email, nacionalidad,rol,contrasena);
+            objetoPsensei.altaSensei(Convert.ToInt32(cedula), idEscuela, nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
         }
 
-        public void actualizarSensei(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+
+        public void actualizarSensei(string cedula, int idEscuela, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            objetoPsensei.editarSensei(Convert.ToInt32(cedula), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
+            objetoPsensei.editarSensei(Convert.ToInt32(cedula), idEscuela, nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
         }
         public void eliminarSensei(string cedula, string nombre, string apellido, string email, string nacionalidad,string contrasena)
         {

@@ -67,7 +67,7 @@ namespace Presentacion
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
             VtnPrincipal ventana = new VtnPrincipal();
             ventana.AbrirVentana<VtnUsuarios>();
             ventana.Show();
@@ -77,7 +77,8 @@ namespace Presentacion
         {
             try
             {
-                objetoAtletas.insertarAtletas(txtCedula.Text, cmbCategorias.SelectedItem.ToString(), txtNombre.Text, txtPais.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"));
+                int idCategoriaSeleccionada = (int)cmbCategorias.SelectedValue;
+                objetoAtletas.insertarAtletas(txtCedula.Text, idCategoriaSeleccionada, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"), txtPeso.Text, txtSexo.Text, txtPais.Text, txtNombre.Text, txtApellido.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -93,7 +94,7 @@ namespace Presentacion
         {
             try
             {
-                objetoAtletas.eliminarAtletas(txtCedula.Text, cmbCategorias.SelectedItem.ToString(), txtNombre.Text, txtPais.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"));
+                objetoAtletas.eliminarAtletas(txtCedula.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"), txtPeso.Text, txtSexo.Text, txtPais.Text, txtNombre.Text, txtApellido.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -109,7 +110,8 @@ namespace Presentacion
         {
             try
             {
-                objetoAtletas.actualizarAtletas(txtCedula.Text, cmbCategorias.SelectedItem.ToString(), txtNombre.Text, txtPais.Text, txtApellido.Text, txtPeso.Text, txtSexo.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"));
+                int idCategoriaSeleccionada = (int)cmbCategorias.SelectedValue;
+                objetoAtletas.actualizarAtletas(txtCedula.Text, idCategoriaSeleccionada, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"), txtPeso.Text, txtSexo.Text, txtPais.Text, txtNombre.Text, txtApellido.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();

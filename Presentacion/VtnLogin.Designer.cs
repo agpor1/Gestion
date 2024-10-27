@@ -34,7 +34,7 @@
             txtUsuario = new TextBox();
             txtContraseña = new TextBox();
             label1 = new Label();
-            btbIniciar = new Button();
+            btnIniciar = new Button();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             btnMinimiza = new PictureBox();
@@ -78,7 +78,7 @@
             txtUsuario.BackColor = SystemColors.InactiveCaptionText;
             txtUsuario.BorderStyle = BorderStyle.None;
             txtUsuario.Font = new Font("Constantia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.ForeColor = SystemColors.WindowFrame;
+            txtUsuario.ForeColor = SystemColors.MenuHighlight;
             txtUsuario.Location = new Point(366, 78);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(339, 20);
@@ -92,7 +92,7 @@
             txtContraseña.BackColor = SystemColors.InactiveCaptionText;
             txtContraseña.BorderStyle = BorderStyle.None;
             txtContraseña.Font = new Font("Constantia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContraseña.ForeColor = SystemColors.WindowFrame;
+            txtContraseña.ForeColor = SystemColors.MenuHighlight;
             txtContraseña.Location = new Point(366, 153);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(339, 20);
@@ -105,28 +105,28 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Consolas", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.WindowFrame;
+            label1.ForeColor = SystemColors.MenuHighlight;
             label1.Location = new Point(488, 9);
             label1.Name = "label1";
             label1.Size = new Size(95, 34);
             label1.TabIndex = 3;
             label1.Text = "LOGIN";
             // 
-            // btbIniciar
+            // btnIniciar
             // 
-            btbIniciar.BackColor = SystemColors.ControlDark;
-            btbIniciar.FlatAppearance.BorderSize = 0;
-            btbIniciar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btbIniciar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btbIniciar.FlatStyle = FlatStyle.Flat;
-            btbIniciar.ForeColor = SystemColors.Menu;
-            btbIniciar.Location = new Point(366, 242);
-            btbIniciar.Name = "btbIniciar";
-            btbIniciar.Size = new Size(339, 40);
-            btbIniciar.TabIndex = 3;
-            btbIniciar.Text = "INICIAR";
-            btbIniciar.UseVisualStyleBackColor = false;
-            btbIniciar.Click += btbIniciar_Click;
+            btnIniciar.BackColor = SystemColors.MenuHighlight;
+            btnIniciar.FlatAppearance.BorderSize = 0;
+            btnIniciar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnIniciar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnIniciar.FlatStyle = FlatStyle.Flat;
+            btnIniciar.ForeColor = SystemColors.Menu;
+            btnIniciar.Location = new Point(366, 242);
+            btnIniciar.Name = "btnIniciar";
+            btnIniciar.Size = new Size(339, 40);
+            btnIniciar.TabIndex = 3;
+            btnIniciar.Text = "INICIAR";
+            btnIniciar.UseVisualStyleBackColor = false;
+            btnIniciar.Click += btbIniciar_Click;
             // 
             // textBox3
             // 
@@ -181,7 +181,7 @@
             // 
             lblMensajeError.AutoSize = true;
             lblMensajeError.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMensajeError.ForeColor = SystemColors.WindowFrame;
+            lblMensajeError.ForeColor = SystemColors.MenuHighlight;
             lblMensajeError.Location = new Point(366, 203);
             lblMensajeError.Name = "lblMensajeError";
             lblMensajeError.Size = new Size(48, 18);
@@ -203,7 +203,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = SystemColors.ControlDark;
+            menuStrip1.BackColor = SystemColors.MenuHighlight;
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.GripMargin = new Padding(0);
             menuStrip1.GripStyle = ToolStripGripStyle.Visible;
@@ -217,7 +217,7 @@
             // 
             // Idiomas
             // 
-            Idiomas.BackColor = SystemColors.ControlDark;
+            Idiomas.BackColor = SystemColors.MenuHighlight;
             Idiomas.DropDownItems.AddRange(new ToolStripItem[] { españolToolStripMenuItem, inglesToolStripMenuItem });
             Idiomas.ForeColor = SystemColors.Info;
             Idiomas.Name = "Idiomas";
@@ -226,7 +226,7 @@
             // 
             // españolToolStripMenuItem
             // 
-            españolToolStripMenuItem.BackColor = SystemColors.ControlDark;
+            españolToolStripMenuItem.BackColor = SystemColors.MenuHighlight;
             españolToolStripMenuItem.ForeColor = SystemColors.Menu;
             españolToolStripMenuItem.Name = "españolToolStripMenuItem";
             españolToolStripMenuItem.Size = new Size(115, 22);
@@ -234,7 +234,7 @@
             // 
             // inglesToolStripMenuItem
             // 
-            inglesToolStripMenuItem.BackColor = SystemColors.ControlDark;
+            inglesToolStripMenuItem.BackColor = SystemColors.MenuHighlight;
             inglesToolStripMenuItem.ForeColor = SystemColors.Menu;
             inglesToolStripMenuItem.Name = "inglesToolStripMenuItem";
             inglesToolStripMenuItem.Size = new Size(115, 22);
@@ -253,7 +253,7 @@
             Controls.Add(btnCerrar);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
-            Controls.Add(btbIniciar);
+            Controls.Add(btnIniciar);
             Controls.Add(label1);
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
@@ -282,7 +282,7 @@
         private TextBox txtUsuario;
         private TextBox txtContraseña;
         private Label label1;
-        private Button btbIniciar;
+        private Button btnIniciar;
         private TextBox textBox3;
         private TextBox textBox4;
         private PictureBox btnMinimiza;

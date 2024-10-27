@@ -60,5 +60,14 @@ namespace Presentacion
             lblTitulo.Text = Lenguajes.Cuk;
         }
 
+        private void lblTitulo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

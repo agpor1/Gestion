@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class VtnTorneo
+    partial class VtnDojos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,31 +29,30 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            dtFechaInicio = new DateTimePicker();
             lblBuscar = new Label();
             txtBuscar = new TextBox();
-            txtAlcance = new TextBox();
-            lblAlcance = new Label();
-            btnGuardar = new Button();
-            lblFechaInicio = new Label();
             txtNombre = new TextBox();
             lblNombre = new Label();
+            btnGuardar = new Button();
+            txtIncriptos = new TextBox();
+            lblInscriptos = new Label();
             txtId = new TextBox();
             lblId = new Label();
             btnRellenar = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
-            tblTorneo = new DataGridView();
+            tblDojos = new DataGridView();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
             btnMaximizar = new PictureBox();
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
-            dtFechaFin = new DateTimePicker();
-            lblFechaFin = new Label();
+            btnAtras = new Button();
             cmbEscuelas = new ComboBox();
             lblEscuelas = new Label();
-            ((System.ComponentModel.ISupportInitialize)tblTorneo).BeginInit();
+            cmbDocAtleta = new ComboBox();
+            lblDocAtleta = new Label();
+            ((System.ComponentModel.ISupportInitialize)tblDojos).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -61,142 +60,125 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
             // 
-            // dtFechaInicio
-            // 
-            dtFechaInicio.Format = DateTimePickerFormat.Short;
-            dtFechaInicio.Location = new Point(134, 171);
-            dtFechaInicio.Name = "dtFechaInicio";
-            dtFechaInicio.Size = new Size(232, 23);
-            dtFechaInicio.TabIndex = 172;
-            // 
             // lblBuscar
             // 
             lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(447, 53);
+            lblBuscar.Location = new Point(447, 69);
             lblBuscar.Name = "lblBuscar";
             lblBuscar.Size = new Size(42, 15);
-            lblBuscar.TabIndex = 171;
+            lblBuscar.TabIndex = 154;
             lblBuscar.Text = "Buscar";
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(495, 50);
+            txtBuscar.Location = new Point(495, 66);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(232, 23);
-            txtBuscar.TabIndex = 170;
-            // 
-            // txtAlcance
-            // 
-            txtAlcance.Location = new Point(134, 139);
-            txtAlcance.Name = "txtAlcance";
-            txtAlcance.Size = new Size(232, 23);
-            txtAlcance.TabIndex = 167;
-            // 
-            // lblAlcance
-            // 
-            lblAlcance.AutoSize = true;
-            lblAlcance.Location = new Point(9, 142);
-            lblAlcance.Name = "lblAlcance";
-            lblAlcance.Size = new Size(49, 15);
-            lblAlcance.TabIndex = 166;
-            lblAlcance.Text = "Alcance";
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(11, 378);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 165;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // lblFechaInicio
-            // 
-            lblFechaInicio.AutoSize = true;
-            lblFechaInicio.Location = new Point(9, 171);
-            lblFechaInicio.Name = "lblFechaInicio";
-            lblFechaInicio.Size = new Size(86, 15);
-            lblFechaInicio.TabIndex = 164;
-            lblFechaInicio.Text = "Fecha de Inicio";
+            txtBuscar.TabIndex = 153;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(134, 105);
+            txtNombre.Location = new Point(107, 184);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
-            txtNombre.TabIndex = 163;
+            txtNombre.TabIndex = 150;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(9, 109);
+            lblNombre.Location = new Point(9, 187);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
-            lblNombre.TabIndex = 162;
+            lblNombre.TabIndex = 149;
             lblNombre.Text = "Nombre";
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(11, 394);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 148;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // txtIncriptos
+            // 
+            txtIncriptos.Location = new Point(107, 213);
+            txtIncriptos.Name = "txtIncriptos";
+            txtIncriptos.Size = new Size(232, 23);
+            txtIncriptos.TabIndex = 147;
+            // 
+            // lblInscriptos
+            // 
+            lblInscriptos.AutoSize = true;
+            lblInscriptos.Location = new Point(11, 216);
+            lblInscriptos.Name = "lblInscriptos";
+            lblInscriptos.Size = new Size(86, 15);
+            lblInscriptos.TabIndex = 146;
+            lblInscriptos.Text = "Cant Inscriptos";
             // 
             // txtId
             // 
-            txtId.Location = new Point(134, 76);
+            txtId.Location = new Point(107, 92);
             txtId.Name = "txtId";
             txtId.Size = new Size(232, 23);
-            txtId.TabIndex = 161;
+            txtId.TabIndex = 143;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(11, 79);
+            lblId.Location = new Point(11, 95);
             lblId.Name = "lblId";
             lblId.Size = new Size(17, 15);
-            lblId.TabIndex = 160;
+            lblId.TabIndex = 142;
             lblId.Text = "Id";
             // 
             // btnRellenar
             // 
-            btnRellenar.Location = new Point(173, 378);
+            btnRellenar.Location = new Point(173, 394);
             btnRellenar.Name = "btnRellenar";
             btnRellenar.Size = new Size(75, 23);
-            btnRellenar.TabIndex = 159;
+            btnRellenar.TabIndex = 141;
             btnRellenar.Text = "Rellenar";
             btnRellenar.UseVisualStyleBackColor = true;
             btnRellenar.Click += btnRellenar_Click;
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(92, 378);
+            btnModificar.Location = new Point(92, 394);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
-            btnModificar.TabIndex = 158;
+            btnModificar.TabIndex = 140;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(254, 378);
+            btnEliminar.Location = new Point(254, 394);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
-            btnEliminar.TabIndex = 157;
+            btnEliminar.TabIndex = 139;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // tblTorneo
+            // tblDojos
             // 
-            tblTorneo.AllowUserToAddRows = false;
-            tblTorneo.AllowUserToDeleteRows = false;
-            tblTorneo.AllowUserToResizeColumns = false;
-            tblTorneo.AllowUserToResizeRows = false;
+            tblDojos.AllowUserToAddRows = false;
+            tblDojos.AllowUserToDeleteRows = false;
+            tblDojos.AllowUserToResizeColumns = false;
+            tblDojos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblTorneo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            tblTorneo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblTorneo.Location = new Point(495, 79);
-            tblTorneo.Name = "tblTorneo";
-            tblTorneo.ReadOnly = true;
-            tblTorneo.RightToLeft = RightToLeft.No;
-            tblTorneo.Size = new Size(730, 326);
-            tblTorneo.TabIndex = 156;
+            tblDojos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            tblDojos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tblDojos.Location = new Point(495, 95);
+            tblDojos.Name = "tblDojos";
+            tblDojos.ReadOnly = true;
+            tblDojos.RightToLeft = RightToLeft.No;
+            tblDojos.Size = new Size(730, 326);
+            tblDojos.TabIndex = 138;
             // 
             // panelBarraTitulo
             // 
@@ -209,13 +191,13 @@
             panelBarraTitulo.Location = new Point(0, 0);
             panelBarraTitulo.Name = "panelBarraTitulo";
             panelBarraTitulo.Size = new Size(1237, 45);
-            panelBarraTitulo.TabIndex = 155;
+            panelBarraTitulo.TabIndex = 137;
             // 
             // btnRestaurar
             // 
             btnRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnRestaurar.Cursor = Cursors.Hand;
-            btnRestaurar.Location = new Point(5532, 12);
+            btnRestaurar.Location = new Point(4495, 12);
             btnRestaurar.Name = "btnRestaurar";
             btnRestaurar.Size = new Size(28, 18);
             btnRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -227,7 +209,7 @@
             // 
             btnMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMaximizar.Cursor = Cursors.Hand;
-            btnMaximizar.Location = new Point(5498, 12);
+            btnMaximizar.Location = new Point(4461, 12);
             btnMaximizar.Name = "btnMaximizar";
             btnMaximizar.Size = new Size(28, 18);
             btnMaximizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -238,7 +220,7 @@
             // 
             btnMinimiza.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMinimiza.Cursor = Cursors.Hand;
-            btnMinimiza.Location = new Point(5532, 12);
+            btnMinimiza.Location = new Point(4495, 12);
             btnMinimiza.Name = "btnMinimiza";
             btnMinimiza.Size = new Size(28, 18);
             btnMinimiza.SizeMode = PictureBoxSizeMode.Zoom;
@@ -249,76 +231,84 @@
             // 
             btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.Location = new Point(5566, 12);
+            btnCerrar.Location = new Point(4529, 12);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(23, 18);
             btnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
             btnCerrar.TabIndex = 12;
             btnCerrar.TabStop = false;
             // 
-            // dtFechaFin
+            // btnAtras
             // 
-            dtFechaFin.Format = DateTimePickerFormat.Short;
-            dtFechaFin.Location = new Point(134, 200);
-            dtFechaFin.Name = "dtFechaFin";
-            dtFechaFin.Size = new Size(232, 23);
-            dtFechaFin.TabIndex = 174;
-            // 
-            // lblFechaFin
-            // 
-            lblFechaFin.AutoSize = true;
-            lblFechaFin.Location = new Point(9, 200);
-            lblFechaFin.Name = "lblFechaFin";
-            lblFechaFin.Size = new Size(119, 15);
-            lblFechaFin.TabIndex = 173;
-            lblFechaFin.Text = "Fecha de Finalizacion";
+            btnAtras.Location = new Point(9, 585);
+            btnAtras.Name = "btnAtras";
+            btnAtras.Size = new Size(75, 23);
+            btnAtras.TabIndex = 136;
+            btnAtras.Text = "Atras";
+            btnAtras.UseVisualStyleBackColor = true;
             // 
             // cmbEscuelas
             // 
             cmbEscuelas.FormattingEnabled = true;
-            cmbEscuelas.Location = new Point(134, 240);
+            cmbEscuelas.Location = new Point(107, 121);
             cmbEscuelas.Name = "cmbEscuelas";
             cmbEscuelas.Size = new Size(121, 23);
-            cmbEscuelas.TabIndex = 176;
+            cmbEscuelas.TabIndex = 178;
             // 
             // lblEscuelas
             // 
             lblEscuelas.AutoSize = true;
-            lblEscuelas.Location = new Point(9, 240);
+            lblEscuelas.Location = new Point(9, 121);
             lblEscuelas.Name = "lblEscuelas";
             lblEscuelas.Size = new Size(51, 15);
-            lblEscuelas.TabIndex = 175;
+            lblEscuelas.TabIndex = 177;
             lblEscuelas.Text = "Escuelas";
             // 
-            // VtnTorneo
+            // cmbDocAtleta
+            // 
+            cmbDocAtleta.FormattingEnabled = true;
+            cmbDocAtleta.Location = new Point(107, 155);
+            cmbDocAtleta.Name = "cmbDocAtleta";
+            cmbDocAtleta.Size = new Size(121, 23);
+            cmbDocAtleta.TabIndex = 180;
+            // 
+            // lblDocAtleta
+            // 
+            lblDocAtleta.AutoSize = true;
+            lblDocAtleta.Location = new Point(9, 155);
+            lblDocAtleta.Name = "lblDocAtleta";
+            lblDocAtleta.Size = new Size(59, 15);
+            lblDocAtleta.TabIndex = 179;
+            lblDocAtleta.Text = "DocAtleta";
+            // 
+            // VtnDojos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
+            Controls.Add(cmbDocAtleta);
+            Controls.Add(lblDocAtleta);
             Controls.Add(cmbEscuelas);
             Controls.Add(lblEscuelas);
-            Controls.Add(dtFechaFin);
-            Controls.Add(lblFechaFin);
-            Controls.Add(dtFechaInicio);
             Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
-            Controls.Add(txtAlcance);
-            Controls.Add(lblAlcance);
-            Controls.Add(btnGuardar);
-            Controls.Add(lblFechaInicio);
             Controls.Add(txtNombre);
             Controls.Add(lblNombre);
+            Controls.Add(btnGuardar);
+            Controls.Add(txtIncriptos);
+            Controls.Add(lblInscriptos);
             Controls.Add(txtId);
             Controls.Add(lblId);
             Controls.Add(btnRellenar);
             Controls.Add(btnModificar);
             Controls.Add(btnEliminar);
-            Controls.Add(tblTorneo);
+            Controls.Add(tblDojos);
             Controls.Add(panelBarraTitulo);
-            Name = "VtnTorneo";
-            Text = "VtnTorneo";
-            Load += VtnTorneo_Load;
-            ((System.ComponentModel.ISupportInitialize)tblTorneo).EndInit();
+            Controls.Add(btnAtras);
+            Name = "VtnDojos";
+            Text = "VtnDojos";
+            Load += VtnDojos_Load;
+            ((System.ComponentModel.ISupportInitialize)tblDojos).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
@@ -330,29 +320,30 @@
 
         #endregion
 
-        private DateTimePicker dtFechaInicio;
         private Label lblBuscar;
         private TextBox txtBuscar;
-        private TextBox txtAlcance;
-        private Label lblAlcance;
-        private Button btnGuardar;
-        private Label lblFechaInicio;
+        private TextBox txtPeso;
+        private Label lblPeso;
         private TextBox txtNombre;
         private Label lblNombre;
+        private Button btnGuardar;
+        private TextBox txtIncriptos;
+        private Label lblInscriptos;
         private TextBox txtId;
         private Label lblId;
         private Button btnRellenar;
         private Button btnModificar;
         private Button btnEliminar;
-        private DataGridView tblTorneo;
+        private DataGridView tblDojos;
         private Panel panelBarraTitulo;
         private PictureBox btnRestaurar;
         private PictureBox btnMaximizar;
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
-        private DateTimePicker dtFechaFin;
-        private Label lblFechaFin;
+        private Button btnAtras;
         private ComboBox cmbEscuelas;
         private Label lblEscuelas;
+        private ComboBox cmbDocAtleta;
+        private Label lblDocAtleta;
     }
 }

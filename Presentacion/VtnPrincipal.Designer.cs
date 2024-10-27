@@ -35,6 +35,7 @@
             panelFormularios = new Panel();
             logo = new PictureBox();
             panelMenu = new Panel();
+            btnTorneo = new Button();
             logoEscuelas = new PictureBox();
             btnEscuela = new Button();
             btnCategorias = new Button();
@@ -50,7 +51,7 @@
             btnRestaurar = new PictureBox();
             lblTitulo = new TextBox();
             btnMaximizar = new PictureBox();
-            btnTorneo = new Button();
+            btnDojos = new Button();
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panelPrincipal.SuspendLayout();
@@ -128,6 +129,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(37, 47, 66);
+            panelMenu.Controls.Add(btnDojos);
             panelMenu.Controls.Add(btnTorneo);
             panelMenu.Controls.Add(logoEscuelas);
             panelMenu.Controls.Add(btnEscuela);
@@ -143,11 +145,30 @@
             panelMenu.Size = new Size(209, 650);
             panelMenu.TabIndex = 14;
             // 
+            // btnTorneo
+            // 
+            btnTorneo.FlatAppearance.BorderSize = 0;
+            btnTorneo.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnTorneo.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnTorneo.FlatStyle = FlatStyle.Flat;
+            btnTorneo.Font = new Font("Arial", 9.75F);
+            btnTorneo.ForeColor = SystemColors.ButtonHighlight;
+            btnTorneo.Image = (Image)resources.GetObject("btnTorneo.Image");
+            btnTorneo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTorneo.Location = new Point(20, 465);
+            btnTorneo.Name = "btnTorneo";
+            btnTorneo.Size = new Size(112, 52);
+            btnTorneo.TabIndex = 27;
+            btnTorneo.Text = "   Torneos";
+            btnTorneo.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnTorneo.UseVisualStyleBackColor = true;
+            btnTorneo.Click += btnTorneo_Click;
+            // 
             // logoEscuelas
             // 
             logoEscuelas.BackColor = Color.FromArgb(37, 47, 66);
             logoEscuelas.Image = (Image)resources.GetObject("logoEscuelas.Image");
-            logoEscuelas.Location = new Point(20, 458);
+            logoEscuelas.Location = new Point(20, 407);
             logoEscuelas.MinimumSize = new Size(30, 30);
             logoEscuelas.Name = "logoEscuelas";
             logoEscuelas.Size = new Size(39, 52);
@@ -164,9 +185,9 @@
             btnEscuela.Font = new Font("Arial", 9.75F);
             btnEscuela.ForeColor = SystemColors.ButtonHighlight;
             btnEscuela.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEscuela.Location = new Point(56, 458);
+            btnEscuela.Location = new Point(56, 407);
             btnEscuela.Name = "btnEscuela";
-            btnEscuela.Size = new Size(98, 52);
+            btnEscuela.Size = new Size(98, 45);
             btnEscuela.TabIndex = 26;
             btnEscuela.Text = "      Escuelas";
             btnEscuela.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -183,9 +204,9 @@
             btnCategorias.ForeColor = SystemColors.ButtonHighlight;
             btnCategorias.Image = (Image)resources.GetObject("btnCategorias.Image");
             btnCategorias.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCategorias.Location = new Point(12, 400);
+            btnCategorias.Location = new Point(12, 355);
             btnCategorias.Name = "btnCategorias";
-            btnCategorias.Size = new Size(133, 52);
+            btnCategorias.Size = new Size(133, 46);
             btnCategorias.TabIndex = 25;
             btnCategorias.Text = "    Categorias";
             btnCategorias.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -202,9 +223,9 @@
             btnPools.ForeColor = SystemColors.ButtonHighlight;
             btnPools.Image = (Image)resources.GetObject("btnPools.Image");
             btnPools.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPools.Location = new Point(12, 342);
+            btnPools.Location = new Point(20, 304);
             btnPools.Name = "btnPools";
-            btnPools.Size = new Size(112, 52);
+            btnPools.Size = new Size(112, 45);
             btnPools.TabIndex = 24;
             btnPools.Text = "   Pools";
             btnPools.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -283,9 +304,9 @@
             btnRanking.ForeColor = SystemColors.ButtonHighlight;
             btnRanking.Image = (Image)resources.GetObject("btnRanking.Image");
             btnRanking.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRanking.Location = new Point(12, 272);
+            btnRanking.Location = new Point(20, 250);
             btnRanking.Name = "btnRanking";
-            btnRanking.Size = new Size(112, 52);
+            btnRanking.Size = new Size(112, 48);
             btnRanking.TabIndex = 22;
             btnRanking.Text = "   Ranking";
             btnRanking.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -302,7 +323,7 @@
             btnUsuarios.ForeColor = SystemColors.ButtonHighlight;
             btnUsuarios.Image = (Image)resources.GetObject("btnUsuarios.Image");
             btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuarios.Location = new Point(3, 192);
+            btnUsuarios.Location = new Point(12, 170);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(142, 74);
             btnUsuarios.TabIndex = 20;
@@ -367,24 +388,24 @@
             btnMaximizar.TabStop = false;
             btnMaximizar.Click += btnMaximizar_Click;
             // 
-            // btnTorneo
+            // btnDojos
             // 
-            btnTorneo.FlatAppearance.BorderSize = 0;
-            btnTorneo.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
-            btnTorneo.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnTorneo.FlatStyle = FlatStyle.Flat;
-            btnTorneo.Font = new Font("Arial", 9.75F);
-            btnTorneo.ForeColor = SystemColors.ButtonHighlight;
-            btnTorneo.Image = (Image)resources.GetObject("btnTorneo.Image");
-            btnTorneo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTorneo.Location = new Point(12, 516);
-            btnTorneo.Name = "btnTorneo";
-            btnTorneo.Size = new Size(112, 52);
-            btnTorneo.TabIndex = 27;
-            btnTorneo.Text = "   Torneos";
-            btnTorneo.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnTorneo.UseVisualStyleBackColor = true;
-            btnTorneo.Click += btnTorneo_Click;
+            btnDojos.FlatAppearance.BorderSize = 0;
+            btnDojos.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnDojos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnDojos.FlatStyle = FlatStyle.Flat;
+            btnDojos.Font = new Font("Arial", 9.75F);
+            btnDojos.ForeColor = SystemColors.ButtonHighlight;
+            btnDojos.Image = (Image)resources.GetObject("btnDojos.Image");
+            btnDojos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDojos.Location = new Point(20, 523);
+            btnDojos.Name = "btnDojos";
+            btnDojos.Size = new Size(112, 52);
+            btnDojos.TabIndex = 28;
+            btnDojos.Text = "   Dojos";
+            btnDojos.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnDojos.UseVisualStyleBackColor = true;
+            btnDojos.Click += btnDojos_Click;
             // 
             // VtnPrincipal
             // 
@@ -438,5 +459,6 @@
         private Button btnEscuela;
         private PictureBox logoEscuelas;
         private Button btnTorneo;
+        private Button btnDojos;
     }
 }

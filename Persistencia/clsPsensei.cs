@@ -85,11 +85,11 @@ namespace Persistencia
         }
 
 
-        public void altaSensei(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void altaSensei(int cedula, int idEscuela,string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "INSERT INTO personas VALUES ( docPersona='" + cedula + "', primerNombre= '" + nombre + "', segundoNombre='" + segundoNombre + "',  primerApellido= '" + apellido + "', correo= '" + email + "'" +
-                        ", nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "')";
-            string consultaSQL2 = "INSERT INTO senseis  VALUES docSensei= " + cedula+ "";
+            string consultaSQL1 = "INSERT INTO `personas`(`docPersona`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `correo`, `nacionalidad`, `rol`, `contrasena`) " +
+                "VALUES ('" + cedula + "','" + nombre + "','" + segundoNombre + "','" + apellido + "','" + segundoApellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
+            string consultaSQL2 = "INSERT INTO `senseis`(`docSensei`, `idEscuela`) VALUES ('"+cedula+"','"+idEscuela+"')";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
                  
@@ -97,11 +97,11 @@ namespace Persistencia
 
 
 
-        public void editarSensei(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void editarSensei(int cedula, int idEscuela, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "UPDATE personas SET  primerNombre= '" + nombre + "',  segundoNombre= '" + apellido + "', primerApellido= '" + apellido + "', apellido= '" + apellido + "', " +
-                        "correo= '" + email + "', nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "' WHERE docPersona= '" + cedula + "'";
-            string consultaSQL2 = "UPDATE senseis SET WHERE docSensei= '" + cedula + "'";
+            string consultaSQL1 = "UPDATE `personas` SET `primerNombre`='" + nombre + "',`segundoNombre`='" + segundoNombre + "',`primerApellido`='" + apellido + "'," +
+                "`segundoApellido`='" + segundoApellido + "',`correo`='" + email + "',`nacionalidad`='" + nacionalidad + "',`rol`='" + rol + "',`contrasena`='" + contrasena + "' WHERE docPersona = " + cedula + ";'";
+            string consultaSQL2 = "UPDATE `senseis` SET `idEscuela`='"+idEscuela+"' WHERE `docSensei`='"+cedula+"'";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
         }
@@ -119,18 +119,20 @@ namespace Persistencia
 
         public clsEsensei recrearSensei(MySqlDataReader fila)
         {
-            clsEsensei unUsuario = new clsEsensei();
+            clsEsensei unP = new clsEsensei();
 
-            unUsuario.Cedula = fila.GetInt32("cedula");
-            unUsuario.Apellido = fila.GetString("apellido");
-            unUsuario.Nombre = fila.GetString("nombre");
-            unUsuario.Email = fila.GetString("email");
-            unUsuario.Nacionalidad = fila.GetString("nacionalidad");
+            unP.Cedula = fila.GetInt32("docSensei");
+            unP.Nombre = fila.GetString("primerNombre");
+            unP.segundoNombre = fila.IsDBNull(fila.GetOrdinal("segundoNombre")) ? "" : fila.GetString("segundoNombre");
+            unP.Apellido = fila.GetString("primerApellido");
+            unP.segundoApellido = fila.IsDBNull(fila.GetOrdinal("segundoApellido")) ? "" : fila.GetString("segundoApellido");
+            unP.Email = fila.GetString("correo");
+            unP.Nacionalidad = fila.GetString("nacionalidad");
+            unP.Rol = fila.GetString("rol");
+            unP.Contrasena = fila.GetString("contrasena");
+            unP.IdEscuela = fila.GetInt32("idEscuela");
 
-            return unUsuario;
-
+            return unP;
         }
-
-
     }
 }

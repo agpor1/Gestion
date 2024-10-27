@@ -10,22 +10,23 @@ namespace Persistencia
 {
     public class clsPdojo : clsPersistencia  
     {
-        public void altaDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInsriptos)
+        public void altaDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInscriptos)
         {
-            string consultaSQL = "INSERT INTO dojos VALUES ( idDojo='" + idDojo + "', idEscuela= '" + idEscuela + "', docAtleta='" + docAtleta + "', nombre= '" + nombre + "', cantInscriptos= '" + cantInsriptos +"')";
+            string consultaSQL = "INSERT INTO `dojos`(`idDojo`, `idEscuela`, `docAtleta`, `nombre`, `cantInscriptos`) VALUES " +
+                "('"+idDojo+"','"+idEscuela+"','"+docAtleta+"','"+nombre+"','"+cantInscriptos+"')";
             ejecutarSQL(consultaSQL);
         }
 
-        public void editarDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInsriptos)
+        public void editarDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInscriptos)
         {
-            string consultaSQL = "UPDATE dojos SET idEscuela= '" + idEscuela + "', docAtleta='" + docAtleta + "', nombre= '" + nombre + "', cantInscriptos= '" + cantInsriptos + "'" +
-                 "' WHERE idDojo= '" + idDojo + "'";
+            string consultaSQL = "UPDATE `dojos` SET `idEscuela`='"+idEscuela+"',`docAtleta`='"+docAtleta+"',`nombre`='"+nombre+"'," +
+                "`cantInscriptos`='"+cantInscriptos+ "' WHERE `idDojo`= '" + idDojo + "'";
             ejecutarSQL(consultaSQL);
         }
 
-        public void eliminarDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInsriptos)
+        public void eliminarDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInsrciptos)
         {
-            string consultaSQL = "DELETE FROM dojos WHERE idDojo= '" + idDojo + "'";
+            string consultaSQL = "DELETE FROM `dojos`  WHERE `idDojo`= '" + idDojo + "'";
             ejecutarSQL(consultaSQL);
         }
 

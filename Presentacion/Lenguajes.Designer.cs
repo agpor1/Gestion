@@ -61,6 +61,15 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Alcance.
+        /// </summary>
+        internal static string Alcance {
+            get {
+                return ResourceManager.GetString("Alcance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Apellido.
         /// </summary>
         internal static string Apellido {
@@ -201,6 +210,24 @@ namespace Presentacion {
         internal static string Escuela {
             get {
                 return ResourceManager.GetString("Escuela", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha Finalizacion .
+        /// </summary>
+        internal static string FechaFin {
+            get {
+                return ResourceManager.GetString("FechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de inicio.
+        /// </summary>
+        internal static string FechaInicio {
+            get {
+                return ResourceManager.GetString("FechaInicio", resourceCulture);
             }
         }
         
@@ -363,6 +390,15 @@ namespace Presentacion {
         internal static string Sexo {
             get {
                 return ResourceManager.GetString("Sexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Torneo.
+        /// </summary>
+        internal static string Torneo {
+            get {
+                return ResourceManager.GetString("Torneo", resourceCulture);
             }
         }
         

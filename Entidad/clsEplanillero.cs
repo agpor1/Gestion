@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class clsEsensei
+    public class clsEplanillero
     {
         public int Cedula { get; set; }
-        public int IdEscuela { get; set; }
         public string Nombre { get; set; }
         public string segundoNombre { get; set; }
         public string Apellido { get; set; }
@@ -18,6 +17,6 @@ namespace Entidad
         public string Rol { get; set; }
         public string Nacionalidad { get; set; }
         public string Email { get; set; }
-       
+
     }
 }

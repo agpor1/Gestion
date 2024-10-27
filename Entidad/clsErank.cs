@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dominio
+namespace Entidad
 {
-    internal class clsDarbrito
+    public class clsErank
     {
+        public string medallero { get; set; }
+        public string nombre { get; set; }
     }
 }

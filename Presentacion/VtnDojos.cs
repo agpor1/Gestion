@@ -14,27 +14,26 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class VtnTorneo : Form
+    public partial class VtnDojos : Form
     {
-        private clsDtorneo objetoTorneo = new clsDtorneo();
-        clsPatletas objetoPatletas = new clsPatletas();
-
-        public VtnTorneo()
+        private clsDdojo objetoTorneo = new clsDdojo();
+        clsPdojo objetoPtorneo = new clsPdojo();
+        public VtnDojos()
         {
             InitializeComponent();
         }
-
-        private void VtnTorneo_Load(object sender, EventArgs e)
+        private void VtnDojos_Load(object sender, EventArgs e)
         {
             actualizar();
             CargarEscuela();
+            CargarAtleta();
             CambiarIdioma(GestorIdiomas.Idioma);
 
         }
         public void actualizar()
         {
-            clsDtorneo unDu = new clsDtorneo();
-            tblTorneo.DataSource = unDu.listarTorneos();
+            clsDdojo unDu = new clsDdojo();
+            tblDojos.DataSource = unDu.listarDojo();
         }
 
         private void CargarEscuela()
@@ -67,14 +66,45 @@ namespace Presentacion
                 MessageBox.Show("Error al cargar las escuelas: " + ex.Message);
             }
         }
-      
+        private void CargarAtleta()
+        {
+            try
+            {
+                clsDatletas atletasDatos = new clsDatletas();
+
+                List<clsEatletas> atletas = atletasDatos.ObtenerAtletas();
+
+                if (atletas != null)
+                {
+                    clsEatletas atletasVacio = new clsEatletas { Cedula = 0 };
+                    atletas.Insert(0, atletasVacio);
+
+                    cmbDocAtleta.DataSource = atletas;
+                    cmbDocAtleta.DisplayMember = "Cedula";
+                    cmbDocAtleta.ValueMember = "Cedula";
+
+                    cmbDocAtleta.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron altetas.");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar los altetas: " + ex.Message);
+            }
+        }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
-                objetoTorneo.insertarTorneo(txtId.Text, idEscuelaSeleccionada, txtNombre.Text, txtAlcance.Text, dtFechaInicio.Value.ToString("yyyy-MM-dd"), dtFechaFin.Value.ToString("yyyy-MM-dd"));
+                int docAtleta = (int)cmbDocAtleta.SelectedValue;
+                objetoTorneo.insertarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtIncriptos.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -91,7 +121,8 @@ namespace Presentacion
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
-                objetoTorneo.eliminarTorneo(txtId.Text, idEscuelaSeleccionada, txtNombre.Text, txtAlcance.Text, dtFechaInicio.Value.ToString("yyyy-MM-dd"), dtFechaFin.Value.ToString("yyyy-MM-dd"));
+                int docAtleta = (int)cmbDocAtleta.SelectedValue;
+                objetoTorneo.eliminarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtIncriptos.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -108,7 +139,8 @@ namespace Presentacion
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
-                objetoTorneo.actualizarTorneo(txtId.Text, idEscuelaSeleccionada, txtNombre.Text, txtAlcance.Text, dtFechaInicio.Value.ToString("yyyy-MM-dd"), dtFechaFin.Value.ToString("yyyy-MM-dd"));
+                int docAtleta = (int)cmbDocAtleta.SelectedValue;
+                objetoTorneo.actualizarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtIncriptos.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -133,19 +165,20 @@ namespace Presentacion
             btnRellenar.Text = Lenguajes.Rellenar;
             btnEliminar.Text = Lenguajes.Eliminar;
             lblNombre.Text = Lenguajes.Nombre;
-            lblAlcance.Text = Lenguajes.Alcance;
-            lblFechaInicio.Text = Lenguajes.FechaInicio;
-            lblFechaFin.Text = Lenguajes.FechaFin;
+            //lbl.Text = Lenguajes.Alcance;
+            //lblFechaInicio.Text = Lenguajes.FechaInicio;
+            //lblFechaFin.Text = Lenguajes.FechaFin;
         }
 
         private void btnRellenar_Click(object sender, EventArgs e)
         {
-            if (tblTorneo.SelectedRows.Count > 0)
+            if (tblDojos.SelectedRows.Count > 0)
             {
-                txtId.Text = tblTorneo.CurrentRow.Cells["idTorneo"].Value.ToString();
-                txtNombre.Text = tblTorneo.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtAlcance.Text = tblTorneo.CurrentRow.Cells["alcance"].Value.ToString();
-                cmbEscuelas.Text = tblTorneo.CurrentRow.Cells["idEscuela"].Value.ToString();
+                txtId.Text = tblDojos.CurrentRow.Cells["idDojo"].Value.ToString();
+                cmbEscuelas.Text = tblDojos.CurrentRow.Cells["idEscuela"].Value.ToString();
+                cmbDocAtleta.Text = tblDojos.CurrentRow.Cells["docAtleta"].Value.ToString();
+                txtNombre.Text = tblDojos.CurrentRow.Cells["nombre"].Value.ToString();
+                txtIncriptos.Text = tblDojos.CurrentRow.Cells["cantInscriptos"].Value.ToString();
             }
             else
                 MessageBox.Show("Selecione una fila por favor");
@@ -154,9 +187,11 @@ namespace Presentacion
         {
             txtId.Clear();
             txtNombre.Clear();
-            txtAlcance.Clear();
+            txtIncriptos.Clear();
             cmbEscuelas.Text = "";
+            cmbDocAtleta.Text = "";
         }
 
+     
     }
 }

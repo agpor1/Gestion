@@ -10,22 +10,22 @@ namespace Persistencia
 {
     public class clsPtorneo : clsPersistencia
     {
-        public void altaTorneo(int idTorneo, int idPool, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
+        public void altaTorneo(int idTorneo, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
         {
-            string consultaSQL = "INSERT INTO torneos VALUES ( idTorneo='" + idTorneo + "', idPool= '" + idPool + "', idEscuela='" + idEscuela + "',  nombre= '" + nombre + "', alcance= '" + alcance + "'" +
-                ", fechaInicio= '" + fechaInicio + "', fechaFinal= '" + fechaFin +"')";
+            string consultaSQL = "INSERT INTO `torneos`(`idTorneo`, `idEscuela`, `nombre`, `alcance`, `fechaInicio`, `fechaFinal`) " +
+                "VALUES ('"+idTorneo+"','"+idEscuela+"','"+nombre+"','"+alcance+"','"+fechaInicio.ToString("yyyy-MM-dd") + "','"+fechaFin.ToString("yyyy-MM-dd") + "')";
 
             ejecutarSQL(consultaSQL);
         }
 
-        public void editarTorneo(int idTorneo, int idPool, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
+        public void editarTorneo(int idTorneo, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
         {
-            string consultaSQL = "UPDATE torneos SET idPool= '" + idPool + "', idEscuela='" + idEscuela +"',  nombre= '" + nombre + "', alcance= '" + alcance + "'" +
-                ", fechaInicio= '" + fechaInicio + "', fechaFinal= '" + fechaFin + "'WHERE idTorneo= '" + idTorneo + "'";
+            string consultaSQL = "UPDATE torneos SET idEscuela='" + idEscuela +"',  nombre= '" + nombre + "', alcance= '" + alcance + "'" +
+                ", fechaInicio= '" + fechaInicio.ToString("yyyy-MM-dd") + "', fechaFinal= '" + fechaFin.ToString("yyyy-MM-dd") + "'WHERE idTorneo= '" + idTorneo + "'";
             ejecutarSQL(consultaSQL);
         }
 
-        public void eliminarTorneo(int idTorneo, int idPool, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
+        public void eliminarTorneo(int idTorneo, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
         {
             string consultaSQL = "DELETE FROM torneos WHERE idTorneo= '" + idTorneo + "'";
             ejecutarSQL(consultaSQL);
@@ -70,7 +70,6 @@ namespace Persistencia
             clsEtorneo unT = new clsEtorneo();
 
             unT.idTorneo = fila.GetInt32("idTorneo");
-            unT.idPool = fila.GetInt32("idPool");
             unT.idEscuela = fila.GetInt32("idEscuela");
             unT.nombre = fila.GetString("nombre");
             unT.alcance = fila.GetString("alcance");

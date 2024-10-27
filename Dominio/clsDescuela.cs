@@ -14,8 +14,7 @@ namespace Dominio
 
         public List<clsEescuela> listarEscuela()
         {
-            clsPescuela unEs = new clsPescuela();
-            return unEs.listarEscuela();
+            return escuela.listarEscuela();
         }
         public List<clsEescuela> ObtenerEscuelas()
         {

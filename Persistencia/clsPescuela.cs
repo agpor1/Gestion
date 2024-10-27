@@ -13,15 +13,13 @@ namespace Persistencia
     {
         public void altaEscuela(int id, string nombre, string medallero, DateTime fechaCreacion, string direccion)
         {
-            string fechaFormateada = fechaCreacion.ToString("yyyy-MM-dd HH:mm:ss");
-            string consultaSQL = "INSERT INTO `escuelas` (`idEscuela`, `nombre`, `medallero`, `fechaCreacion`, `dirreccion`) VALUES ('" + id + "', '" + nombre + "', '" + medallero + "', '" + fechaCreacion + "', '" + direccion + "')";
+            string consultaSQL = "INSERT INTO `escuelas` (`idEscuela`, `nombre`, `medallero`, `fechaCreacion`, `dirreccion`) VALUES ('" + id + "', '" + nombre + "', '" + medallero + "', '" + fechaCreacion.ToString("yyyy-MM-dd") + "', '" + direccion + "')";
             ejecutarSQL(consultaSQL);
         }
 
         public void editarEscuela(int id, string nombre, string medallero, DateTime fechaCreacion, string direccion)
         {
-            string fechaFormateada = fechaCreacion.ToString("yyyy-MM-dd HH:mm:ss");
-            string consultaSQL = "UPDATE escuelas SET  nombre= '" + nombre + "', medallero='" + medallero + "', fechaCreacion= '" + fechaCreacion + "', dirreccion= '" +direccion+ "' WHERE idEscuela= '" + id + "'";
+            string consultaSQL = "UPDATE escuelas SET  nombre= '" + nombre + "', medallero='" + medallero + "', fechaCreacion= '" + fechaCreacion.ToString("yyyy-MM-dd") + "', dirreccion= '" +direccion+ "' WHERE idEscuela= '" + id + "'";
             ejecutarSQL(consultaSQL);
         }
 
@@ -52,7 +50,6 @@ namespace Persistencia
             unaEscuela.idEscuela = fila.GetInt32("idEscuela");
             unaEscuela.nombre = fila.GetString("nombre");
             unaEscuela.medallero = fila.GetString("medallero");
-            //unaEscuela.fechaCrea = fila.GetDateTime("fechaCreacion");
             unaEscuela.direccion = fila.GetString("dirreccion");
 
             return unaEscuela;
@@ -93,11 +90,5 @@ namespace Persistencia
 
             return escuela;
         }
-
-
-
-
-
-
     }
 }

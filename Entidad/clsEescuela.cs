@@ -11,7 +11,6 @@ namespace Entidad
         public int idEscuela { get; set; }
         public string nombre { get; set; }
         public string medallero { get; set; }
-        public DateTime fechaCrea { get; set; }
         public string direccion { get; set; }
 
 

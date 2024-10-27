@@ -18,18 +18,18 @@ namespace Dominio
             return unPu.listarTorneo();
         }
 
-        public void insertarTorneo(string idTorneo, string idPool, string idEscuela, string nombre, string alcance, string fechaInicio, string fechaFin)
+        public void insertarTorneo(string idTorneo, int idEscuela, string nombre, string alcance, string fechaInicio, string fechaFin)
         {
-            objetoTorneo.altaTorneo(Convert.ToInt32(idTorneo), Convert.ToInt32(idPool), Convert.ToInt32(idEscuela), nombre, alcance, Convert.ToDateTime(fechaInicio),Convert.ToDateTime(fechaFin));
+            objetoTorneo.altaTorneo(Convert.ToInt32(idTorneo), idEscuela, nombre, alcance, Convert.ToDateTime(fechaInicio),Convert.ToDateTime(fechaFin));
         }
 
-        public void actualizarTorneo(string idTorneo, string idPool, string idEscuela, string nombre, string alcance, string fechaInicio, string fechaFin)
+        public void actualizarTorneo(string idTorneo, int idEscuela, string nombre, string alcance, string fechaInicio, string fechaFin)
         {
-            objetoTorneo.editarTorneo(Convert.ToInt32(idTorneo), Convert.ToInt32(idPool), Convert.ToInt32(idEscuela), nombre, alcance, Convert.ToDateTime(fechaInicio), Convert.ToDateTime(fechaFin));
+            objetoTorneo.editarTorneo(Convert.ToInt32(idTorneo), idEscuela, nombre, alcance, Convert.ToDateTime(fechaInicio), Convert.ToDateTime(fechaFin));
         }
-        public void eliminarTorneo(string idTorneo, string idPool, string idEscuela, string nombre, string alcance, string fechaInicio, string fechaFin)
+        public void eliminarTorneo(string idTorneo, int idEscuela, string nombre, string alcance, string fechaInicio, string fechaFin)
         {
-            objetoTorneo.eliminarTorneo(Convert.ToInt32(idTorneo), Convert.ToInt32(idPool), Convert.ToInt32(idEscuela), nombre, alcance, Convert.ToDateTime(fechaInicio), Convert.ToDateTime(fechaFin));
+            objetoTorneo.eliminarTorneo(Convert.ToInt32(idTorneo), idEscuela, nombre, alcance, Convert.ToDateTime(fechaInicio), Convert.ToDateTime(fechaFin));
         }
 
     }

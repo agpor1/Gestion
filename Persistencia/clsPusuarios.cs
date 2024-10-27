@@ -13,21 +13,21 @@ namespace Persistencia
    {
         public void altaUsuario (int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena) 
         {
-           string consultaSQL = "INSERT INTO personas VALUES ( docPersona='" + cedula + "', primerNombre= '" + nombre + "', segundoNombre='" + segundoNombre + "',  primerApellido= '" + apellido + "', correo= '" + email + "'" +
-                ", nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "')";
+           string consultaSQL = "INSERT INTO `personas`(`docPersona`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `correo`, `nacionalidad`, `rol`, `contrasena`) " +
+                "VALUES ('"+cedula+"','"+nombre+"','"+segundoNombre+"','"+apellido+"','"+segundoApellido+"','"+email+"','"+nacionalidad+"','"+rol+"','"+contrasena+"')";
             ejecutarSQL(consultaSQL);
         }
     
         public void editarUsuario(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL = "UPDATE personas SET  primerNombre= '" + nombre + "',  segundoNombre= '" + apellido + "', primerApellido= '" + apellido + "', apellido= '" + apellido + "', " +
-                "correo= '" + email + "', nacionalidad= '" + nacionalidad + "', rol= '" + rol + "', contrasena= '" + contrasena + "' WHERE docPersona= '" + cedula+"'";
+            string consultaSQL = "UPDATE `personas` SET `primerNombre`='"+nombre+"',`segundoNombre`='"+segundoNombre+"',`primerApellido`='"+apellido+"'," +
+                "`segundoApellido`='"+segundoApellido+"',`correo`='"+email+"',`nacionalidad`='"+nacionalidad+"',`rol`='"+rol+"',`contrasena`='"+contrasena+"' WHERE docPersona = "+cedula+";'";
             ejecutarSQL(consultaSQL);
         }
 
         public void eliminarUsuario(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL = "DELETE FROM personas WHERE docPerona= '" + cedula + "'";
+            string consultaSQL = "DELETE FROM `personas` WHERE `docPersona`= '" + cedula + "'";
             ejecutarSQL(consultaSQL);
         }
 

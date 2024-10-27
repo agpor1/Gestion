@@ -44,7 +44,7 @@
             lblNacionalidad = new Label();
             txtEmail = new TextBox();
             lblEmail = new Label();
-            cmbCargos = new ComboBox();
+            cmbEscuelas = new ComboBox();
             btnGuardar = new Button();
             lblEscuela = new Label();
             txtContrasena = new TextBox();
@@ -218,13 +218,13 @@
             lblEmail.TabIndex = 97;
             lblEmail.Text = "Email";
             // 
-            // cmbCargos
+            // cmbEscuelas
             // 
-            cmbCargos.FormattingEnabled = true;
-            cmbCargos.Location = new Point(107, 348);
-            cmbCargos.Name = "cmbCargos";
-            cmbCargos.Size = new Size(121, 23);
-            cmbCargos.TabIndex = 96;
+            cmbEscuelas.FormattingEnabled = true;
+            cmbEscuelas.Location = new Point(107, 348);
+            cmbEscuelas.Name = "cmbEscuelas";
+            cmbEscuelas.Size = new Size(121, 23);
+            cmbEscuelas.TabIndex = 96;
             // 
             // btnGuardar
             // 
@@ -234,6 +234,7 @@
             btnGuardar.TabIndex = 95;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // lblEscuela
             // 
@@ -316,6 +317,7 @@
             btnListar.TabIndex = 85;
             btnListar.Text = "Rellenar";
             btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
             // 
             // btnModificar
             // 
@@ -325,6 +327,7 @@
             btnModificar.TabIndex = 84;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -334,6 +337,7 @@
             btnEliminar.TabIndex = 83;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // lblBuscar
             // 
@@ -354,6 +358,7 @@
             // cmbRol
             // 
             cmbRol.FormattingEnabled = true;
+            cmbRol.Items.AddRange(new object[] { "Administrador", "Estandar" });
             cmbRol.Location = new Point(107, 319);
             cmbRol.Name = "cmbRol";
             cmbRol.Size = new Size(121, 23);
@@ -385,7 +390,7 @@
             Controls.Add(lblNacionalidad);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
-            Controls.Add(cmbCargos);
+            Controls.Add(cmbEscuelas);
             Controls.Add(btnGuardar);
             Controls.Add(lblEscuela);
             Controls.Add(txtContrasena);
@@ -430,7 +435,7 @@
         private Label lblNacionalidad;
         private TextBox txtEmail;
         private Label lblEmail;
-        private ComboBox cmbCargos;
+        private ComboBox cmbEscuelas;
         private Button btnGuardar;
         private Label lblEscuela;
         private TextBox txtContrasena;

@@ -125,7 +125,7 @@ namespace Presentacion
 
         private void btnRank_Click(object sender, EventArgs e)
         {
-
+            AbrirVentana<VtnRank>();
         }
         private void btnEscuela_Click(object sender, EventArgs e)
         {
@@ -138,6 +138,10 @@ namespace Presentacion
         private void btnCategorias_Click(object sender, EventArgs e)
         {
             AbrirVentana<VtnCategoria>();
+        }
+        private void btnDojos_Click(object sender, EventArgs e)
+        {
+            AbrirVentana<VtnDojos>();
         }
         public void AbrirVentana<MiForm>() where MiForm : Form, new()
         {
@@ -194,6 +198,8 @@ namespace Presentacion
             btnUsuarios.Text = Lenguajes.Usuarios;
             btnCategorias.Text = Lenguajes.Categorias;
             btnEscuela.Text = Lenguajes.Escuela;
+            btnTorneo.Text = Lenguajes.Torneo;
         }
+
     }
 }

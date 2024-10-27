@@ -16,29 +16,23 @@ namespace Presentacion
 {
     public partial class VtnPlanillero : Form
     {
+        private clsDplanillero objetoDplanillero = new clsDplanillero();
+        clsPplanillero objetoPplanillero = new clsPplanillero();
         public VtnPlanillero()
         {
             InitializeComponent();
         }
 
-       private clsDplanillero objetoDplanillero = new clsDplanillero();
-        clsPplanillero objetoPplanillero = new clsPplanillero();
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void VtnPlanillero_Load(object sender, EventArgs e)
         {
-            mostrarPlanillero();
+            actualizar();
             CambiarIdioma(GestorIdiomas.Idioma);
         }
 
-        private void mostrarPlanillero()
+        public void actualizar()
         {
-            clsPsensei objetoPsensei = new clsPsensei();
-           
+            clsDplanillero unDu = new clsDplanillero();
+            tblPlanillero.DataSource = unDu.listarPlanillero();
         }
         private void CambiarIdioma(string idioma)
         {
@@ -69,9 +63,9 @@ namespace Presentacion
         {
             try
             {
-                objetoDplanillero.insertarPlanillero(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
-                MessageBox.Show("Se agrego correctamente al nuevo usuario");
-                mostrarPlanillero();
+                objetoDplanillero.insertarPlanillero(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                MessageBox.Show("Se agrego correctamente al nuevo planillero");
+                actualizar();
                 limpiarCampos();
             }
             catch (Exception ex)
@@ -84,9 +78,9 @@ namespace Presentacion
         {
             try
             {
-                objetoDplanillero.actualizarPlanillero(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
-                MessageBox.Show("Se actualizo correctamente el usuario");
-                mostrarPlanillero();
+                objetoDplanillero.actualizarPlanillero(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                MessageBox.Show("Se actualizo correctamente al planillero");
+                actualizar();
                 limpiarCampos();
             }
             catch (Exception ex)
@@ -99,9 +93,9 @@ namespace Presentacion
         {
             try
             {
-                objetoDplanillero.eliminarPlanillero(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
-                MessageBox.Show("Se elimino correctamente el usuario");
-                mostrarPlanillero();
+                objetoDplanillero.eliminarPlanillero(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, txtContrasena.Text);
+                MessageBox.Show("Se elimino correctamente el planillero");
+                actualizar();
                 limpiarCampos();
             }
             catch (Exception ex)
@@ -114,7 +108,13 @@ namespace Presentacion
         {
             if (tblPlanillero.SelectedRows.Count > 0)
             {
-                txtCedula.Text = tblPlanillero.CurrentRow.Cells["Cedula"].Value.ToString();
+                txtCedula.Text = tblPlanillero.CurrentRow.Cells["cedula"].Value.ToString();
+                txtNombre.Text = tblPlanillero.CurrentRow.Cells["nombre"].Value.ToString();
+                txtApellido.Text = tblPlanillero.CurrentRow.Cells["apellido"].Value.ToString();
+                txtEmail.Text = tblPlanillero.CurrentRow.Cells["email"].Value.ToString();
+                txtNac.Text = tblPlanillero.CurrentRow.Cells["nacionalidad"].Value.ToString();
+                cmbCargos.Text = tblPlanillero.CurrentRow.Cells["rol"].Value.ToString();
+
             }
             else
                 MessageBox.Show("Selecione una fila por favor");
@@ -125,13 +125,14 @@ namespace Presentacion
             txtApellido.Clear();
             txtEmail.Clear();
             txtNac.Clear();
-            cmbCargos.Items.Clear();
+            cmbCargos.Text = "";
             txtNombre.Clear();
             txtContrasena.Clear();
-            cmbCargos.Items.Clear();
+            txtSegundoApellido.Clear();
+            txtSegundoName.Clear();
         }
 
-        private void btnAtras_Click_1(object sender, EventArgs e)
+        private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
             VtnPrincipal ventana = new VtnPrincipal();

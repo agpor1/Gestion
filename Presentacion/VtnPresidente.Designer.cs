@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            tblPersona = new DataGridView();
+            tblPresidente = new DataGridView();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
             btnMaximizar = new PictureBox();
@@ -60,7 +60,7 @@
             btnEliminar = new Button();
             lblBuscar = new Label();
             txtBuscar = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)tblPersona).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tblPresidente).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -68,21 +68,21 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
             // 
-            // tblPersona
+            // tblPresidente
             // 
-            tblPersona.AllowUserToAddRows = false;
-            tblPersona.AllowUserToDeleteRows = false;
-            tblPersona.AllowUserToResizeColumns = false;
-            tblPersona.AllowUserToResizeRows = false;
+            tblPresidente.AllowUserToAddRows = false;
+            tblPresidente.AllowUserToDeleteRows = false;
+            tblPresidente.AllowUserToResizeColumns = false;
+            tblPresidente.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblPersona.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            tblPersona.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblPersona.Location = new Point(495, 101);
-            tblPersona.Name = "tblPersona";
-            tblPersona.ReadOnly = true;
-            tblPersona.RightToLeft = RightToLeft.No;
-            tblPersona.Size = new Size(730, 326);
-            tblPersona.TabIndex = 38;
+            tblPresidente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            tblPresidente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tblPresidente.Location = new Point(495, 101);
+            tblPresidente.Name = "tblPresidente";
+            tblPresidente.ReadOnly = true;
+            tblPresidente.RightToLeft = RightToLeft.No;
+            tblPresidente.Size = new Size(730, 326);
+            tblPresidente.TabIndex = 38;
             // 
             // panelBarraTitulo
             // 
@@ -233,6 +233,7 @@
             btnGuardar.TabIndex = 95;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // lblCargo
             // 
@@ -315,6 +316,7 @@
             btnListar.TabIndex = 85;
             btnListar.Text = "Rellenar";
             btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
             // 
             // btnModificar
             // 
@@ -324,6 +326,7 @@
             btnModificar.TabIndex = 84;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -333,6 +336,7 @@
             btnEliminar.TabIndex = 83;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // lblBuscar
             // 
@@ -379,13 +383,13 @@
             Controls.Add(btnListar);
             Controls.Add(btnModificar);
             Controls.Add(btnEliminar);
-            Controls.Add(tblPersona);
+            Controls.Add(tblPresidente);
             Controls.Add(panelBarraTitulo);
             Controls.Add(btnAtras);
             Name = "VtnPresidente";
             Text = "VtnPresidente";
             Load += VtnPresidente_Load;
-            ((System.ComponentModel.ISupportInitialize)tblPersona).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tblPresidente).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
@@ -396,7 +400,7 @@
         }
 
         #endregion
-        private DataGridView tblPersona;
+        private DataGridView tblPresidente;
         private Panel panelBarraTitulo;
         private PictureBox btnRestaurar;
         private PictureBox btnMaximizar;

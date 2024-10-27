@@ -204,6 +204,7 @@
             tblAtletas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblAtletas.Location = new Point(562, 83);
             tblAtletas.Name = "tblAtletas";
+            tblAtletas.RightToLeft = RightToLeft.Yes;
             tblAtletas.Size = new Size(576, 326);
             tblAtletas.TabIndex = 32;
             // 
@@ -339,9 +340,11 @@
             // 
             // dtFecha
             // 
+            dtFecha.CustomFormat = "yyyy-MM-dd";
+            dtFecha.Format = DateTimePickerFormat.Short;
             dtFecha.Location = new Point(112, 283);
             dtFecha.Name = "dtFecha";
-            dtFecha.Size = new Size(232, 23);
+            dtFecha.Size = new Size(121, 23);
             dtFecha.TabIndex = 155;
             // 
             // VtnAtletas

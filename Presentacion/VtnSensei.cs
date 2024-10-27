@@ -20,14 +20,13 @@ namespace Presentacion
         public VtnSensei()
         {
             InitializeComponent();
-            actualizar();
         }
         private void VtnSensei_Load(object sender, EventArgs e)
         {
             CambiarIdioma(GestorIdiomas.Idioma);
             actualizar();
+            CargarEscuela();
         }
-
         private void CambiarIdioma(string idioma)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
@@ -47,7 +46,7 @@ namespace Presentacion
             lblEmail.Text = Lenguajes.Email;
             lblContrasena.Text = Lenguajes.Contrasena;
             lblSegundoApellido.Text = Lenguajes.SegundoApellido;
-            lblEscuela.Text = Lenguajes.Cargo;
+            lblEscuela.Text = Lenguajes.Escuela;
             lblBuscar.Text = Lenguajes.Buscar;
             lblNacionalidad.Text = Lenguajes.Nacionalidad;
             btnAtras.Text = Lenguajes.Atras;
@@ -59,6 +58,36 @@ namespace Presentacion
             tblSensei.DataSource = unDu.listarSensei();
         }
 
+        private void CargarEscuela()
+        {
+            try
+            {
+                clsDescuela escuelaDatos = new clsDescuela();
+
+                List<clsEescuela> escuela = escuelaDatos.ObtenerEscuelas();
+
+                if (escuela != null)
+                {
+                    clsEescuela escuelaVacia = new clsEescuela { idEscuela = 0, nombre = "" };
+                    escuela.Insert(0, escuelaVacia);
+
+                    cmbEscuelas.DataSource = escuela;
+                    cmbEscuelas.DisplayMember = "nombre";
+                    cmbEscuelas.ValueMember = "idEscuela";
+
+                    cmbEscuelas.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron escuelas.");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar las escuelas: " + ex.Message);
+            }
+        }
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -70,7 +99,8 @@ namespace Presentacion
         {
             try
             {
-                objetoSensei.insertarSensei(txtCedula.Text, txtNombre.Text,txtSegundoName.Text, txtApellido.Text,txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
+                int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
+                objetoSensei.insertarSensei(txtCedula.Text, idEscuelaSeleccionada, txtNombre.Text,txtSegundoName.Text, txtApellido.Text,txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -85,7 +115,8 @@ namespace Presentacion
         {
             try
             {
-                objetoSensei.actualizarSensei(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
+                int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
+                objetoSensei.actualizarSensei(txtCedula.Text, idEscuelaSeleccionada, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -116,6 +147,14 @@ namespace Presentacion
             if (tblSensei.SelectedRows.Count > 0)
             {
                 txtCedula.Text = tblSensei.CurrentRow.Cells["Cedula"].Value.ToString();
+                txtNombre.Text = tblSensei.CurrentRow.Cells["nombre"].Value.ToString();
+                txtSegundoName.Text = tblSensei.CurrentRow.Cells["segundoNombre"].Value.ToString();
+                txtApellido.Text = tblSensei.CurrentRow.Cells["apellido"].Value.ToString();
+                txtSegundoApellido.Text = tblSensei.CurrentRow.Cells["segundoApellido"].Value.ToString();
+                txtEmail.Text = tblSensei.CurrentRow.Cells["Email"].Value.ToString();
+                txtNac.Text = tblSensei.CurrentRow.Cells["nacionalidad"].Value.ToString();
+                cmbRol.Text = tblSensei.CurrentRow.Cells["Rol"].Value.ToString();
+
             }
             else
                 MessageBox.Show("Selecione una fila por favor");
