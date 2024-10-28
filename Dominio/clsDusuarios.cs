@@ -15,8 +15,7 @@ namespace Dominio
 
         public List<clsEusuario> listarUsuarios()
         {
-            clsPusuarios unPu = new clsPusuarios();
-            return unPu.listarUsuarios();
+            return objetoPusuario.listarUsuarios();
         }
 
         public void insertarUsuario (string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena) {

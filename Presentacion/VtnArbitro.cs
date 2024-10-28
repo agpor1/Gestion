@@ -66,14 +66,14 @@ namespace Presentacion
         }
         public void actualizar()
         {
-            clsDarbitro unDa = new clsDarbitro();
-            tblArbitro.DataSource = unDa.listarArbitro();
+            tblArbitro.DataSource = objetoArbitro.listarArbitro();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                objetoArbitro.insertarArbitro(txtCedula.Text, cmbCategoria.SelectedItem.ToString(), txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                int idCategoriaSeleccionada = (int)cmbCategoria.SelectedValue;
+                objetoArbitro.insertarArbitro(txtCedula.Text, idCategoriaSeleccionada, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -88,7 +88,8 @@ namespace Presentacion
         {
             try
             {
-                objetoArbitro.actualizarArbitro(txtCedula.Text, cmbCategoria.SelectedItem.ToString(), txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                int idCategoriaSeleccionada = (int)cmbCategoria.SelectedValue;
+                objetoArbitro.actualizarArbitro(txtCedula.Text, idCategoriaSeleccionada, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();

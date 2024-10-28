@@ -165,9 +165,8 @@ namespace Presentacion
             btnRellenar.Text = Lenguajes.Rellenar;
             btnEliminar.Text = Lenguajes.Eliminar;
             lblNombre.Text = Lenguajes.Nombre;
-            //lbl.Text = Lenguajes.Alcance;
-            //lblFechaInicio.Text = Lenguajes.FechaInicio;
-            //lblFechaFin.Text = Lenguajes.FechaFin;
+            lblInscriptos.Text = Lenguajes.Alcance;
+            lblDocAtleta.Text = Lenguajes.DocAtleta;
         }
 
         private void btnRellenar_Click(object sender, EventArgs e)

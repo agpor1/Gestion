@@ -178,6 +178,15 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cedula atleta.
+        /// </summary>
+        internal static string DocAtleta {
+            get {
+                return ResourceManager.GetString("DocAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Edad.
         /// </summary>
         internal static string Edad {
@@ -223,11 +232,29 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de finalizacion.
+        /// </summary>
+        internal static string FechaFinn {
+            get {
+                return ResourceManager.GetString("FechaFinn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Fecha de inicio.
         /// </summary>
         internal static string FechaInicio {
             get {
                 return ResourceManager.GetString("FechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de Inicio.
+        /// </summary>
+        internal static string FechaInicioo {
+            get {
+                return ResourceManager.GetString("FechaInicioo", resourceCulture);
             }
         }
         

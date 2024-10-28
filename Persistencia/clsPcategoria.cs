@@ -27,7 +27,7 @@ namespace Persistencia
             string consultaSQL = "DELETE FROM categorias WHERE idCategoria= '" + id + "'";
             ejecutarSQL(consultaSQL);
         }
-
+        
         public List<clsEcategoria> listarCategoria()
         {
             List<clsEcategoria> colCategoria = new List<clsEcategoria>();

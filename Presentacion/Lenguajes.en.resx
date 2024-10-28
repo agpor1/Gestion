@@ -156,6 +156,9 @@
   <data name="Cuk" xml:space="preserve">
     <value>Uruguayan Karate Confederation</value>
   </data>
+  <data name="DocAlteta" xml:space="preserve">
+    <value>Id Athlete</value>
+  </data>
   <data name="Edad" xml:space="preserve">
     <value>Age</value>
   </data>

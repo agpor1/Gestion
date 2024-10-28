@@ -156,6 +156,9 @@
   <data name="Cuk" xml:space="preserve">
     <value>Confederacion Uruguaya de Karate</value>
   </data>
+  <data name="DocAtleta" xml:space="preserve">
+    <value>Cedula atleta</value>
+  </data>
   <data name="Edad" xml:space="preserve">
     <value>Edad</value>
   </data>
@@ -171,8 +174,14 @@
   <data name="FechaFin" xml:space="preserve">
     <value>Fecha Finalizacion </value>
   </data>
+  <data name="FechaFinn" xml:space="preserve">
+    <value>Fecha de finalizacion</value>
+  </data>
   <data name="FechaInicio" xml:space="preserve">
     <value>Fecha de inicio</value>
+  </data>
+  <data name="FechaInicioo" xml:space="preserve">
+    <value>Fecha de Inicio</value>
   </data>
   <data name="Guardar" xml:space="preserve">
     <value>Guardar</value>

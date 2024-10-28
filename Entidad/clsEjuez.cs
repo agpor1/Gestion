@@ -17,6 +17,6 @@ namespace Entidad
         public string Rol { get; set; }
         public string Nacionalidad { get; set; }
         public string Email { get; set; }
-        public string Categoria { get; set; }
+        public int Categoria { get; set; }
     }
 }

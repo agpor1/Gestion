@@ -16,14 +16,14 @@ namespace Dominio
             return objetoParbitro.listarArbitro();
         }
 
-        public void insertarArbitro(string cedula, string idCategoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void insertarArbitro(string cedula, int idCategoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            objetoParbitro.altaArbitro(Convert.ToInt32(cedula), Convert.ToInt32(idCategoria), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
+            objetoParbitro.altaArbitro(Convert.ToInt32(cedula), idCategoria, nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
         }
 
-        public void actualizarArbitro(string cedula, string idCategoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void actualizarArbitro(string cedula, int idCategoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            objetoParbitro.editarArbitro(Convert.ToInt32(cedula), Convert.ToInt32(idCategoria), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
+            objetoParbitro.editarArbitro(Convert.ToInt32(cedula), idCategoria, nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);
         }
         public void eliminarArbitro(string cedula, string nombre, string apellido, string email, string nacionalidad, string contrasena)
         {

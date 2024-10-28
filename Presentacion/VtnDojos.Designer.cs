@@ -47,7 +47,6 @@
             btnMaximizar = new PictureBox();
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
-            btnAtras = new Button();
             cmbEscuelas = new ComboBox();
             lblEscuelas = new Label();
             cmbDocAtleta = new ComboBox();
@@ -238,15 +237,6 @@
             btnCerrar.TabIndex = 12;
             btnCerrar.TabStop = false;
             // 
-            // btnAtras
-            // 
-            btnAtras.Location = new Point(9, 585);
-            btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(75, 23);
-            btnAtras.TabIndex = 136;
-            btnAtras.Text = "Atras";
-            btnAtras.UseVisualStyleBackColor = true;
-            // 
             // cmbEscuelas
             // 
             cmbEscuelas.FormattingEnabled = true;
@@ -304,7 +294,6 @@
             Controls.Add(btnEliminar);
             Controls.Add(tblDojos);
             Controls.Add(panelBarraTitulo);
-            Controls.Add(btnAtras);
             Name = "VtnDojos";
             Text = "VtnDojos";
             Load += VtnDojos_Load;
@@ -340,7 +329,6 @@
         private PictureBox btnMaximizar;
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
-        private Button btnAtras;
         private ComboBox cmbEscuelas;
         private Label lblEscuelas;
         private ComboBox cmbDocAtleta;

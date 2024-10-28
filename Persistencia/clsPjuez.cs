@@ -12,38 +12,19 @@ namespace Persistencia
     {
         public List<clsEjuez> listarJuez()
         {
-            List<clsEjuez> colUsuarios = new List<clsEjuez>();
+            List<clsEjuez> colJuez = new List<clsEjuez>();
             string consultaSQL = "SELECT * FROM jueces INNER JOIN personas ON jueces.docJueces = personas.docPersona;";
-            MySqlDataReader datos = null;
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
 
-            try
+            while (datos.Read())
             {
-                datos = ejecutarYdevolver(consultaSQL);
-
-                if (datos != null && datos.HasRows)
-                {
-                    while (datos.Read())
-                    {
-                        colUsuarios.Add(recrearJuez(datos));
-                    }
-                }
+                colJuez.Add(recrearJuez(datos));
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al listar juez: {ex.Message}");
-            }
-            finally
-            {
-                if (datos != null)
-                {
-                    CerrarLectorYConexion(datos);
-                }
-            }
-
-            return colUsuarios;
+            CerrarLectorYConexion(datos);
+            return colJuez;
         }
 
-        public void altaJueces(int cedula, string categoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void altaJueces(int cedula, int categoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
             string consultaSQL1 = "INSERT INTO `personas`(`docPersona`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `correo`, `nacionalidad`, `rol`, `contrasena`) " +
                 "VALUES ('" + cedula + "','" + nombre + "','" + segundoNombre + "','" + apellido + "','" + segundoApellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
@@ -55,7 +36,7 @@ namespace Persistencia
 
 
 
-        public void editarJueces(int cedula, string categoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void editarJueces(int cedula, int categoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
             string consultaSQL1 = "UPDATE `personas` SET `primerNombre`='" + nombre + "',`segundoNombre`='" + segundoNombre + "',`primerApellido`='" + apellido + "'," +
                 "`segundoApellido`='" + segundoApellido + "',`correo`='" + email + "',`nacionalidad`='" + nacionalidad + "',`rol`='" + rol + "',`contrasena`='" + contrasena + "' WHERE docPersona = " + cedula + ";'";
@@ -65,10 +46,10 @@ namespace Persistencia
         }
 
 
-        public void eliminarSensei(int cedula, string nombre, string apellido, string email, string nacionalidad, string contrasena)
+        public void eliminarJueces(int cedula, string nombre, string apellido, string email, string nacionalidad, string contrasena)
         {
             string consulaSQL1 = "DELETE FROM personas WHERE docPersona= '" + cedula + "'";
-            string consulaSQL2 = "DELETE FROM jueces WHERE docSensei= '" + cedula + "'";
+            string consulaSQL2 = "DELETE FROM jueces WHERE docJueces= '" + cedula + "'";
             ejecutarSQL(consulaSQL1);
             ejecutarSQL(consulaSQL2);
         }
@@ -77,7 +58,8 @@ namespace Persistencia
         {
             clsEjuez unP = new clsEjuez();
 
-            unP.Cedula = fila.GetInt32("docSensei");
+            unP.Cedula = fila.GetInt32("docJueces");
+            unP.Categoria = fila.GetInt32("categoria");
             unP.Nombre = fila.GetString("primerNombre");
             unP.segundoNombre = fila.IsDBNull(fila.GetOrdinal("segundoNombre")) ? "" : fila.GetString("segundoNombre");
             unP.Apellido = fila.GetString("primerApellido");
@@ -86,7 +68,6 @@ namespace Persistencia
             unP.Nacionalidad = fila.GetString("nacionalidad");
             unP.Rol = fila.GetString("rol");
             unP.Contrasena = fila.GetString("contrasena");
-            unP.Categoria = fila.GetString("categoria");
 
             return unP;
         }

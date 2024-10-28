@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            tblPersona = new DataGridView();
+            tblJuez = new DataGridView();
             panelBarraTitulo = new Panel();
             btnRestaurar = new PictureBox();
             btnMaximizar = new PictureBox();
@@ -60,7 +60,9 @@
             btnEliminar = new Button();
             lblBuscar = new Label();
             txtBuscar = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)tblPersona).BeginInit();
+            cmbCategoria = new ComboBox();
+            lblCategoria = new Label();
+            ((System.ComponentModel.ISupportInitialize)tblJuez).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -68,21 +70,21 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
             // 
-            // tblPersona
+            // tblJuez
             // 
-            tblPersona.AllowUserToAddRows = false;
-            tblPersona.AllowUserToDeleteRows = false;
-            tblPersona.AllowUserToResizeColumns = false;
-            tblPersona.AllowUserToResizeRows = false;
+            tblJuez.AllowUserToAddRows = false;
+            tblJuez.AllowUserToDeleteRows = false;
+            tblJuez.AllowUserToResizeColumns = false;
+            tblJuez.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblPersona.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            tblPersona.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblPersona.Location = new Point(495, 86);
-            tblPersona.Name = "tblPersona";
-            tblPersona.ReadOnly = true;
-            tblPersona.RightToLeft = RightToLeft.No;
-            tblPersona.Size = new Size(730, 326);
-            tblPersona.TabIndex = 38;
+            tblJuez.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            tblJuez.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tblJuez.Location = new Point(495, 86);
+            tblJuez.Name = "tblJuez";
+            tblJuez.ReadOnly = true;
+            tblJuez.RightToLeft = RightToLeft.No;
+            tblJuez.Size = new Size(730, 326);
+            tblJuez.TabIndex = 38;
             // 
             // panelBarraTitulo
             // 
@@ -227,12 +229,13 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(15, 370);
+            btnGuardar.Location = new Point(27, 426);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 73;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // lblCargo
             // 
@@ -309,30 +312,33 @@
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(177, 370);
+            btnListar.Location = new Point(189, 426);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(75, 23);
             btnListar.TabIndex = 63;
             btnListar.Text = "Rellenar";
             btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(96, 370);
+            btnModificar.Location = new Point(108, 426);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
             btnModificar.TabIndex = 62;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(258, 370);
+            btnEliminar.Location = new Point(270, 426);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 61;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // lblBuscar
             // 
@@ -350,11 +356,30 @@
             txtBuscar.Size = new Size(232, 23);
             txtBuscar.TabIndex = 83;
             // 
+            // cmbCategoria
+            // 
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(113, 376);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(121, 23);
+            cmbCategoria.TabIndex = 100;
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(20, 379);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(58, 15);
+            lblCategoria.TabIndex = 99;
+            lblCategoria.Text = "Categoria";
+            // 
             // VtnJuez
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 642);
+            Controls.Add(cmbCategoria);
+            Controls.Add(lblCategoria);
             Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(txtSegundoApellido);
@@ -379,13 +404,13 @@
             Controls.Add(btnListar);
             Controls.Add(btnModificar);
             Controls.Add(btnEliminar);
-            Controls.Add(tblPersona);
+            Controls.Add(tblJuez);
             Controls.Add(panelBarraTitulo);
             Controls.Add(btnAtras);
             Name = "VtnJuez";
             Text = "VtnJuez";
             Load += VtnJuez_Load;
-            ((System.ComponentModel.ISupportInitialize)tblPersona).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tblJuez).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
@@ -396,7 +421,7 @@
         }
 
         #endregion
-        private DataGridView tblPersona;
+        private DataGridView tblJuez;
         private Panel panelBarraTitulo;
         private PictureBox btnRestaurar;
         private PictureBox btnMaximizar;
@@ -427,5 +452,7 @@
         private Button btnEliminar;
         private Label lblBuscar;
         private TextBox txtBuscar;
+        private ComboBox cmbCategoria;
+        private Label lblCategoria;
     }
 }

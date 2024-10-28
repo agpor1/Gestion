@@ -12,35 +12,16 @@ namespace Persistencia
     {
         public List<clsEarbitro> listarArbitro()
         {
-            List<clsEarbitro> colArbitro = new List<clsEarbitro>();
+            List<clsEarbitro> colArbitros = new List<clsEarbitro>();
             string consultaSQL = "SELECT * FROM arbitros INNER JOIN personas ON arbitros.docArbitro = personas.docPersona;";
-            MySqlDataReader datos = null;
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
 
-            try
+            while (datos.Read())
             {
-                datos = ejecutarYdevolver(consultaSQL);
-
-                if (datos != null && datos.HasRows)
-                {
-                    while (datos.Read())
-                    {
-                        colArbitro.Add(recrearArbitro(datos));
-                    }
-                }
+                colArbitros.Add(recrearArbitro(datos));
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al listar sensei: {ex.Message}");
-            }
-            finally
-            {
-                if (datos != null)
-                {
-                    CerrarLectorYConexion(datos);
-                }
-            }
-
-            return colArbitro;
+            CerrarLectorYConexion(datos);
+            return colArbitros;
         }
 
 
@@ -49,7 +30,7 @@ namespace Persistencia
         {
             string consultaSQL1 = "INSERT INTO `personas`(`docPersona`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `correo`, `nacionalidad`, `rol`, `contrasena`) " +
                 "VALUES ('" + cedula + "','" + nombre + "','" + segundoNombre + "','" + apellido + "','" + segundoApellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
-            string consultaSQL2 = "INSERT INTO `arbitros`(`docArbitro`, `categoria`) VALUES ('" + cedula + "','" + idCategoria + "')";
+            string consultaSQL2 = "INSERT INTO `arbitros`(`docArbitro`, `categoria`) VALUES ('"+ cedula +"','" + idCategoria +"')";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
 
@@ -61,7 +42,7 @@ namespace Persistencia
         {
             string consultaSQL1 = "UPDATE `personas` SET `primerNombre`='" + nombre + "',`segundoNombre`='" + segundoNombre + "',`primerApellido`='" + apellido + "'," +
                 "`segundoApellido`='" + segundoApellido + "',`correo`='" + email + "',`nacionalidad`='" + nacionalidad + "',`rol`='" + rol + "',`contrasena`='" + contrasena + "' WHERE docPersona = " + cedula + ";'";
-            string consultaSQL2 = "UPDATE `arbitros` SET `categoria`='" + idCategoria + "' WHERE `docArbitro`='" + cedula + "'";
+            string consultaSQL2 = "UPDATE `arbitros` SET `categoria`='"+ idCategoria +"' WHERE `docArbitro`='"+ cedula +"'";
             ejecutarSQL(consultaSQL1);
             ejecutarSQL(consultaSQL2);
         }
@@ -82,7 +63,7 @@ namespace Persistencia
             clsEarbitro unP = new clsEarbitro();
 
             unP.Cedula = fila.GetInt32("docArbitro");
-            unP.IdCategoria = fila.GetInt32("idCategoria");
+            unP.IdCategoria = fila.GetInt32("categoria");
             unP.Nombre = fila.GetString("primerNombre");
             unP.segundoNombre = fila.IsDBNull(fila.GetOrdinal("segundoNombre")) ? "" : fila.GetString("segundoNombre");
             unP.Apellido = fila.GetString("primerApellido");
