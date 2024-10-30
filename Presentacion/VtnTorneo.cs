@@ -22,6 +22,13 @@ namespace Presentacion
         public VtnTorneo()
         {
             InitializeComponent();
+            cmbFiltro.Items.AddRange(new string[] {
+            " ",
+            "fechaInicio",
+            "ranking",
+            "año creado",
+            });
+            cmbFiltro.SelectedIndex = 0; // Seleccion vacia por defecto
         }
 
         private void VtnTorneo_Load(object sender, EventArgs e)
@@ -71,6 +78,14 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtAlcance.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                cmbEscuelas.SelectedItem == null )
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
@@ -88,6 +103,12 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verificar que el campo de id no este vacio
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de id antes de eliminar. ");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
@@ -105,6 +126,13 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text) ||
+                cmbEscuelas.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete el campo escuelas antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
@@ -156,6 +184,31 @@ namespace Presentacion
             txtNombre.Clear();
             txtAlcance.Clear();
             cmbEscuelas.Text = "";
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cmbFiltro.SelectedIndex = 0;
+            tblTorneo.DataSource = objetoTorneo.ListarTorneoPorFiltro("", "");
+            tblTorneo.Refresh();
+        }
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string valorBusqueda = txtBuscar.Text;
+            string tipoFiltro = cmbFiltro.SelectedItem?.ToString() ?? "";
+
+            // Validación 
+            if (tipoFiltro == "fecha" && !string.IsNullOrEmpty(valorBusqueda))
+            {
+                if (!valorBusqueda.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor ingrese solo números para la fecha");
+                    return;
+                }
+            }
+
+            tblTorneo.DataSource = objetoTorneo.ListarTorneoPorFiltro(valorBusqueda, tipoFiltro);
+            tblTorneo.Refresh();
         }
 
     }

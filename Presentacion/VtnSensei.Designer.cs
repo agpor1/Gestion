@@ -354,6 +354,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(232, 23);
             txtBuscar.TabIndex = 105;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // cmbRol
             // 

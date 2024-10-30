@@ -93,8 +93,32 @@ namespace Presentacion
         {
             tblJuez.DataSource = objetoJuez.listarJuez();
         }
+
+        //private void txtBuscar_TextChanged(object sender, EventArgs e)
+        //{
+        //    tblJuez.DataSource = objetoJuez.listarLibrosPorPais(txtBuscar.Text);
+        //}
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtNac.Text) ||
+                cmbCargos.SelectedItem == null ||
+                cmbCategoria.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
+            // Verificar si el usuario ya existe usando la capa de dominio
+            if (objetoJuez.verificarExistenciaUsuario(txtCedula.Text))
+            {
+                MessageBox.Show("Este usuario ya existe.");
+                return; // Sale del método si el usuario ya existe
+            }
             try
             {
                 int idCategoriaSeleccionada = (int)cmbCategoria.SelectedValue;
@@ -111,6 +135,14 @@ namespace Presentacion
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                cmbCargos.SelectedItem == null ||
+                cmbCategoria.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete los campos de cargos, categorias antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idCategoriaSeleccionada = (int)cmbCategoria.SelectedValue;
@@ -127,6 +159,12 @@ namespace Presentacion
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verificar que el campo de cedula no este vacio
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de cedula antes de eliminar. ");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoJuez.eliminarArbitro(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, txtContrasena.Text);

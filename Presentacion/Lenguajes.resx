@@ -189,6 +189,9 @@
   <data name="Iniciar" xml:space="preserve">
     <value>Iniciar</value>
   </data>
+  <data name="Inscriptos" xml:space="preserve">
+    <value>Inscriptos</value>
+  </data>
   <data name="Jueces" xml:space="preserve">
     <value>Jueces</value>
   </data>

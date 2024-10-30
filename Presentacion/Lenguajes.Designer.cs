@@ -277,6 +277,15 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Inscriptos.
+        /// </summary>
+        internal static string Inscriptos {
+            get {
+                return ResourceManager.GetString("Inscriptos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Jueces.
         /// </summary>
         internal static string Jueces {

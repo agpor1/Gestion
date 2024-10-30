@@ -20,6 +20,13 @@ namespace Presentacion
         public VtnAtletas()
         {
             InitializeComponent();
+            cmbFiltro.Items.AddRange(new string[] {
+            " ",
+            "pais",
+            "cedula",
+            "sexo",
+            });
+            cmbFiltro.SelectedIndex = 0; // Queda vacio por defecto
         }
         private void VtnAtletas_Load(object sender, EventArgs e)
         {
@@ -63,7 +70,7 @@ namespace Presentacion
                 MessageBox.Show("Error al cargar las categorías: " + ex.Message);
             }
         }
-       
+
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -75,6 +82,25 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                cmbCategorias.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtCarnetF.Text) ||
+                string.IsNullOrWhiteSpace(txtPeso.Text) ||
+                string.IsNullOrWhiteSpace(txtPais.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtSexo.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
+            // Verificar si el usuario ya existe usando la capa de dominio
+            if (objetoAtletas.verificarExistenciaUsuario(txtCedula.Text))
+            {
+                MessageBox.Show("Este usuario ya existe.");
+                return; // Sale del método si el usuario ya existe
+            }
             try
             {
                 int idCategoriaSeleccionada = (int)cmbCategorias.SelectedValue;
@@ -92,6 +118,12 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verifica que el campo de cedula no este vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de cedula antes de eliminar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoAtletas.eliminarAtletas(txtCedula.Text, txtCarnetF.Text, dtFecha.Value.ToString("yyyy-MM-dd"), txtPeso.Text, txtSexo.Text, txtPais.Text, txtNombre.Text, txtApellido.Text);
@@ -108,6 +140,13 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                cmbCategorias.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete el campo de categoria antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idCategoriaSeleccionada = (int)cmbCategorias.SelectedValue;
@@ -155,6 +194,31 @@ namespace Presentacion
             cmbCategorias.Text = "";
         }
 
-       
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string valorBusqueda = txtBuscar.Text;
+            string tipoFiltro = cmbFiltro.SelectedItem?.ToString() ?? "";
+
+            // Validación 
+            if (tipoFiltro == "cedula" && !string.IsNullOrEmpty(valorBusqueda))
+            {
+                if (!valorBusqueda.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor ingrese solo números para el documento");
+                    return;
+                }
+            }
+
+            tblAtletas.DataSource = objetoAtletas.ListarAtletasPorFiltro(valorBusqueda, tipoFiltro);
+            tblAtletas.Refresh();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cmbFiltro.SelectedIndex = 0;
+            tblAtletas.DataSource = objetoAtletas.ListarAtletasPorFiltro("", "");
+            tblAtletas.Refresh();
+        }
     }
 }

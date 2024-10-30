@@ -21,6 +21,14 @@ namespace Dominio
         {
             return objetoPatletas.ObtenerAtletas();
         }
+        public bool verificarExistenciaUsuario(string cedula)
+        {
+            return objetoPatletas.ExisteUsuario(cedula);
+        }
+        public List<clsEatletas> ListarAtletasPorFiltro(string valor, string tipoFiltro)
+        {
+            return objetoPatletas.ListarAtletasPorFiltro(valor, tipoFiltro);
+        }
         public void insertarAtletas(string cedula, int idCategoria, string carnetF, string fechaNac, string peso, string sexo, string pais, string nombre, string apellido)
         {
             objetoPatletas.altaAtleta(Convert.ToInt32(cedula), idCategoria,carnetF,Convert.ToDateTime(fechaNac), peso, sexo, pais, nombre, apellido);

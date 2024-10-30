@@ -20,14 +20,24 @@ namespace Presentacion
         public VtnCategoria()
         {
             InitializeComponent();
-            this.Resize += VtnCategoria_Resize;
-            ConfigurarControles();
-            CambiarIdioma(GestorIdiomas.Idioma);
+
+            cmbFiltro.Items.AddRange(new string[] {
+            " ",
+            "peso",
+            "edad",
+            "sexo",
+            });
+            cmbFiltro.SelectedIndex = 0; // Seleccion vacia por defecto
+
+
         }
 
         private void VtnCategoria_Load(object sender, EventArgs e)
         {
             actualizar();
+            ConfigurarControles();
+            CambiarIdioma(GestorIdiomas.Idioma);
+            this.Resize += VtnCategoria_Resize;
         }
 
 
@@ -40,6 +50,16 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtSexo.Text) ||
+                string.IsNullOrWhiteSpace(txtPeso.Text) ||
+                string.IsNullOrWhiteSpace(txtEdad.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoCategoria.insertarCategoria(txtId.Text, txtNombre.Text, txtSexo.Text, txtEdad.Text, txtPeso.Text);
@@ -55,6 +75,12 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de id antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoCategoria.actualizarCategoria(txtId.Text, txtNombre.Text, txtSexo.Text, txtEdad.Text, txtPeso.Text);
@@ -86,6 +112,12 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verifica que el campo de id no este vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de id antes de eliminar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoCategoria.eliminarCategoria(txtId.Text, txtNombre.Text, txtSexo.Text, txtEdad.Text, txtPeso.Text);
@@ -166,7 +198,30 @@ namespace Presentacion
             btnEliminar.Text = Lenguajes.Eliminar;
             lblBuscar.Text = Lenguajes.Buscar;
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cmbFiltro.SelectedIndex = 0;
+            tblCategoria.DataSource = objetoCategoria.ListarCategoriaPorFiltro("", "");
+            tblCategoria.Refresh();
+        }
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string valorBusqueda = txtBuscar.Text;
+            string tipoFiltro = cmbFiltro.SelectedItem?.ToString() ?? "";
 
+            // Validación 
+            if (tipoFiltro == "edad" && !string.IsNullOrEmpty(valorBusqueda))
+            {
+                if (!valorBusqueda.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor ingrese solo números para la edad");
+                    return;
+                }
+            }
 
+            tblCategoria.DataSource = objetoCategoria.ListarCategoriaPorFiltro(valorBusqueda, tipoFiltro);
+            tblCategoria.Refresh();
+        }
     }
 }

@@ -35,8 +35,8 @@
             panelFormularios = new Panel();
             logo = new PictureBox();
             panelMenu = new Panel();
+            btnDojos = new Button();
             btnTorneo = new Button();
-            logoEscuelas = new PictureBox();
             btnEscuela = new Button();
             btnCategorias = new Button();
             btnPools = new Button();
@@ -51,14 +51,12 @@
             btnRestaurar = new PictureBox();
             lblTitulo = new TextBox();
             btnMaximizar = new PictureBox();
-            btnDojos = new Button();
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panelPrincipal.SuspendLayout();
             panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)logoEscuelas).BeginInit();
             panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelBarraTitulo.SuspendLayout();
@@ -131,7 +129,6 @@
             panelMenu.BackColor = Color.FromArgb(37, 47, 66);
             panelMenu.Controls.Add(btnDojos);
             panelMenu.Controls.Add(btnTorneo);
-            panelMenu.Controls.Add(logoEscuelas);
             panelMenu.Controls.Add(btnEscuela);
             panelMenu.Controls.Add(btnCategorias);
             panelMenu.Controls.Add(btnPools);
@@ -145,6 +142,25 @@
             panelMenu.Size = new Size(209, 650);
             panelMenu.TabIndex = 14;
             // 
+            // btnDojos
+            // 
+            btnDojos.FlatAppearance.BorderSize = 0;
+            btnDojos.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnDojos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnDojos.FlatStyle = FlatStyle.Flat;
+            btnDojos.Font = new Font("Arial", 9.75F);
+            btnDojos.ForeColor = SystemColors.ButtonHighlight;
+            btnDojos.Image = (Image)resources.GetObject("btnDojos.Image");
+            btnDojos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDojos.Location = new Point(12, 537);
+            btnDojos.Name = "btnDojos";
+            btnDojos.Size = new Size(112, 57);
+            btnDojos.TabIndex = 28;
+            btnDojos.Text = "   Dojos";
+            btnDojos.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnDojos.UseVisualStyleBackColor = true;
+            btnDojos.Click += btnDojos_Click;
+            // 
             // btnTorneo
             // 
             btnTorneo.FlatAppearance.BorderSize = 0;
@@ -155,7 +171,7 @@
             btnTorneo.ForeColor = SystemColors.ButtonHighlight;
             btnTorneo.Image = (Image)resources.GetObject("btnTorneo.Image");
             btnTorneo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTorneo.Location = new Point(20, 465);
+            btnTorneo.Location = new Point(12, 478);
             btnTorneo.Name = "btnTorneo";
             btnTorneo.Size = new Size(112, 52);
             btnTorneo.TabIndex = 27;
@@ -163,18 +179,6 @@
             btnTorneo.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnTorneo.UseVisualStyleBackColor = true;
             btnTorneo.Click += btnTorneo_Click;
-            // 
-            // logoEscuelas
-            // 
-            logoEscuelas.BackColor = Color.FromArgb(37, 47, 66);
-            logoEscuelas.Image = (Image)resources.GetObject("logoEscuelas.Image");
-            logoEscuelas.Location = new Point(20, 407);
-            logoEscuelas.MinimumSize = new Size(30, 30);
-            logoEscuelas.Name = "logoEscuelas";
-            logoEscuelas.Size = new Size(39, 52);
-            logoEscuelas.SizeMode = PictureBoxSizeMode.Zoom;
-            logoEscuelas.TabIndex = 15;
-            logoEscuelas.TabStop = false;
             // 
             // btnEscuela
             // 
@@ -184,10 +188,11 @@
             btnEscuela.FlatStyle = FlatStyle.Flat;
             btnEscuela.Font = new Font("Arial", 9.75F);
             btnEscuela.ForeColor = SystemColors.ButtonHighlight;
+            btnEscuela.Image = (Image)resources.GetObject("btnEscuela.Image");
             btnEscuela.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEscuela.Location = new Point(56, 407);
+            btnEscuela.Location = new Point(3, 407);
             btnEscuela.Name = "btnEscuela";
-            btnEscuela.Size = new Size(98, 45);
+            btnEscuela.Size = new Size(142, 65);
             btnEscuela.TabIndex = 26;
             btnEscuela.Text = "      Escuelas";
             btnEscuela.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -223,9 +228,9 @@
             btnPools.ForeColor = SystemColors.ButtonHighlight;
             btnPools.Image = (Image)resources.GetObject("btnPools.Image");
             btnPools.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPools.Location = new Point(20, 304);
+            btnPools.Location = new Point(12, 304);
             btnPools.Name = "btnPools";
-            btnPools.Size = new Size(112, 45);
+            btnPools.Size = new Size(112, 56);
             btnPools.TabIndex = 24;
             btnPools.Text = "   Pools";
             btnPools.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -285,9 +290,9 @@
             btnCerrarSesion.ForeColor = SystemColors.ButtonHighlight;
             btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
             btnCerrarSesion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrarSesion.Location = new Point(12, 600);
+            btnCerrarSesion.Location = new Point(12, 597);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(151, 38);
+            btnCerrarSesion.Size = new Size(151, 50);
             btnCerrarSesion.TabIndex = 23;
             btnCerrarSesion.Text = "Cerrar Sesion";
             btnCerrarSesion.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -388,25 +393,6 @@
             btnMaximizar.TabStop = false;
             btnMaximizar.Click += btnMaximizar_Click;
             // 
-            // btnDojos
-            // 
-            btnDojos.FlatAppearance.BorderSize = 0;
-            btnDojos.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
-            btnDojos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnDojos.FlatStyle = FlatStyle.Flat;
-            btnDojos.Font = new Font("Arial", 9.75F);
-            btnDojos.ForeColor = SystemColors.ButtonHighlight;
-            btnDojos.Image = (Image)resources.GetObject("btnDojos.Image");
-            btnDojos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDojos.Location = new Point(20, 523);
-            btnDojos.Name = "btnDojos";
-            btnDojos.Size = new Size(112, 52);
-            btnDojos.TabIndex = 28;
-            btnDojos.Text = "   Dojos";
-            btnDojos.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnDojos.UseVisualStyleBackColor = true;
-            btnDojos.Click += btnDojos_Click;
-            // 
             // VtnPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -425,7 +411,6 @@
             panelFormularios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             panelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)logoEscuelas).EndInit();
             panelPerfil.ResumeLayout(false);
             panelPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -457,7 +442,6 @@
         private PictureBox logo;
         private Button btnCategorias;
         private Button btnEscuela;
-        private PictureBox logoEscuelas;
         private Button btnTorneo;
         private Button btnDojos;
     }

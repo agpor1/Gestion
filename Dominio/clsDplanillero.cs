@@ -17,7 +17,10 @@ namespace Dominio
         {
             return objetoPplanillero.listarPlanillero();
         }
-
+        public bool verificarExistenciaUsuario(string cedula)
+        {
+            return objetoPplanillero.ExisteUsuario(cedula);
+        }
         public void insertarPlanillero(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
             objetoPplanillero.altaPlanillero(Convert.ToInt32(cedula), nombre,segundoNombre, apellido,segundoApellido ,email, nacionalidad, rol, contrasena);

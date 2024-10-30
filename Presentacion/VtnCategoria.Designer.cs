@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            lblBuscar = new Label();
-            txtBuscar = new TextBox();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtPeso = new TextBox();
             lblPeso = new Label();
             txtSexo = new TextBox();
@@ -52,6 +50,11 @@
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
             btnAtras = new Button();
+            lblFiltrar = new Label();
+            cmbFiltro = new ComboBox();
+            lblBuscar = new Label();
+            txtBuscar = new TextBox();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)tblCategoria).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
@@ -59,22 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
-            // 
-            // lblBuscar
-            // 
-            lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(447, 66);
-            lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(42, 15);
-            lblBuscar.TabIndex = 135;
-            lblBuscar.Text = "Buscar";
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(495, 63);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(232, 23);
-            txtBuscar.TabIndex = 134;
             // 
             // txtPeso
             // 
@@ -202,8 +189,8 @@
             tblCategoria.AllowUserToDeleteRows = false;
             tblCategoria.AllowUserToResizeColumns = false;
             tblCategoria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblCategoria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblCategoria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             tblCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblCategoria.Location = new Point(495, 92);
             tblCategoria.Name = "tblCategoria";
@@ -280,11 +267,58 @@
             btnAtras.UseVisualStyleBackColor = true;
             btnAtras.Click += btnAtras_Click;
             // 
+            // lblFiltrar
+            // 
+            lblFiltrar.AutoSize = true;
+            lblFiltrar.Location = new Point(491, 66);
+            lblFiltrar.Name = "lblFiltrar";
+            lblFiltrar.Size = new Size(58, 15);
+            lblFiltrar.TabIndex = 184;
+            lblFiltrar.Text = "Filtrar por";
+            // 
+            // cmbFiltro
+            // 
+            cmbFiltro.FormattingEnabled = true;
+            cmbFiltro.Location = new Point(555, 63);
+            cmbFiltro.Name = "cmbFiltro";
+            cmbFiltro.Size = new Size(117, 23);
+            cmbFiltro.TabIndex = 183;
+            // 
+            // lblBuscar
+            // 
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(1066, 66);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(42, 15);
+            lblBuscar.TabIndex = 182;
+            lblBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(1114, 63);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(110, 23);
+            txtBuscar.TabIndex = 181;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(495, 424);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(92, 23);
+            btnLimpiar.TabIndex = 185;
+            btnLimpiar.Text = "Limpiar Filtro";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // VtnCategoria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
+            Controls.Add(btnLimpiar);
+            Controls.Add(lblFiltrar);
+            Controls.Add(cmbFiltro);
             Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(txtPeso);
@@ -319,9 +353,6 @@
         }
 
         #endregion
-
-        private Label lblBuscar;
-        private TextBox txtBuscar;
         private TextBox txtPeso;
         private Label lblPeso;
         private TextBox txtSexo;
@@ -343,5 +374,10 @@
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
         private Button btnAtras;
+        private Label lblFiltrar;
+        private ComboBox cmbFiltro;
+        private Label lblBuscar;
+        private TextBox txtBuscar;
+        private Button btnLimpiar;
     }
 }

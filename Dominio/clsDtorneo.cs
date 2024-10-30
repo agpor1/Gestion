@@ -22,6 +22,10 @@ namespace Dominio
         {
             objetoTorneo.altaTorneo(Convert.ToInt32(idTorneo), idEscuela, nombre, alcance, Convert.ToDateTime(fechaInicio),Convert.ToDateTime(fechaFin));
         }
+        public List<clsEtorneo> ListarTorneoPorFiltro(string valor, string tipoFiltro)
+        {
+            return objetoTorneo.ListarTorneoPorFiltro(valor, tipoFiltro);
+        }
 
         public void actualizarTorneo(string idTorneo, int idEscuela, string nombre, string alcance, string fechaInicio, string fechaFin)
         {

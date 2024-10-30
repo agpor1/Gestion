@@ -44,6 +44,20 @@ namespace Persistencia
 
             return colUsuarios;
         }
+        public List<clsEsensei> listarSenseiPorEscuela(string idEscuela)
+        {
+            List<clsEsensei> colJuez = new List<clsEsensei>();
+            string consultaSQL = "SELECT * FROM senseis INNER JOIN personas ON sensei.docSensei = personas.docPersona WHERE personas.idEscuela LIKE '" + idEscuela + "%';";
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
+
+            while (datos.Read())
+            {
+                colJuez.Add(recrearSensei(datos));
+            }
+
+            CerrarLectorYConexion(datos);
+            return colJuez;
+        }
 
         public List<clsEsensei> obtenerSenseis()
         {
@@ -114,8 +128,36 @@ namespace Persistencia
             ejecutarSQL(consulaSQL1);
             ejecutarSQL(consulaSQL2);
         }
+        public bool ExisteUsuario(string cedula)
+        {
+            bool existe = false;
+            string consultaSQL = "SELECT COUNT(*) FROM senseis WHERE docSensei = @docSensei;";
 
-       
+            List<MySqlParameter> parametros = new List<MySqlParameter>
+            {
+            new MySqlParameter("@docSensei", cedula)
+            };
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL, parametros);
+
+            // Verificar si datos es null antes de leer
+            if (datos != null)
+            {
+                if (datos.Read())
+                {
+                    existe = datos.GetInt32(0) > 0;
+                }
+
+                // Cerrar el lector y la conexión
+                CerrarLectorYConexion(datos);
+            }
+            else
+            {
+                Console.WriteLine("Error: No se pudieron obtener los datos del usuario.");
+            }
+
+            return existe;
+        }
 
         public clsEsensei recrearSensei(MySqlDataReader fila)
         {

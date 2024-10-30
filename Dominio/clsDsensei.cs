@@ -20,6 +20,16 @@ namespace Dominio
         {
             return objetoPsensei.obtenerSenseis();
         }
+        public bool verificarExistenciaUsuario(string cedula)
+        {
+            return objetoPsensei.ExisteUsuario(cedula);
+        }
+
+        public List<clsEsensei> listarSenseisPorEscuela(string idEsceula)
+        {
+            return objetoPsensei.listarSenseiPorEscuela(idEsceula);
+        }
+
         public void insertarSensei(string cedula, int idEscuela, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
             objetoPsensei.altaSensei(Convert.ToInt32(cedula), idEscuela, nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);

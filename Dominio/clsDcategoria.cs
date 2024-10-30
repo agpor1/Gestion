@@ -25,7 +25,10 @@ namespace Dominio
         {
             categoria.altaCategoria(Convert.ToInt32(id), nombre, sexo, Convert.ToInt32(edad), peso);
         }
-
+        public List<clsEcategoria> ListarCategoriaPorFiltro(string valor, string tipoFiltro)
+        {
+            return categoria.ListarCategoriaPorFiltro(valor, tipoFiltro);
+        }
         public void actualizarCategoria(string id, string nombre, string sexo, string edad, string peso)
         {
             categoria.editarCategoria(Convert.ToInt32(id), nombre, sexo, Convert.ToInt32(edad), peso);

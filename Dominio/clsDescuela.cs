@@ -20,7 +20,10 @@ namespace Dominio
         {
             return escuela.ObtenerEscuelas();
         }
-
+        public List<clsEescuela> ListarEscuelaPorFiltro(string valor, string tipoFiltro)
+        {
+            return escuela.ListarEscuelaPorFiltro(valor, tipoFiltro);
+        }
         public void insertarEscuela(string id, string nombre, string medallero, string fechaCreacion, string direccion)
         {
                 escuela.altaEscuela(Convert.ToInt32(id), nombre, medallero,Convert.ToDateTime(fechaCreacion), direccion);

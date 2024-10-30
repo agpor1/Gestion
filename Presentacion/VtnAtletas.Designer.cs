@@ -59,6 +59,9 @@
             lblBuscar = new Label();
             txtBuscar = new TextBox();
             dtFecha = new DateTimePicker();
+            cmbFiltro = new ComboBox();
+            lblFiltrar = new Label();
+            btnLimpiar = new Button();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -325,7 +328,7 @@
             // lblBuscar
             // 
             lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(514, 54);
+            lblBuscar.Location = new Point(980, 57);
             lblBuscar.Name = "lblBuscar";
             lblBuscar.Size = new Size(42, 15);
             lblBuscar.TabIndex = 108;
@@ -333,10 +336,11 @@
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(562, 51);
+            txtBuscar.Location = new Point(1028, 54);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(232, 23);
+            txtBuscar.Size = new Size(110, 23);
             txtBuscar.TabIndex = 107;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // dtFecha
             // 
@@ -347,11 +351,41 @@
             dtFecha.Size = new Size(121, 23);
             dtFecha.TabIndex = 155;
             // 
+            // cmbFiltro
+            // 
+            cmbFiltro.FormattingEnabled = true;
+            cmbFiltro.Location = new Point(626, 54);
+            cmbFiltro.Name = "cmbFiltro";
+            cmbFiltro.Size = new Size(58, 23);
+            cmbFiltro.TabIndex = 156;
+            // 
+            // lblFiltrar
+            // 
+            lblFiltrar.AutoSize = true;
+            lblFiltrar.Location = new Point(562, 57);
+            lblFiltrar.Name = "lblFiltrar";
+            lblFiltrar.Size = new Size(58, 15);
+            lblFiltrar.TabIndex = 157;
+            lblFiltrar.Text = "Filtrar por";
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(562, 417);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(92, 23);
+            btnLimpiar.TabIndex = 158;
+            btnLimpiar.Text = "Limpiar Filtro";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // VtnAtletas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 642);
+            Controls.Add(btnLimpiar);
+            Controls.Add(lblFiltrar);
+            Controls.Add(cmbFiltro);
             Controls.Add(dtFecha);
             Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
@@ -424,5 +458,8 @@
         private Label lblBuscar;
         private TextBox txtBuscar;
         private DateTimePicker dtFecha;
+        private ComboBox cmbFiltro;
+        private Label lblFiltrar;
+        private Button btnLimpiar;
     }
 }

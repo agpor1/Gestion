@@ -45,6 +45,37 @@ namespace Persistencia
             return colUsuarios;
         }
 
+        public bool ExisteUsuario(string cedula)
+        {
+            bool existe = false;
+            string consultaSQL = "SELECT COUNT(*) FROM personas WHERE docPersona = @docPersona;";
+
+            List<MySqlParameter> parametros = new List<MySqlParameter>
+            {
+        new MySqlParameter("@docPersona", cedula)
+            };
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL, parametros);
+
+            // Verificar si datos es null antes de leer
+            if (datos != null)
+            {
+                if (datos.Read())
+                {
+                    existe = datos.GetInt32(0) > 0;
+                }
+
+                // Cerrar el lector y la conexión
+                CerrarLectorYConexion(datos);
+            }
+            else
+            {
+                Console.WriteLine("Error: No se pudieron obtener los datos del usuario.");
+            }
+
+            return existe;
+        }
+
         public clsEusuario recrearUsuario(MySqlDataReader fila)
         {
             clsEusuario unUsuario = new clsEusuario();

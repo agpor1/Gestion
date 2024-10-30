@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            lblBuscar = new Label();
-            txtBuscar = new TextBox();
             txtDireccion = new TextBox();
             lblDireccion = new Label();
             txtMedallero = new TextBox();
@@ -51,6 +49,11 @@
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
             dtFecha = new DateTimePicker();
+            lblFiltrar = new Label();
+            cmbFiltro = new ComboBox();
+            lblBuscar = new Label();
+            txtBuscar = new TextBox();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)tblEscuela).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
@@ -58,22 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)btnMinimiza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
-            // 
-            // lblBuscar
-            // 
-            lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(447, 57);
-            lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(42, 15);
-            lblBuscar.TabIndex = 153;
-            lblBuscar.Text = "Buscar";
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(495, 54);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(232, 23);
-            txtBuscar.TabIndex = 152;
             // 
             // txtDireccion
             // 
@@ -201,7 +188,7 @@
             tblEscuela.Name = "tblEscuela";
             tblEscuela.ReadOnly = true;
             tblEscuela.RightToLeft = RightToLeft.No;
-            tblEscuela.Size = new Size(730, 326);
+            tblEscuela.Size = new Size(526, 326);
             tblEscuela.TabIndex = 137;
             // 
             // panelBarraTitulo
@@ -269,14 +256,61 @@
             dtFecha.Size = new Size(232, 23);
             dtFecha.TabIndex = 154;
             // 
+            // lblFiltrar
+            // 
+            lblFiltrar.AutoSize = true;
+            lblFiltrar.Location = new Point(493, 57);
+            lblFiltrar.Name = "lblFiltrar";
+            lblFiltrar.Size = new Size(58, 15);
+            lblFiltrar.TabIndex = 161;
+            lblFiltrar.Text = "Filtrar por";
+            // 
+            // cmbFiltro
+            // 
+            cmbFiltro.FormattingEnabled = true;
+            cmbFiltro.Location = new Point(557, 54);
+            cmbFiltro.Name = "cmbFiltro";
+            cmbFiltro.Size = new Size(108, 23);
+            cmbFiltro.TabIndex = 160;
+            // 
+            // lblBuscar
+            // 
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(863, 57);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(42, 15);
+            lblBuscar.TabIndex = 159;
+            lblBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(911, 54);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(110, 23);
+            txtBuscar.TabIndex = 158;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(495, 415);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(92, 23);
+            btnLimpiar.TabIndex = 162;
+            btnLimpiar.Text = "Limpiar Filtro";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // VtnEscuelas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
-            Controls.Add(dtFecha);
+            Controls.Add(btnLimpiar);
+            Controls.Add(lblFiltrar);
+            Controls.Add(cmbFiltro);
             Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
+            Controls.Add(dtFecha);
             Controls.Add(txtDireccion);
             Controls.Add(lblDireccion);
             Controls.Add(txtMedallero);
@@ -306,9 +340,6 @@
         }
 
         #endregion
-
-        private Label lblBuscar;
-        private TextBox txtBuscar;
         private TextBox txtDireccion;
         private Label lblDireccion;
         private TextBox txtMedallero;
@@ -329,5 +360,10 @@
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
         private DateTimePicker dtFecha;
+        private Label lblFiltrar;
+        private ComboBox cmbFiltro;
+        private Label lblBuscar;
+        private TextBox txtBuscar;
+        private Button btnLimpiar;
     }
 }

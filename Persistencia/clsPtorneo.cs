@@ -64,6 +64,37 @@ namespace Persistencia
 
             return colAtletas;
         }
+        public List<clsEtorneo> ListarTorneoPorFiltro(string valor, string tipoFiltro)
+        {
+            List<clsEtorneo> colTorneo = new List<clsEtorneo>();
+            string consultaSQL = "";
+
+            switch (tipoFiltro)
+            {
+                case "fechaInicio":
+                    consultaSQL = "SELECT * FROM torneos WHERE fechaInicio LIKE '%" + valor + "%'";
+                    break;
+                case "ranking":
+                    consultaSQL = "SELECT * FROM escuelas WHERE medallero LIKE '%" + valor + "%'";
+                    break;
+                case "año creado":
+                    consultaSQL = "SELECT * FROM escuelas WHERE fechaCreacion LIKE '%" + valor + "%'";
+                    break;
+                default:
+                    consultaSQL = "SELECT * FROM torneos";
+                    break;
+            }
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
+
+            while (datos.Read())
+            {
+                colTorneo.Add(recrearTorneos(datos));
+            }
+
+            CerrarLectorYConexion(datos);
+            return colTorneo;
+        }
 
         public clsEtorneo recrearTorneos(MySqlDataReader fila)
         {

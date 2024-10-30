@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblBuscar = new Label();
             txtBuscar = new TextBox();
             txtNombre = new TextBox();
             lblNombre = new Label();
             btnGuardar = new Button();
-            txtIncriptos = new TextBox();
+            txtInscriptos = new TextBox();
             lblInscriptos = new Label();
             txtId = new TextBox();
             lblId = new Label();
@@ -101,12 +101,12 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // txtIncriptos
+            // txtInscriptos
             // 
-            txtIncriptos.Location = new Point(107, 213);
-            txtIncriptos.Name = "txtIncriptos";
-            txtIncriptos.Size = new Size(232, 23);
-            txtIncriptos.TabIndex = 147;
+            txtInscriptos.Location = new Point(107, 213);
+            txtInscriptos.Name = "txtInscriptos";
+            txtInscriptos.Size = new Size(232, 23);
+            txtInscriptos.TabIndex = 147;
             // 
             // lblInscriptos
             // 
@@ -169,8 +169,8 @@
             tblDojos.AllowUserToDeleteRows = false;
             tblDojos.AllowUserToResizeColumns = false;
             tblDojos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblDojos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblDojos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             tblDojos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblDojos.Location = new Point(495, 95);
             tblDojos.Name = "tblDojos";
@@ -285,7 +285,7 @@
             Controls.Add(txtNombre);
             Controls.Add(lblNombre);
             Controls.Add(btnGuardar);
-            Controls.Add(txtIncriptos);
+            Controls.Add(txtInscriptos);
             Controls.Add(lblInscriptos);
             Controls.Add(txtId);
             Controls.Add(lblId);
@@ -316,7 +316,7 @@
         private TextBox txtNombre;
         private Label lblNombre;
         private Button btnGuardar;
-        private TextBox txtIncriptos;
+        private TextBox txtInscriptos;
         private Label lblInscriptos;
         private TextBox txtId;
         private Label lblId;

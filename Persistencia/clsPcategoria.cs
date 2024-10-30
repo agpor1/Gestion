@@ -41,7 +41,37 @@ namespace Persistencia
             CerrarLectorYConexion(datos);
             return colCategoria;
         }
+        public List<clsEcategoria> ListarCategoriaPorFiltro(string valor, string tipoFiltro)
+        {
+            List<clsEcategoria> colCategoria = new List<clsEcategoria>();
+            string consultaSQL = "";
 
+            switch (tipoFiltro)
+            {
+                case "peso":
+                    consultaSQL = "SELECT * FROM categorias WHERE peso LIKE '%" + valor + "%'";
+                    break;
+                case "edad":
+                    consultaSQL = "SELECT * FROM categorias WHERE edad LIKE '%" + valor + "%'";
+                    break;
+                case "sexo":
+                    consultaSQL = "SELECT * FROM categorias WHERE sexo LIKE '%" + valor + "%'";
+                    break;
+                default:
+                    consultaSQL = "SELECT * FROM categorias";
+                    break;
+            }
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
+
+            while (datos.Read())
+            {
+                colCategoria.Add(recrearCategoria(datos));
+            }
+
+            CerrarLectorYConexion(datos);
+            return colCategoria;
+        }
         public clsEcategoria recrearCategoria(MySqlDataReader fila)
         {
             clsEcategoria unUsuario = new clsEcategoria();

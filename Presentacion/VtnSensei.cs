@@ -97,10 +97,29 @@ namespace Presentacion
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtNac.Text) ||
+                cmbEscuelas.SelectedItem == null ||
+                cmbRol.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
+            // Verificar si el usuario ya existe usando la capa de dominio
+            if (objetoSensei.verificarExistenciaUsuario(txtCedula.Text))
+            {
+                MessageBox.Show("Este usuario ya existe.");
+                return; // Sale del método si el usuario ya existe
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
-                objetoSensei.insertarSensei(txtCedula.Text, idEscuelaSeleccionada, txtNombre.Text,txtSegundoName.Text, txtApellido.Text,txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
+                objetoSensei.insertarSensei(txtCedula.Text, idEscuelaSeleccionada, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbRol.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -113,6 +132,14 @@ namespace Presentacion
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                cmbEscuelas.SelectedItem == null ||
+                cmbRol.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete los campos de escuela, rol antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
@@ -129,9 +156,15 @@ namespace Presentacion
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verificar que el campo de cedula no este vacio
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de cedula antes de eliminar. ");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
-                objetoSensei.eliminarSensei(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text,txtContrasena.Text);
+                objetoSensei.eliminarSensei(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtNac.Text, txtContrasena.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -168,6 +201,11 @@ namespace Presentacion
             txtNombre.Clear();
             txtContrasena.Clear();
             cmbRol.Text = "";
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            tblSensei.DataSource = objetoSensei.listarSenseisPorEscuela(txtBuscar.Text);
         }
     }
 }

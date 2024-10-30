@@ -64,8 +64,67 @@ namespace Persistencia
 
             return colAtletas;
         }
+        public List<clsEatletas> ListarAtletasPorFiltro(string valor, string tipoFiltro)
+        {
+            List<clsEatletas> colAtleta = new List<clsEatletas>();
+            string consultaSQL = "";
 
-    
+            switch (tipoFiltro)
+            {
+                case "pais":
+                    consultaSQL = "SELECT * FROM atletas WHERE pais LIKE '%" + valor + "%'";
+                    break;
+                case "cedula":
+                    consultaSQL = "SELECT * FROM atletas WHERE docAtleta LIKE '%" + valor + "%'";
+                    break;
+                case "sexo":
+                    consultaSQL = "SELECT * FROM atletas WHERE sexo LIKE '%" + valor + "%'";
+                    break;
+                default:
+                    consultaSQL = "SELECT * FROM atletas";
+                    break;
+            }
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
+
+            while (datos.Read())
+            {
+                colAtleta.Add(recrearAtletas(datos));
+            }
+
+            CerrarLectorYConexion(datos);
+            return colAtleta;
+        }
+        public bool ExisteUsuario(string cedula)
+        {
+            bool existe = false;
+            string consultaSQL = "SELECT COUNT(*) FROM atletas WHERE docAtleta = @docAtleta;";
+
+            List<MySqlParameter> parametros = new List<MySqlParameter>
+            {
+            new MySqlParameter("@docAtleta", cedula)
+            };
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL, parametros);
+
+            // Verificar si datos es null antes de leer
+            if (datos != null)
+            {
+                if (datos.Read())
+                {
+                    existe = datos.GetInt32(0) > 0;
+                }
+
+                // Cerrar el lector y la conexión
+                CerrarLectorYConexion(datos);
+            }
+            else
+            {
+                Console.WriteLine("Error: No se pudieron obtener los datos del usuario.");
+            }
+
+            return existe;
+        }
         public clsEatletas recrearAtletas(MySqlDataReader fila)
         {
             clsEatletas unA = new clsEatletas();

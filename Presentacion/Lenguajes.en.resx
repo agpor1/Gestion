@@ -183,6 +183,9 @@
   <data name="Iniciar" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="Inscriptos" xml:space="preserve">
+    <value>Registered</value>
+  </data>
   <data name="Jueces" xml:space="preserve">
     <value>Judges</value>
   </data>

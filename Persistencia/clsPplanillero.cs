@@ -77,9 +77,36 @@ namespace Persistencia
             ejecutarSQL(consulaSQL1);
             ejecutarSQL(consulaSQL2);
         }
+        public bool ExisteUsuario(string cedula)
+        {
+            bool existe = false;
+            string consultaSQL = "SELECT COUNT(*) FROM planilleros WHERE docPlanillero = @docPlanillero;";
 
+            List<MySqlParameter> parametros = new List<MySqlParameter>
+            {
+        new MySqlParameter("@docPlanillero", cedula)
+            };
 
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL, parametros);
 
+            // Verificar si datos es null antes de leer
+            if (datos != null)
+            {
+                if (datos.Read())
+                {
+                    existe = datos.GetInt32(0) > 0;
+                }
+
+                // Cerrar el lector y la conexión
+                CerrarLectorYConexion(datos);
+            }
+            else
+            {
+                Console.WriteLine("Error: No se pudieron obtener los datos del usuario.");
+            }
+
+            return existe;
+        }
         public clsEplanillero recrearPlanillero(MySqlDataReader fila)
         {
             clsEplanillero unP = new clsEplanillero();

@@ -24,7 +24,36 @@ namespace Persistencia
             return colArbitros;
         }
 
+        public bool ExisteUsuario(string cedula)
+        {
+            bool existe = false;
+            string consultaSQL = "SELECT COUNT(*) FROM arbitros WHERE docArbitro = @docArbitro;";
 
+            List<MySqlParameter> parametros = new List<MySqlParameter>
+            {
+        new MySqlParameter("@docArbitro", cedula)
+            };
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL, parametros);
+
+            // Verificar si datos es null antes de leer
+            if (datos != null)
+            {
+                if (datos.Read())
+                {
+                    existe = datos.GetInt32(0) > 0;
+                }
+
+                // Cerrar el lector y la conexión
+                CerrarLectorYConexion(datos);
+            }
+            else
+            {
+                Console.WriteLine("Error: No se pudieron obtener los datos del usuario.");
+            }
+
+            return existe;
+        }
 
         public void altaArbitro(int cedula, int idCategoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
@@ -71,7 +100,6 @@ namespace Persistencia
             unP.Email = fila.GetString("correo");
             unP.Nacionalidad = fila.GetString("nacionalidad");
             unP.Rol = fila.GetString("rol");
-            unP.Contrasena = fila.GetString("contrasena");
 
             return unP;
         }

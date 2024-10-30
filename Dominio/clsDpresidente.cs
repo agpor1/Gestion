@@ -15,7 +15,10 @@ namespace Dominio
         {
             return objetoPpresidente.listarPresidente();
         }
-
+        public bool verificarExistenciaUsuario(string cedula)
+        {
+            return objetoPpresidente.ExisteUsuario(cedula);
+        }
         public void insertarPresidente(string cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
             objetoPpresidente.altaPresidente(Convert.ToInt32(cedula), nombre, segundoNombre, apellido, segundoApellido, email, nacionalidad, rol, contrasena);

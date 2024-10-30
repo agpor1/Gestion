@@ -15,6 +15,10 @@ namespace Dominio
         {
             return objetoPjuez.listarJuez();
         }
+        public bool verificarExistenciaUsuario(string cedula)
+        {
+            return objetoPjuez.ExisteUsuario(cedula);
+        }
 
         public void insertarArbitro(string cedula, int idCategoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {

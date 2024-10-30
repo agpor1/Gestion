@@ -42,6 +42,37 @@ namespace Persistencia
             CerrarLectorYConexion(datos);
             return colEscuela;
         }
+        public List<clsEescuela> ListarEscuelaPorFiltro(string valor, string tipoFiltro)
+        {
+            List<clsEescuela> colEscuela = new List<clsEescuela>();
+            string consultaSQL = "";
+
+            switch (tipoFiltro)
+            {
+                case "nombre":
+                    consultaSQL = "SELECT * FROM escuelas WHERE nombre LIKE '%" + valor + "%'";
+                    break;
+                case "ranking":
+                    consultaSQL = "SELECT * FROM escuelas WHERE medallero LIKE '%" + valor + "%'";
+                    break;
+                case "año creado":
+                    consultaSQL = "SELECT * FROM escuelas WHERE fechaCreacion LIKE '%" + valor + "%'";
+                    break;
+                default:
+                    consultaSQL = "SELECT * FROM escuelas";
+                    break;
+            }
+
+            MySqlDataReader datos = ejecutarYdevolver(consultaSQL);
+
+            while (datos.Read())
+            {
+                colEscuela.Add(recrearEscuela(datos));
+            }
+
+            CerrarLectorYConexion(datos);
+            return colEscuela;
+        }
 
         public clsEescuela recrearEscuela(MySqlDataReader fila)
         {

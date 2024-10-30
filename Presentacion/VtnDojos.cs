@@ -100,11 +100,21 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text) ||
+                cmbDocAtleta.SelectedItem == null ||
+                cmbEscuelas.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtInscriptos.Text))   
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
                 int docAtleta = (int)cmbDocAtleta.SelectedValue;
-                objetoTorneo.insertarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtIncriptos.Text);
+                objetoTorneo.insertarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtInscriptos.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -118,11 +128,17 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verifica que el campo de id no este vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de id antes de eliminar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
                 int docAtleta = (int)cmbDocAtleta.SelectedValue;
-                objetoTorneo.eliminarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtIncriptos.Text);
+                objetoTorneo.eliminarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtInscriptos.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -136,11 +152,19 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text) ||
+                cmbDocAtleta.SelectedItem == null ||
+                cmbEscuelas.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete los campos de docatleta, escuelas antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
                 int docAtleta = (int)cmbDocAtleta.SelectedValue;
-                objetoTorneo.actualizarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtIncriptos.Text);
+                objetoTorneo.actualizarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtInscriptos.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -165,7 +189,7 @@ namespace Presentacion
             btnRellenar.Text = Lenguajes.Rellenar;
             btnEliminar.Text = Lenguajes.Eliminar;
             lblNombre.Text = Lenguajes.Nombre;
-            lblInscriptos.Text = Lenguajes.Alcance;
+            lblInscriptos.Text = Lenguajes.Inscriptos;
             lblDocAtleta.Text = Lenguajes.DocAtleta;
         }
 
@@ -177,7 +201,7 @@ namespace Presentacion
                 cmbEscuelas.Text = tblDojos.CurrentRow.Cells["idEscuela"].Value.ToString();
                 cmbDocAtleta.Text = tblDojos.CurrentRow.Cells["docAtleta"].Value.ToString();
                 txtNombre.Text = tblDojos.CurrentRow.Cells["nombre"].Value.ToString();
-                txtIncriptos.Text = tblDojos.CurrentRow.Cells["cantInscriptos"].Value.ToString();
+                txtInscriptos.Text = tblDojos.CurrentRow.Cells["cantInscriptos"].Value.ToString();
             }
             else
                 MessageBox.Show("Selecione una fila por favor");
@@ -186,7 +210,7 @@ namespace Presentacion
         {
             txtId.Clear();
             txtNombre.Clear();
-            txtIncriptos.Clear();
+            txtInscriptos.Clear();
             cmbEscuelas.Text = "";
             cmbDocAtleta.Text = "";
         }

@@ -72,17 +72,24 @@ namespace Persistencia
             }
         }
 
-        public MySqlDataReader ejecutarYdevolver(string consultaSQL)
+        public MySqlDataReader ejecutarYdevolver(string consultaSQL, List<MySqlParameter> parametros = null)
         {
             MySqlDataReader resultado = null;
-            
+
             try
             {
                 AbrirConexion();
                 MySqlCommand comando = new MySqlCommand(consultaSQL, con);
+
+                // Agregar los parámetros a la consulta si existen
+                if (parametros != null)
+                {
+                    comando.Parameters.AddRange(parametros.ToArray());
+                }
+
                 resultado = comando.ExecuteReader();
             }
-            catch (MySqlException ex) 
+            catch (MySqlException ex)
             {
                 Console.WriteLine("Error al ejecutar la consulta y devolver resultados: " + ex.Message);
             }
@@ -90,8 +97,10 @@ namespace Persistencia
             {
                 Console.WriteLine("Error general al ejecutar la consulta: " + ex.Message);
             }
+
             return resultado;
         }
+
 
         public void CerrarLectorYConexion(MySqlDataReader lector)
         {

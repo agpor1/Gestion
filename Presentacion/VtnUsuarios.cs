@@ -17,7 +17,6 @@ namespace Presentacion
     public partial class VtnUsuarios : Form
     {
         private clsDusuarios objetoUsuario = new clsDusuarios();
-        clsPusuarios objetoPusuario = new clsPusuarios();
         public VtnUsuarios()
         {
             InitializeComponent();
@@ -65,27 +64,50 @@ namespace Presentacion
 
         public void actualizar()
         {
-            clsDusuarios unDu = new clsDusuarios();
-            tblPersona.DataSource = unDu.listarUsuarios();
+            tblPersona.DataSource = objetoUsuario.listarUsuarios();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtNac.Text) ||
+                cmbCargos.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
+            // Verificar si el usuario ya existe usando la capa de dominio
+            if (objetoUsuario.verificarExistenciaUsuario(txtCedula.Text))
+            {
+                MessageBox.Show("Este usuario ya existe.");
+                return; // Sale del método si el usuario ya existe
+            }
             try
             {
                 objetoUsuario.insertarUsuario(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
-                MessageBox.Show("Se agrego correctamente al nuevo usuario");
+                MessageBox.Show("Se agregó correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo agregar el usuario por: " + ex);
-
+                MessageBox.Show("No se pudo agregar el usuario debido a: " + ex.Message);
             }
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtCedula.Text) ||   
+                cmbCargos.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete el campo de cargos antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoUsuario.actualizarUsuario(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
@@ -101,6 +123,12 @@ namespace Presentacion
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verificar que el campo de cedula no este vacio
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de cedula antes de eliminar. ");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoUsuario.eliminarUsuarios(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);

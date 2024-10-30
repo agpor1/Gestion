@@ -19,6 +19,14 @@ namespace Presentacion
         public VtnEscuelas()
         {
             InitializeComponent();
+            cmbFiltro.Items.AddRange(new string[] {
+            " ",
+            "nombre",
+            "ranking",
+            "año creado",
+            });
+            cmbFiltro.SelectedIndex = 0; // Seleccion vacia por defecto
+
         }
 
 
@@ -37,6 +45,15 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtMedallero.Text) ||
+                string.IsNullOrWhiteSpace(txtDireccion.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoEscuela.insertarEscuela(txtId.Text, txtNombre.Text, txtMedallero.Text, dtFecha.Value.ToString("yyyy-MM-dd"), txtDireccion.Text);
@@ -53,6 +70,12 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            // Verificar si algún campo está vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de id antes de modificar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoEscuela.actualizarEscuela(txtId.Text, txtNombre.Text, txtMedallero.Text, dtFecha.Value.ToString("yyyy-MM-dd"), txtDireccion.Text);
@@ -74,7 +97,6 @@ namespace Presentacion
                 txtId.Text = tblEscuela.CurrentRow.Cells["idEscuela"].Value.ToString();
                 txtNombre.Text = tblEscuela.CurrentRow.Cells["nombre"].Value.ToString();
                 txtMedallero.Text = tblEscuela.CurrentRow.Cells["medallero"].Value.ToString();
-                //txtFechaCrea.Text = tblEscuela.CurrentRow.Cells["fechaCreacion"].Value.ToString();
                 txtDireccion.Text = tblEscuela.CurrentRow.Cells["direccion"].Value.ToString();
 
             }
@@ -84,6 +106,12 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verifica que el campo de id no este vacío
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Por favor, complete el campo de id antes de eliminar.");
+                return; // Sale del método si hay algún campo vacío
+            }
             try
             {
                 objetoEscuela.eliminarEscuela(txtId.Text, txtNombre.Text, txtMedallero.Text, dtFecha.Value.ToString("yyyy-MM-dd"), txtDireccion.Text);
@@ -105,7 +133,13 @@ namespace Presentacion
             ventana.AbrirVentana<VtnUsuarios>();
             ventana.Show();
         }
-
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cmbFiltro.SelectedIndex = 0;
+            tblEscuela.DataSource = objetoEscuela.ListarEscuelaPorFiltro("", "");
+            tblEscuela.Refresh();
+        }
         private void limpiarCampos()
         {
             txtId.Clear();
@@ -113,6 +147,25 @@ namespace Presentacion
             txtMedallero.Clear();
             txtNombre.Clear();
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string valorBusqueda = txtBuscar.Text;
+            string tipoFiltro = cmbFiltro.SelectedItem?.ToString() ?? "";
+
+            // Validación 
+            if (tipoFiltro == "fecha" && !string.IsNullOrEmpty(valorBusqueda))
+            {
+                if (!valorBusqueda.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor ingrese solo números para la fecha");
+                    return;
+                }
+            }
+
+            tblEscuela.DataSource = objetoEscuela.ListarEscuelaPorFiltro(valorBusqueda, tipoFiltro);
+            tblEscuela.Refresh();
         }
     }
 }
