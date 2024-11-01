@@ -141,6 +141,9 @@
   <data name="Cargo" xml:space="preserve">
     <value>Permisos</value>
   </data>
+  <data name="CarneF" xml:space="preserve">
+    <value>Carnet Federado</value>
+  </data>
   <data name="Categorias" xml:space="preserve">
     <value>Categorias</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="CerrarSesion" xml:space="preserve">
     <value>Cerrar Sesion</value>
+  </data>
+  <data name="Combate" xml:space="preserve">
+    <value>Combates</value>
   </data>
   <data name="Contrasena" xml:space="preserve">
     <value>Contraseña</value>
@@ -183,6 +189,12 @@
   <data name="FechaInicioo" xml:space="preserve">
     <value>Fecha de Inicio</value>
   </data>
+  <data name="FechaNac" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Filtrar" xml:space="preserve">
+    <value>Filtrar por</value>
+  </data>
   <data name="Guardar" xml:space="preserve">
     <value>Guardar</value>
   </data>
@@ -203,6 +215,9 @@
   </data>
   <data name="Nombre" xml:space="preserve">
     <value>Nombre</value>
+  </data>
+  <data name="Pais" xml:space="preserve">
+    <value>Pais</value>
   </data>
   <data name="Peso" xml:space="preserve">
     <value>Peso</value>
@@ -242,6 +257,9 @@
   </data>
   <data name="Torneo" xml:space="preserve">
     <value>Torneo</value>
+  </data>
+  <data name="Ubicacion" xml:space="preserve">
+    <value>Ubicacion</value>
   </data>
   <data name="Usuarios" xml:space="preserve">
     <value>Usuarios</value>

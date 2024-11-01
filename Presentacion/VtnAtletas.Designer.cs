@@ -37,25 +37,25 @@
             txtPeso = new TextBox();
             lblPeso = new Label();
             txtApellido = new TextBox();
-            label3 = new Label();
+            lblApellido = new Label();
             txtNombre = new TextBox();
-            label2 = new Label();
+            lblNombre = new Label();
             txtCedula = new TextBox();
-            label1 = new Label();
+            lblCedula = new Label();
             tblAtletas = new DataGridView();
             btnListar = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
             btnAtras = new Button();
             txtCarnetF = new TextBox();
-            label5 = new Label();
+            lblCarnetF = new Label();
             txtPais = new TextBox();
             lblPais = new Label();
             txtSexo = new TextBox();
-            label8 = new Label();
-            label12 = new Label();
+            lblSexo = new Label();
+            lblFechaNac = new Label();
             cmbCategorias = new ComboBox();
-            label4 = new Label();
+            lblCategoria = new Label();
             lblBuscar = new Label();
             txtBuscar = new TextBox();
             dtFecha = new DateTimePicker();
@@ -161,14 +161,14 @@
             txtApellido.Size = new Size(232, 23);
             txtApellido.TabIndex = 38;
             // 
-            // label3
+            // lblApellido
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 141);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 15);
-            label3.TabIndex = 37;
-            label3.Text = "Apellido";
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(12, 141);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(51, 15);
+            lblApellido.TabIndex = 37;
+            lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
@@ -177,14 +177,14 @@
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 36;
             // 
-            // label2
+            // lblNombre
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 112);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 15);
-            label2.TabIndex = 35;
-            label2.Text = "Nombre";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(12, 112);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(51, 15);
+            lblNombre.TabIndex = 35;
+            lblNombre.Text = "Nombre";
             // 
             // txtCedula
             // 
@@ -193,14 +193,14 @@
             txtCedula.Size = new Size(232, 23);
             txtCedula.TabIndex = 34;
             // 
-            // label1
+            // lblCedula
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 83);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 15);
-            label1.TabIndex = 33;
-            label1.Text = "Cedula";
+            lblCedula.AutoSize = true;
+            lblCedula.Location = new Point(12, 83);
+            lblCedula.Name = "lblCedula";
+            lblCedula.Size = new Size(44, 15);
+            lblCedula.TabIndex = 33;
+            lblCedula.Text = "Cedula";
             // 
             // tblAtletas
             // 
@@ -258,14 +258,14 @@
             txtCarnetF.Size = new Size(232, 23);
             txtCarnetF.TabIndex = 51;
             // 
-            // label5
+            // lblCarnetF
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 257);
-            label5.Name = "label5";
-            label5.Size = new Size(94, 15);
-            label5.TabIndex = 50;
-            label5.Text = "Carnet Federado";
+            lblCarnetF.AutoSize = true;
+            lblCarnetF.Location = new Point(12, 257);
+            lblCarnetF.Name = "lblCarnetF";
+            lblCarnetF.Size = new Size(94, 15);
+            lblCarnetF.TabIndex = 50;
+            lblCarnetF.Text = "Carnet Federado";
             // 
             // txtPais
             // 
@@ -290,23 +290,23 @@
             txtSexo.Size = new Size(232, 23);
             txtSexo.TabIndex = 45;
             // 
-            // label8
+            // lblSexo
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(12, 199);
-            label8.Name = "label8";
-            label8.Size = new Size(32, 15);
-            label8.TabIndex = 44;
-            label8.Text = "Sexo";
+            lblSexo.AutoSize = true;
+            lblSexo.Location = new Point(12, 199);
+            lblSexo.Name = "lblSexo";
+            lblSexo.Size = new Size(32, 15);
+            lblSexo.TabIndex = 44;
+            lblSexo.Text = "Sexo";
             // 
-            // label12
+            // lblFechaNac
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(12, 286);
-            label12.Name = "label12";
-            label12.Size = new Size(103, 15);
-            label12.TabIndex = 52;
-            label12.Text = "Fecha Nacimiento";
+            lblFechaNac.AutoSize = true;
+            lblFechaNac.Location = new Point(12, 286);
+            lblFechaNac.Name = "lblFechaNac";
+            lblFechaNac.Size = new Size(103, 15);
+            lblFechaNac.TabIndex = 52;
+            lblFechaNac.Text = "Fecha Nacimiento";
             // 
             // cmbCategorias
             // 
@@ -316,14 +316,14 @@
             cmbCategorias.Size = new Size(121, 23);
             cmbCategorias.TabIndex = 55;
             // 
-            // label4
+            // lblCategoria
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(48, 321);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 15);
-            label4.TabIndex = 54;
-            label4.Text = "Categoria";
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(48, 321);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(58, 15);
+            lblCategoria.TabIndex = 54;
+            lblCategoria.Text = "Categoria";
             // 
             // lblBuscar
             // 
@@ -390,24 +390,24 @@
             Controls.Add(lblBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(cmbCategorias);
-            Controls.Add(label4);
-            Controls.Add(label12);
+            Controls.Add(lblCategoria);
+            Controls.Add(lblFechaNac);
             Controls.Add(txtCarnetF);
-            Controls.Add(label5);
+            Controls.Add(lblCarnetF);
             Controls.Add(txtPais);
             Controls.Add(lblPais);
             Controls.Add(txtSexo);
-            Controls.Add(label8);
+            Controls.Add(lblSexo);
             Controls.Add(btnAtras);
             Controls.Add(btnGuardar);
             Controls.Add(txtPeso);
             Controls.Add(lblPeso);
             Controls.Add(txtApellido);
-            Controls.Add(label3);
+            Controls.Add(lblApellido);
             Controls.Add(txtNombre);
-            Controls.Add(label2);
+            Controls.Add(lblNombre);
             Controls.Add(txtCedula);
-            Controls.Add(label1);
+            Controls.Add(lblCedula);
             Controls.Add(tblAtletas);
             Controls.Add(btnListar);
             Controls.Add(btnModificar);
@@ -436,25 +436,25 @@
         private TextBox txtPeso;
         private Label lblPeso;
         private TextBox txtApellido;
-        private Label label3;
+        private Label lblApellido;
         private TextBox txtNombre;
-        private Label label2;
+        private Label lblNombre;
         private TextBox txtCedula;
-        private Label label1;
+        private Label lblCedula;
         private DataGridView tblAtletas;
         private Button btnListar;
         private Button btnModificar;
         private Button btnEliminar;
         private Button btnAtras;
         private TextBox txtCarnetF;
-        private Label label5;
+        private Label lblCarnetF;
         private TextBox txtPais;
         private Label lblPais;
         private TextBox txtSexo;
-        private Label label8;
-        private Label label12;
+        private Label lblSexo;
+        private Label lblFechaNac;
         private ComboBox cmbCategorias;
-        private Label label4;
+        private Label lblCategoria;
         private Label lblBuscar;
         private TextBox txtBuscar;
         private DateTimePicker dtFecha;

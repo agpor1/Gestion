@@ -199,6 +199,7 @@ namespace Presentacion
             btnCategorias.Text = Lenguajes.Categorias;
             btnEscuela.Text = Lenguajes.Escuela;
             btnTorneo.Text = Lenguajes.Torneo;
+            btnCombate.Text = Lenguajes.Combate;
 
         }
 

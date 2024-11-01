@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace Presentacion
         {
             actualizar();
             CargarCategorias();
+            CambiarIdioma(GestorIdiomas.Idioma);
         }
 
         public void actualizar()
@@ -220,5 +222,33 @@ namespace Presentacion
             tblAtletas.DataSource = objetoAtletas.ListarAtletasPorFiltro("", "");
             tblAtletas.Refresh();
         }
+
+        private void CambiarIdioma(string idioma)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
+            ActualizarIdioma();
+        }
+
+        private void ActualizarIdioma()
+        {
+            btnGuardar.Text = Lenguajes.Guardar;
+            btnModificar.Text = Lenguajes.Modificar;
+            btnListar.Text = Lenguajes.Rellenar;
+            btnEliminar.Text = Lenguajes.Eliminar;
+            btnAtras.Text = Lenguajes.Atras;
+            lblBuscar.Text = Lenguajes.Buscar;
+            lblCedula.Text = Lenguajes.Cedula;
+            lblNombre.Text = Lenguajes.Nombre;
+            lblApellido.Text = Lenguajes.Apellido;
+            lblPeso.Text = Lenguajes.Peso;
+            lblSexo.Text = Lenguajes.Sexo;
+            lblPais.Text = Lenguajes.Pais;
+            lblCarnetF.Text = Lenguajes.CarneF;
+            lblFechaNac.Text = Lenguajes.FechaNac;
+            lblCategoria.Text = Lenguajes.Categorias;
+            lblFiltrar.Text = Lenguajes.Filtrar;
+        }
+
+
     }
 }

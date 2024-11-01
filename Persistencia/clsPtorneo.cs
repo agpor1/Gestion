@@ -10,22 +10,22 @@ namespace Persistencia
 {
     public class clsPtorneo : clsPersistencia
     {
-        public void altaTorneo(int idTorneo, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
+        public void altaTorneo(int idTorneo, int idEscuela, string nombre, string ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
-            string consultaSQL = "INSERT INTO `torneos`(`idTorneo`, `idEscuela`, `nombre`, `alcance`, `fechaInicio`, `fechaFinal`) " +
-                "VALUES ('"+idTorneo+"','"+idEscuela+"','"+nombre+"','"+alcance+"','"+fechaInicio.ToString("yyyy-MM-dd") + "','"+fechaFin.ToString("yyyy-MM-dd") + "')";
+            string consultaSQL = "INSERT INTO `torneos`(`idTorneo`, `idEscuela`, `nombre`, `ubicacion`, `fechaInicio`, `fechaFinal`) " +
+                "VALUES ('"+idTorneo+"','"+idEscuela+"','"+nombre+"','"+ ubicacion + "','"+fechaInicio.ToString("yyyy-MM-dd") + "','"+fechaFin.ToString("yyyy-MM-dd") + "')";
 
             ejecutarSQL(consultaSQL);
         }
 
-        public void editarTorneo(int idTorneo, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
+        public void editarTorneo(int idTorneo, int idEscuela, string nombre, string ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
-            string consultaSQL = "UPDATE torneos SET idEscuela='" + idEscuela +"',  nombre= '" + nombre + "', alcance= '" + alcance + "'" +
+            string consultaSQL = "UPDATE torneos SET idEscuela='" + idEscuela +"',  nombre= '" + nombre + "', ubicacion= '" + ubicacion + "'" +
                 ", fechaInicio= '" + fechaInicio.ToString("yyyy-MM-dd") + "', fechaFinal= '" + fechaFin.ToString("yyyy-MM-dd") + "'WHERE idTorneo= '" + idTorneo + "'";
             ejecutarSQL(consultaSQL);
         }
 
-        public void eliminarTorneo(int idTorneo, int idEscuela, string nombre, string alcance, DateTime fechaInicio, DateTime fechaFin)
+        public void eliminarTorneo(int idTorneo, int idEscuela, string nombre, string ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
             string consultaSQL = "DELETE FROM torneos WHERE idTorneo= '" + idTorneo + "'";
             ejecutarSQL(consultaSQL);
@@ -74,11 +74,14 @@ namespace Persistencia
                 case "fechaInicio":
                     consultaSQL = "SELECT * FROM torneos WHERE fechaInicio LIKE '%" + valor + "%'";
                     break;
-                case "ranking":
-                    consultaSQL = "SELECT * FROM escuelas WHERE medallero LIKE '%" + valor + "%'";
-                    break;
                 case "año creado":
-                    consultaSQL = "SELECT * FROM escuelas WHERE fechaCreacion LIKE '%" + valor + "%'";
+                    consultaSQL = "SELECT * FROM torneos WHERE fechaCreacion LIKE '%" + valor + "%'";
+                    break;
+                case "ubicacion":
+                    consultaSQL = "SELECT * FROM torneos WHERE ubicacion LIKE '%" + valor + "%'";
+                    break;
+                case "fechaFinal":
+                    consultaSQL = "SELECT * FROM torneos WHERE fechaFinal LIKE '%" + valor + "%'";
                     break;
                 default:
                     consultaSQL = "SELECT * FROM torneos";
@@ -103,7 +106,7 @@ namespace Persistencia
             unT.idTorneo = fila.GetInt32("idTorneo");
             unT.idEscuela = fila.GetInt32("idEscuela");
             unT.nombre = fila.GetString("nombre");
-            unT.alcance = fila.GetString("alcance");
+            unT.ubicacion = fila.GetString("ubicacion");
             unT.fechaInicio = fila.GetDateTime("fechaInicio");
             unT.fechaFinal = fila.GetDateTime("fechaFinal");
 

@@ -133,6 +133,15 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Carnet Federado.
+        /// </summary>
+        internal static string CarneF {
+            get {
+                return ResourceManager.GetString("CarneF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Categorias.
         /// </summary>
         internal static string Categorias {
@@ -156,6 +165,15 @@ namespace Presentacion {
         internal static string CerrarSesion {
             get {
                 return ResourceManager.GetString("CerrarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Combates.
+        /// </summary>
+        internal static string Combate {
+            get {
+                return ResourceManager.GetString("Combate", resourceCulture);
             }
         }
         
@@ -259,6 +277,24 @@ namespace Presentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string FechaNac {
+            get {
+                return ResourceManager.GetString("FechaNac", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtrar por.
+        /// </summary>
+        internal static string Filtrar {
+            get {
+                return ResourceManager.GetString("Filtrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Guardar.
         /// </summary>
         internal static string Guardar {
@@ -318,6 +354,15 @@ namespace Presentacion {
         internal static string Nombre {
             get {
                 return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pais.
+        /// </summary>
+        internal static string Pais {
+            get {
+                return ResourceManager.GetString("Pais", resourceCulture);
             }
         }
         
@@ -435,6 +480,15 @@ namespace Presentacion {
         internal static string Torneo {
             get {
                 return ResourceManager.GetString("Torneo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ubicacion.
+        /// </summary>
+        internal static string Ubicacion {
+            get {
+                return ResourceManager.GetString("Ubicacion", resourceCulture);
             }
         }
         

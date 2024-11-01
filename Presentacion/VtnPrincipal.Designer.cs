@@ -39,7 +39,7 @@
             btnTorneo = new Button();
             btnEscuela = new Button();
             btnCategorias = new Button();
-            btnPools = new Button();
+            btnCombate = new Button();
             panelPerfil = new Panel();
             lblNombre = new Label();
             pictureBox2 = new PictureBox();
@@ -131,7 +131,7 @@
             panelMenu.Controls.Add(btnTorneo);
             panelMenu.Controls.Add(btnEscuela);
             panelMenu.Controls.Add(btnCategorias);
-            panelMenu.Controls.Add(btnPools);
+            panelMenu.Controls.Add(btnCombate);
             panelMenu.Controls.Add(panelPerfil);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnRanking);
@@ -152,7 +152,7 @@
             btnDojos.ForeColor = SystemColors.ButtonHighlight;
             btnDojos.Image = (Image)resources.GetObject("btnDojos.Image");
             btnDojos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDojos.Location = new Point(12, 537);
+            btnDojos.Location = new Point(20, 536);
             btnDojos.Name = "btnDojos";
             btnDojos.Size = new Size(112, 57);
             btnDojos.TabIndex = 28;
@@ -171,11 +171,11 @@
             btnTorneo.ForeColor = SystemColors.ButtonHighlight;
             btnTorneo.Image = (Image)resources.GetObject("btnTorneo.Image");
             btnTorneo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTorneo.Location = new Point(12, 478);
+            btnTorneo.Location = new Point(0, 478);
             btnTorneo.Name = "btnTorneo";
-            btnTorneo.Size = new Size(112, 52);
+            btnTorneo.Size = new Size(203, 52);
             btnTorneo.TabIndex = 27;
-            btnTorneo.Text = "   Torneos";
+            btnTorneo.Text = "                  Torneos";
             btnTorneo.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnTorneo.UseVisualStyleBackColor = true;
             btnTorneo.Click += btnTorneo_Click;
@@ -190,7 +190,7 @@
             btnEscuela.ForeColor = SystemColors.ButtonHighlight;
             btnEscuela.Image = (Image)resources.GetObject("btnEscuela.Image");
             btnEscuela.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEscuela.Location = new Point(3, 407);
+            btnEscuela.Location = new Point(12, 407);
             btnEscuela.Name = "btnEscuela";
             btnEscuela.Size = new Size(142, 65);
             btnEscuela.TabIndex = 26;
@@ -218,23 +218,23 @@
             btnCategorias.UseVisualStyleBackColor = true;
             btnCategorias.Click += btnCategorias_Click;
             // 
-            // btnPools
+            // btnCombate
             // 
-            btnPools.FlatAppearance.BorderSize = 0;
-            btnPools.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
-            btnPools.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnPools.FlatStyle = FlatStyle.Flat;
-            btnPools.Font = new Font("Arial", 9.75F);
-            btnPools.ForeColor = SystemColors.ButtonHighlight;
-            btnPools.Image = (Image)resources.GetObject("btnPools.Image");
-            btnPools.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPools.Location = new Point(12, 304);
-            btnPools.Name = "btnPools";
-            btnPools.Size = new Size(112, 56);
-            btnPools.TabIndex = 24;
-            btnPools.Text = "   Pools";
-            btnPools.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnPools.UseVisualStyleBackColor = true;
+            btnCombate.FlatAppearance.BorderSize = 0;
+            btnCombate.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 50, 70);
+            btnCombate.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnCombate.FlatStyle = FlatStyle.Flat;
+            btnCombate.Font = new Font("Arial", 9.75F);
+            btnCombate.ForeColor = SystemColors.ButtonHighlight;
+            btnCombate.Image = (Image)resources.GetObject("btnCombate.Image");
+            btnCombate.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCombate.Location = new Point(12, 304);
+            btnCombate.Name = "btnCombate";
+            btnCombate.Size = new Size(151, 56);
+            btnCombate.TabIndex = 24;
+            btnCombate.Text = "   Combates";
+            btnCombate.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnCombate.UseVisualStyleBackColor = true;
             // 
             // panelPerfil
             // 
@@ -437,7 +437,7 @@
         private PictureBox pictureBox2;
         private Panel panelPerfil;
         private TextBox lblTitulo;
-        private Button btnPools;
+        private Button btnCombate;
         private Panel panelFormularios;
         private PictureBox logo;
         private Button btnCategorias;

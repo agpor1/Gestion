@@ -25,8 +25,9 @@ namespace Presentacion
             cmbFiltro.Items.AddRange(new string[] {
             " ",
             "fechaInicio",
-            "ranking",
             "año creado",
+            "ubicacion",
+            "fechaFinal"
             });
             cmbFiltro.SelectedIndex = 0; // Seleccion vacia por defecto
         }
@@ -161,7 +162,7 @@ namespace Presentacion
             btnRellenar.Text = Lenguajes.Rellenar;
             btnEliminar.Text = Lenguajes.Eliminar;
             lblNombre.Text = Lenguajes.Nombre;
-            lblAlcance.Text = Lenguajes.Alcance;
+            lblAlcance.Text = Lenguajes.Ubicacion;
             lblFechaInicio.Text = Lenguajes.FechaInicio;
             lblFechaFin.Text = Lenguajes.FechaFin;
         }
@@ -172,7 +173,7 @@ namespace Presentacion
             {
                 txtId.Text = tblTorneo.CurrentRow.Cells["idTorneo"].Value.ToString();
                 txtNombre.Text = tblTorneo.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtAlcance.Text = tblTorneo.CurrentRow.Cells["alcance"].Value.ToString();
+                txtAlcance.Text = tblTorneo.CurrentRow.Cells["ubicacion"].Value.ToString();
                 cmbEscuelas.Text = tblTorneo.CurrentRow.Cells["idEscuela"].Value.ToString();
             }
             else

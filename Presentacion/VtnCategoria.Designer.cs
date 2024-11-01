@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtPeso = new TextBox();
             lblPeso = new Label();
             txtSexo = new TextBox();
@@ -189,14 +189,14 @@
             tblCategoria.AllowUserToDeleteRows = false;
             tblCategoria.AllowUserToResizeColumns = false;
             tblCategoria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblCategoria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblCategoria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             tblCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblCategoria.Location = new Point(495, 92);
+            tblCategoria.Location = new Point(365, 87);
             tblCategoria.Name = "tblCategoria";
             tblCategoria.ReadOnly = true;
             tblCategoria.RightToLeft = RightToLeft.No;
-            tblCategoria.Size = new Size(730, 326);
+            tblCategoria.Size = new Size(645, 326);
             tblCategoria.TabIndex = 111;
             // 
             // panelBarraTitulo
@@ -270,7 +270,7 @@
             // lblFiltrar
             // 
             lblFiltrar.AutoSize = true;
-            lblFiltrar.Location = new Point(491, 66);
+            lblFiltrar.Location = new Point(362, 61);
             lblFiltrar.Name = "lblFiltrar";
             lblFiltrar.Size = new Size(58, 15);
             lblFiltrar.TabIndex = 184;
@@ -279,7 +279,7 @@
             // cmbFiltro
             // 
             cmbFiltro.FormattingEnabled = true;
-            cmbFiltro.Location = new Point(555, 63);
+            cmbFiltro.Location = new Point(426, 58);
             cmbFiltro.Name = "cmbFiltro";
             cmbFiltro.Size = new Size(117, 23);
             cmbFiltro.TabIndex = 183;
@@ -287,7 +287,7 @@
             // lblBuscar
             // 
             lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(1066, 66);
+            lblBuscar.Location = new Point(852, 61);
             lblBuscar.Name = "lblBuscar";
             lblBuscar.Size = new Size(42, 15);
             lblBuscar.TabIndex = 182;
@@ -295,7 +295,7 @@
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(1114, 63);
+            txtBuscar.Location = new Point(900, 58);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(110, 23);
             txtBuscar.TabIndex = 181;
@@ -303,7 +303,7 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(495, 424);
+            btnLimpiar.Location = new Point(365, 460);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(92, 23);
             btnLimpiar.TabIndex = 185;
