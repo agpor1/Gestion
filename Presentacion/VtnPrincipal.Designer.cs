@@ -152,7 +152,7 @@
             btnDojos.ForeColor = SystemColors.ButtonHighlight;
             btnDojos.Image = (Image)resources.GetObject("btnDojos.Image");
             btnDojos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDojos.Location = new Point(20, 536);
+            btnDojos.Location = new Point(12, 536);
             btnDojos.Name = "btnDojos";
             btnDojos.Size = new Size(112, 57);
             btnDojos.TabIndex = 28;
@@ -235,6 +235,7 @@
             btnCombate.Text = "   Combates";
             btnCombate.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnCombate.UseVisualStyleBackColor = true;
+            btnCombate.Click += btnCombate_Click;
             // 
             // panelPerfil
             // 

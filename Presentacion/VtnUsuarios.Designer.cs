@@ -75,8 +75,6 @@
             RightToolStripPanel = new ToolStripPanel();
             LeftToolStripPanel = new ToolStripPanel();
             ContentPanel = new ToolStripContentPanel();
-            lblBuscar = new Label();
-            txtBuscar = new TextBox();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -457,33 +455,15 @@
             // 
             ContentPanel.Size = new Size(1080, 110);
             // 
-            // lblBuscar
-            // 
-            lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(407, 83);
-            lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(42, 15);
-            lblBuscar.TabIndex = 39;
-            lblBuscar.Text = "Buscar";
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(457, 80);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(232, 23);
-            txtBuscar.TabIndex = 34;
-            // 
             // VtnUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 611);
-            Controls.Add(lblBuscar);
             Controls.Add(txtSegundoApellido);
             Controls.Add(lblSegundoApellido);
             Controls.Add(txtSegundoName);
             Controls.Add(lblSegundoNombre);
-            Controls.Add(txtBuscar);
             Controls.Add(menuStrip1);
             Controls.Add(txtNac);
             Controls.Add(lblNacionalidad);
@@ -570,7 +550,5 @@
         private ToolStripPanel RightToolStripPanel;
         private ToolStripPanel LeftToolStripPanel;
         private ToolStripContentPanel ContentPanel;
-        private Label lblBuscar;
-        private TextBox txtBuscar;
     }
 }

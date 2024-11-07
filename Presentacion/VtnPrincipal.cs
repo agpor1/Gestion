@@ -143,6 +143,10 @@ namespace Presentacion
         {
             AbrirVentana<VtnDojos>();
         }
+        private void btnCombate_Click(object sender, EventArgs e)
+        {
+            AbrirVentana<VtnCombate>();
+        }
         public void AbrirVentana<MiForm>() where MiForm : Form, new()
         {
             Form ventana;
@@ -202,6 +206,5 @@ namespace Presentacion
             btnCombate.Text = Lenguajes.Combate;
 
         }
-
     }
 }

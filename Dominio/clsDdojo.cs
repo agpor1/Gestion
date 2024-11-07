@@ -17,18 +17,18 @@ namespace Dominio
             return dojo.listarDojos();
         }
 
-        public void insertarDojo(string idDojo, int idEscuela, int docAtleta, string nombre, string cantInscriptos)
+        public void insertarDojo(string idDojo, int idEscuela, string nombre, string cantInscriptos)
         {
-            dojo.altaDojo(Convert.ToInt32(idDojo), idEscuela, docAtleta, nombre, Convert.ToInt32(cantInscriptos));
+            dojo.altaDojo(Convert.ToInt32(idDojo), idEscuela, nombre, Convert.ToInt32(cantInscriptos));
         }
 
-        public void actualizarDojo(string idDojo, int idEscuela, int docAtleta, string nombre, string cantInscriptos)
+        public void actualizarDojo(string idDojo, int idEscuela, string nombre, string cantInscriptos)
         {
-            dojo.editarDojo(Convert.ToInt32(idDojo), idEscuela, docAtleta, nombre, Convert.ToInt32(cantInscriptos));
+            dojo.editarDojo(Convert.ToInt32(idDojo), idEscuela, nombre, Convert.ToInt32(cantInscriptos));
         }
-        public void eliminarDojo(string idDojo, int idEscuela, int docAtleta, string nombre, string cantIncsriptos)
+        public void eliminarDojo(string idDojo, int idEscuela, string nombre, string cantIncsriptos)
         {
-            dojo.eliminarDojo(Convert.ToInt32(idDojo), idEscuela, docAtleta, nombre, Convert.ToInt32(cantIncsriptos));
+            dojo.eliminarDojo(Convert.ToInt32(idDojo), idEscuela, nombre, Convert.ToInt32(cantIncsriptos));
         }
 
 

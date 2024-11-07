@@ -10,21 +10,21 @@ namespace Persistencia
 {
     public class clsPdojo : clsPersistencia  
     {
-        public void altaDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInscriptos)
+        public void altaDojo(int idDojo, int idEscuela, string nombre, int cantInscriptos)
         {
-            string consultaSQL = "INSERT INTO `dojos`(`idDojo`, `idEscuela`, `docAtleta`, `nombre`, `cantInscriptos`) VALUES " +
-                "('"+idDojo+"','"+idEscuela+"','"+docAtleta+"','"+nombre+"','"+cantInscriptos+"')";
+            string consultaSQL = "INSERT INTO `dojos`(`idDojo`, `idEscuela`, `nombre`, `cantInscriptos`) VALUES " +
+                "('"+idDojo+"','"+idEscuela+"','"+nombre+"','"+cantInscriptos+"')";
             ejecutarSQL(consultaSQL);
         }
 
-        public void editarDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInscriptos)
+        public void editarDojo(int idDojo, int idEscuela,string nombre, int cantInscriptos)
         {
-            string consultaSQL = "UPDATE `dojos` SET `idEscuela`='"+idEscuela+"',`docAtleta`='"+docAtleta+"',`nombre`='"+nombre+"'," +
+            string consultaSQL = "UPDATE `dojos` SET `idEscuela`='"+idEscuela+"',`nombre`='"+nombre+"'," +
                 "`cantInscriptos`='"+cantInscriptos+ "' WHERE `idDojo`= '" + idDojo + "'";
             ejecutarSQL(consultaSQL);
         }
 
-        public void eliminarDojo(int idDojo, int idEscuela, int docAtleta, string nombre, int cantInsrciptos)
+        public void eliminarDojo(int idDojo, int idEscuela, string nombre, int cantInsrciptos)
         {
             string consultaSQL = "DELETE FROM `dojos`  WHERE `idDojo`= '" + idDojo + "'";
             ejecutarSQL(consultaSQL);
@@ -50,7 +50,6 @@ namespace Persistencia
 
             unD.idDojo = fila.GetInt32("idDojo");
             unD.idEscuela = fila.GetInt32("idEscuela");
-            unD.docAtleta = fila.GetInt32("docAtleta");
             unD.nombre = fila.GetString("nombre");
             unD.cantInscriptos = fila.GetInt32("cantInscriptos");
 

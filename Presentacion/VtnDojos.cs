@@ -26,7 +26,6 @@ namespace Presentacion
         {
             actualizar();
             CargarEscuela();
-            CargarAtleta();
             CambiarIdioma(GestorIdiomas.Idioma);
 
         }
@@ -66,43 +65,12 @@ namespace Presentacion
                 MessageBox.Show("Error al cargar las escuelas: " + ex.Message);
             }
         }
-        private void CargarAtleta()
-        {
-            try
-            {
-                clsDatletas atletasDatos = new clsDatletas();
-
-                List<clsEatletas> atletas = atletasDatos.ObtenerAtletas();
-
-                if (atletas != null)
-                {
-                    clsEatletas atletasVacio = new clsEatletas { Cedula = 0 };
-                    atletas.Insert(0, atletasVacio);
-
-                    cmbDocAtleta.DataSource = atletas;
-                    cmbDocAtleta.DisplayMember = "Cedula";
-                    cmbDocAtleta.ValueMember = "Cedula";
-
-                    cmbDocAtleta.SelectedIndex = 0;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontraron altetas.");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error al cargar los altetas: " + ex.Message);
-            }
-        }
-
+       
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Verificar si algún campo está vacío
             if (string.IsNullOrWhiteSpace(txtId.Text) ||
-                cmbDocAtleta.SelectedItem == null ||
                 cmbEscuelas.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtInscriptos.Text))   
@@ -113,8 +81,7 @@ namespace Presentacion
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
-                int docAtleta = (int)cmbDocAtleta.SelectedValue;
-                objetoTorneo.insertarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtInscriptos.Text);
+                objetoTorneo.insertarDojo(txtId.Text, idEscuelaSeleccionada, txtNombre.Text, txtInscriptos.Text);
                 MessageBox.Show("Se agrego correctamente al nuevo usuario");
                 actualizar();
                 limpiarCampos();
@@ -137,8 +104,7 @@ namespace Presentacion
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
-                int docAtleta = (int)cmbDocAtleta.SelectedValue;
-                objetoTorneo.eliminarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtInscriptos.Text);
+                objetoTorneo.eliminarDojo(txtId.Text, idEscuelaSeleccionada, txtNombre.Text, txtInscriptos.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -154,7 +120,6 @@ namespace Presentacion
         {
             // Verificar si algún campo está vacío
             if (string.IsNullOrWhiteSpace(txtId.Text) ||
-                cmbDocAtleta.SelectedItem == null ||
                 cmbEscuelas.SelectedItem == null)
             {
                 MessageBox.Show("Por favor, complete los campos de docatleta, escuelas antes de modificar.");
@@ -163,8 +128,7 @@ namespace Presentacion
             try
             {
                 int idEscuelaSeleccionada = (int)cmbEscuelas.SelectedValue;
-                int docAtleta = (int)cmbDocAtleta.SelectedValue;
-                objetoTorneo.actualizarDojo(txtId.Text, idEscuelaSeleccionada, docAtleta, txtNombre.Text, txtInscriptos.Text);
+                objetoTorneo.actualizarDojo(txtId.Text, idEscuelaSeleccionada, txtNombre.Text, txtInscriptos.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -190,7 +154,6 @@ namespace Presentacion
             btnEliminar.Text = Lenguajes.Eliminar;
             lblNombre.Text = Lenguajes.Nombre;
             lblInscriptos.Text = Lenguajes.Inscriptos;
-            lblDocAtleta.Text = Lenguajes.DocAtleta;
         }
 
         private void btnRellenar_Click(object sender, EventArgs e)
@@ -199,7 +162,6 @@ namespace Presentacion
             {
                 txtId.Text = tblDojos.CurrentRow.Cells["idDojo"].Value.ToString();
                 cmbEscuelas.Text = tblDojos.CurrentRow.Cells["idEscuela"].Value.ToString();
-                cmbDocAtleta.Text = tblDojos.CurrentRow.Cells["docAtleta"].Value.ToString();
                 txtNombre.Text = tblDojos.CurrentRow.Cells["nombre"].Value.ToString();
                 txtInscriptos.Text = tblDojos.CurrentRow.Cells["cantInscriptos"].Value.ToString();
             }
@@ -212,7 +174,6 @@ namespace Presentacion
             txtNombre.Clear();
             txtInscriptos.Clear();
             cmbEscuelas.Text = "";
-            cmbDocAtleta.Text = "";
         }
 
      

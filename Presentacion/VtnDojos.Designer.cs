@@ -49,8 +49,6 @@
             btnCerrar = new PictureBox();
             cmbEscuelas = new ComboBox();
             lblEscuelas = new Label();
-            cmbDocAtleta = new ComboBox();
-            lblDocAtleta = new Label();
             ((System.ComponentModel.ISupportInitialize)tblDojos).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
@@ -77,7 +75,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(107, 184);
+            txtNombre.Location = new Point(107, 150);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 150;
@@ -85,7 +83,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(9, 187);
+            lblNombre.Location = new Point(9, 153);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 149;
@@ -103,7 +101,7 @@
             // 
             // txtInscriptos
             // 
-            txtInscriptos.Location = new Point(107, 213);
+            txtInscriptos.Location = new Point(107, 179);
             txtInscriptos.Name = "txtInscriptos";
             txtInscriptos.Size = new Size(232, 23);
             txtInscriptos.TabIndex = 147;
@@ -111,7 +109,7 @@
             // lblInscriptos
             // 
             lblInscriptos.AutoSize = true;
-            lblInscriptos.Location = new Point(11, 216);
+            lblInscriptos.Location = new Point(11, 182);
             lblInscriptos.Name = "lblInscriptos";
             lblInscriptos.Size = new Size(86, 15);
             lblInscriptos.TabIndex = 146;
@@ -254,30 +252,11 @@
             lblEscuelas.TabIndex = 177;
             lblEscuelas.Text = "Escuelas";
             // 
-            // cmbDocAtleta
-            // 
-            cmbDocAtleta.FormattingEnabled = true;
-            cmbDocAtleta.Location = new Point(107, 155);
-            cmbDocAtleta.Name = "cmbDocAtleta";
-            cmbDocAtleta.Size = new Size(121, 23);
-            cmbDocAtleta.TabIndex = 180;
-            // 
-            // lblDocAtleta
-            // 
-            lblDocAtleta.AutoSize = true;
-            lblDocAtleta.Location = new Point(9, 155);
-            lblDocAtleta.Name = "lblDocAtleta";
-            lblDocAtleta.Size = new Size(59, 15);
-            lblDocAtleta.TabIndex = 179;
-            lblDocAtleta.Text = "DocAtleta";
-            // 
             // VtnDojos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1237, 611);
-            Controls.Add(cmbDocAtleta);
-            Controls.Add(lblDocAtleta);
             Controls.Add(cmbEscuelas);
             Controls.Add(lblEscuelas);
             Controls.Add(lblBuscar);
@@ -331,7 +310,5 @@
         private PictureBox btnCerrar;
         private ComboBox cmbEscuelas;
         private Label lblEscuelas;
-        private ComboBox cmbDocAtleta;
-        private Label lblDocAtleta;
     }
 }
