@@ -25,7 +25,7 @@ namespace Persistencia
             ejecutarSQL(consultaSQL);
         }
 
-        public void eliminarUsuario(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
+        public void eliminarUsuario(int cedula, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string contrasena)
         {
             string consultaSQL = "DELETE FROM `personas` WHERE `docPersona`= '" + cedula + "'";
             ejecutarSQL(consultaSQL);

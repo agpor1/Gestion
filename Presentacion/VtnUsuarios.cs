@@ -130,7 +130,7 @@ namespace Presentacion
             }
             try
             {
-                objetoUsuario.eliminarUsuarios(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
+                objetoUsuario.eliminarUsuarios(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, txtContrasena.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
                 limpiarCampos();
@@ -159,6 +159,8 @@ namespace Presentacion
         {
             txtCedula.Clear();
             txtNombre.Clear();
+            txtSegundoApellido.Clear();
+            txtSegundoName.Clear();
             txtApellido.Clear();
             txtContrasena.Clear();
             txtEmail.Clear();
