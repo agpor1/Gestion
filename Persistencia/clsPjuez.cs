@@ -26,7 +26,7 @@ namespace Persistencia
 
         public void altaJueces(int cedula, int categoria, string nombre, string segundoNombre, string apellido, string segundoApellido, string email, string nacionalidad, string rol, string contrasena)
         {
-            string consultaSQL1 = "INSERT INTO `personas`(`docPersona`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `correo`, `nacionalidad`, `rol`, `contrasena`) " +
+            string consultaSQL1 = "INSERT INTO `personas`(`docPersona`, `priñmerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `correo`, `nacionalidad`, `rol`, `contrasena`) " +
                 "VALUES ('" + cedula + "','" + nombre + "','" + segundoNombre + "','" + apellido + "','" + segundoApellido + "','" + email + "','" + nacionalidad + "','" + rol + "','" + contrasena + "')";
             string consultaSQL2 = "INSERT INTO `jueces`(`docJueces`, `categoria`) VALUES ('" + cedula + "','" + categoria + "')";
             ejecutarSQL(consultaSQL1);

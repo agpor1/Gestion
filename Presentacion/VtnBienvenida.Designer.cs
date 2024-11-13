@@ -43,6 +43,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
             progressBar1 = new ProgressBar();
+            lblPorcentaje = new Label();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -143,7 +144,7 @@
             lblBienvenida.BackColor = Color.White;
             lblBienvenida.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBienvenida.ForeColor = SystemColors.MenuHighlight;
-            lblBienvenida.Location = new Point(273, 172);
+            lblBienvenida.Location = new Point(271, 193);
             lblBienvenida.Name = "lblBienvenida";
             lblBienvenida.Size = new Size(282, 56);
             lblBienvenida.TabIndex = 25;
@@ -155,7 +156,7 @@
             lblNombre.BackColor = Color.White;
             lblNombre.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNombre.ForeColor = SystemColors.MenuHighlight;
-            lblNombre.Location = new Point(293, 280);
+            lblNombre.Location = new Point(318, 279);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(89, 24);
             lblNombre.TabIndex = 26;
@@ -183,10 +184,22 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(206, 451);
+            progressBar1.Location = new Point(214, 415);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(412, 23);
             progressBar1.TabIndex = 28;
+            // 
+            // lblPorcentaje
+            // 
+            lblPorcentaje.AutoSize = true;
+            lblPorcentaje.BackColor = Color.White;
+            lblPorcentaje.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPorcentaje.ForeColor = SystemColors.MenuHighlight;
+            lblPorcentaje.Location = new Point(587, 388);
+            lblPorcentaje.Name = "lblPorcentaje";
+            lblPorcentaje.Size = new Size(39, 24);
+            lblPorcentaje.TabIndex = 42;
+            lblPorcentaje.Text = "0%";
             // 
             // VtnBienvenida
             // 
@@ -194,6 +207,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(781, 500);
+            Controls.Add(lblPorcentaje);
             Controls.Add(progressBar1);
             Controls.Add(pictureBox1);
             Controls.Add(lblNombre);
@@ -232,5 +246,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private ProgressBar progressBar1;
+        private Label lblPorcentaje;
     }
 }

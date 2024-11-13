@@ -23,6 +23,7 @@ namespace Presentacion
         {
             if (this.Opacity < 1) this.Opacity += 0.05;
             progressBar1.Value += 1;
+            lblPorcentaje.Text = $"{progressBar1.Value}%";
             if (progressBar1.Value == 100)
             {
                 timer1.Stop();

@@ -58,7 +58,6 @@ namespace Presentacion
             juecesToolStripMenuItem.Text = Lenguajes.Jueces;
             arbitrosToolStripMenuItem.Text = Lenguajes.Arbitros;
             senseiToolStripMenuItem.Text = Lenguajes.Sensei;
-            lblBuscar.Text = Lenguajes.Buscar;
             lblNacionalidad.Text = Lenguajes.Nacionalidad; 
         }
 
