@@ -279,6 +279,7 @@
             Name = "VtnDojos";
             Text = "VtnDojos";
             Load += VtnDojos_Load;
+            Resize += VtnDojos_Resize;
             ((System.ComponentModel.ISupportInitialize)tblDojos).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();

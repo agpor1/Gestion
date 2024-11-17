@@ -27,6 +27,8 @@ namespace Presentacion
             actualizar();
             CargarEscuela();
             CambiarIdioma(GestorIdiomas.Idioma);
+            this.Resize += VtnDojos_Resize;
+            ConfigurarControles();
 
         }
         public void actualizar()
@@ -175,7 +177,24 @@ namespace Presentacion
             txtInscriptos.Clear();
             cmbEscuelas.Text = "";
         }
+        public void AjustarTabla()
+        {
+            if (tblDojos.InvokeRequired)
+            {
+                tblDojos.Invoke(new Action(AjustarTabla));
+                return;
+            }
+        }
+        private void ConfigurarControles()
+        {
+            // Configurar la tabla
+            tblDojos.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom;
+            AjustarTabla();
+        }
+        private void VtnDojos_Resize(object sender, EventArgs e)
+        {
+            AjustarTabla();
+        }
 
-     
     }
 }

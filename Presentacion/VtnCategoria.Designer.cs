@@ -297,7 +297,7 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(365, 460);
+            btnLimpiar.Location = new Point(12, 420);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(92, 23);
             btnLimpiar.TabIndex = 185;

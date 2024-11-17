@@ -21,6 +21,8 @@ namespace Presentacion
         public VtnAtletas()
         {
             InitializeComponent();
+            this.Resize += VtnAtletas_Resize;
+            ConfigurarControles();
             cmbFiltro.Items.AddRange(new string[] {
             " ",
             "pais",
@@ -214,7 +216,24 @@ namespace Presentacion
             tblAtletas.DataSource = objetoAtletas.ListarAtletasPorFiltro(valorBusqueda, tipoFiltro);
             tblAtletas.Refresh();
         }
-
+        public void AjustarTabla()
+        {
+            if (tblAtletas.InvokeRequired)
+            {
+                tblAtletas.Invoke(new Action(AjustarTabla));
+                return;
+            }
+        }
+        private void ConfigurarControles()
+        {
+            // Configurar la tabla
+            tblAtletas.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom;
+            AjustarTabla();
+        }
+        private void VtnAtletas_Resize(object sender, EventArgs e)
+        {
+            AjustarTabla();
+        }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtBuscar.Text = "";

@@ -378,7 +378,7 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(562, 417);
+            btnLimpiar.Location = new Point(336, 417);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(92, 23);
             btnLimpiar.TabIndex = 158;
@@ -423,6 +423,7 @@
             Controls.Add(panelBarraTitulo);
             Name = "VtnAtletas";
             Load += VtnAtletas_Load;
+            Resize += VtnAtletas_Resize;
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();

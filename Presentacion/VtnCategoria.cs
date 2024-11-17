@@ -157,15 +157,6 @@ namespace Presentacion
                 tblCategoria.Invoke(new Action(AjustarTabla));
                 return;
             }
-
-            // Calcular el ancho disponible
-            int margenIzquierdo = 400; // Espacio para el menú lateral
-            int margenDerecho = 285;
-
-            // Ajustar posición y tamaño de la tabla
-            tblCategoria.Location = new Point(margenIzquierdo, tblCategoria.Location.Y);
-            tblCategoria.Width = this.ClientSize.Width - margenIzquierdo - margenDerecho;
-
         }
         private void ConfigurarControles()
         {
@@ -222,5 +213,7 @@ namespace Presentacion
             tblCategoria.DataSource = objetoCategoria.ListarCategoriaPorFiltro(valorBusqueda, tipoFiltro);
             tblCategoria.Refresh();
         }
+
+
     }
 }
