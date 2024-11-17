@@ -78,6 +78,7 @@
             txtAlcance.Name = "txtAlcance";
             txtAlcance.Size = new Size(232, 23);
             txtAlcance.TabIndex = 167;
+            txtAlcance.TextAlign = HorizontalAlignment.Right;
             // 
             // lblAlcance
             // 
@@ -113,6 +114,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 163;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNombre
             // 
@@ -129,6 +131,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(232, 23);
             txtId.TabIndex = 161;
+            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // lblId
             // 
@@ -181,7 +184,7 @@
             tblTorneo.Location = new Point(495, 79);
             tblTorneo.Name = "tblTorneo";
             tblTorneo.ReadOnly = true;
-            tblTorneo.RightToLeft = RightToLeft.No;
+            tblTorneo.RightToLeft = RightToLeft.Yes;
             tblTorneo.Size = new Size(730, 326);
             tblTorneo.TabIndex = 156;
             // 
@@ -309,6 +312,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(110, 23);
             txtBuscar.TabIndex = 177;
+            txtBuscar.TextAlign = HorizontalAlignment.Right;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // btnLimpiar

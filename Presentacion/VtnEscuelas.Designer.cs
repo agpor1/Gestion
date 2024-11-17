@@ -68,6 +68,7 @@
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(232, 23);
             txtDireccion.TabIndex = 151;
+            txtDireccion.TextAlign = HorizontalAlignment.Right;
             // 
             // lblDireccion
             // 
@@ -84,6 +85,7 @@
             txtMedallero.Name = "txtMedallero";
             txtMedallero.Size = new Size(232, 23);
             txtMedallero.TabIndex = 149;
+            txtMedallero.TextAlign = HorizontalAlignment.Right;
             // 
             // lblMedallero
             // 
@@ -119,6 +121,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 144;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNombre
             // 
@@ -135,6 +138,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(232, 23);
             txtId.TabIndex = 142;
+            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // lblId
             // 
@@ -187,7 +191,7 @@
             tblEscuela.Location = new Point(495, 83);
             tblEscuela.Name = "tblEscuela";
             tblEscuela.ReadOnly = true;
-            tblEscuela.RightToLeft = RightToLeft.No;
+            tblEscuela.RightToLeft = RightToLeft.Yes;
             tblEscuela.Size = new Size(526, 326);
             tblEscuela.TabIndex = 137;
             // 
@@ -288,6 +292,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(110, 23);
             txtBuscar.TabIndex = 158;
+            txtBuscar.TextAlign = HorizontalAlignment.Right;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // btnLimpiar

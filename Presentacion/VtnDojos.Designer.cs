@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblBuscar = new Label();
             txtBuscar = new TextBox();
             txtNombre = new TextBox();
@@ -79,6 +79,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 150;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNombre
             // 
@@ -105,6 +106,7 @@
             txtInscriptos.Name = "txtInscriptos";
             txtInscriptos.Size = new Size(232, 23);
             txtInscriptos.TabIndex = 147;
+            txtInscriptos.TextAlign = HorizontalAlignment.Right;
             // 
             // lblInscriptos
             // 
@@ -121,6 +123,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(232, 23);
             txtId.TabIndex = 143;
+            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // lblId
             // 
@@ -167,13 +170,13 @@
             tblDojos.AllowUserToDeleteRows = false;
             tblDojos.AllowUserToResizeColumns = false;
             tblDojos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tblDojos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tblDojos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             tblDojos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tblDojos.Location = new Point(495, 95);
             tblDojos.Name = "tblDojos";
             tblDojos.ReadOnly = true;
-            tblDojos.RightToLeft = RightToLeft.No;
+            tblDojos.RightToLeft = RightToLeft.Yes;
             tblDojos.Size = new Size(730, 326);
             tblDojos.TabIndex = 138;
             // 

@@ -82,7 +82,7 @@
             tblArbitro.Location = new Point(461, 80);
             tblArbitro.Name = "tblArbitro";
             tblArbitro.ReadOnly = true;
-            tblArbitro.RightToLeft = RightToLeft.No;
+            tblArbitro.RightToLeft = RightToLeft.Yes;
             tblArbitro.Size = new Size(730, 326);
             tblArbitro.TabIndex = 38;
             // 
@@ -160,6 +160,7 @@
             txtSegundoApellido.Name = "txtSegundoApellido";
             txtSegundoApellido.Size = new Size(232, 23);
             txtSegundoApellido.TabIndex = 60;
+            txtSegundoApellido.TextAlign = HorizontalAlignment.Right;
             // 
             // lblSegundoApellido
             // 
@@ -176,6 +177,7 @@
             txtSegundoName.Name = "txtSegundoName";
             txtSegundoName.Size = new Size(232, 23);
             txtSegundoName.TabIndex = 58;
+            txtSegundoName.TextAlign = HorizontalAlignment.Right;
             // 
             // lblSegundoNombre
             // 
@@ -192,6 +194,7 @@
             txtNac.Name = "txtNac";
             txtNac.Size = new Size(232, 23);
             txtNac.TabIndex = 56;
+            txtNac.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNacionalidad
             // 
@@ -208,6 +211,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(232, 23);
             txtEmail.TabIndex = 54;
+            txtEmail.TextAlign = HorizontalAlignment.Right;
             // 
             // lblEmail
             // 
@@ -252,6 +256,7 @@
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(232, 23);
             txtContrasena.TabIndex = 49;
+            txtContrasena.TextAlign = HorizontalAlignment.Right;
             // 
             // lblContrasena
             // 
@@ -268,6 +273,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(232, 23);
             txtApellido.TabIndex = 47;
+            txtApellido.TextAlign = HorizontalAlignment.Right;
             // 
             // lblApellido
             // 
@@ -284,6 +290,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 45;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNombre
             // 
@@ -300,6 +307,7 @@
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(232, 23);
             txtCedula.TabIndex = 43;
+            txtCedula.TextAlign = HorizontalAlignment.Right;
             // 
             // lblCedula
             // 
@@ -346,6 +354,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(232, 23);
             txtBuscar.TabIndex = 34;
+            txtBuscar.TextAlign = HorizontalAlignment.Right;
             // 
             // lblBuscar
             // 

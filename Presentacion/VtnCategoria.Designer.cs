@@ -68,6 +68,7 @@
             txtPeso.Name = "txtPeso";
             txtPeso.Size = new Size(232, 23);
             txtPeso.TabIndex = 133;
+            txtPeso.TextAlign = HorizontalAlignment.Right;
             // 
             // lblPeso
             // 
@@ -84,6 +85,7 @@
             txtSexo.Name = "txtSexo";
             txtSexo.Size = new Size(232, 23);
             txtSexo.TabIndex = 131;
+            txtSexo.TextAlign = HorizontalAlignment.Right;
             // 
             // lblSexo
             // 
@@ -110,6 +112,7 @@
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(232, 23);
             txtEdad.TabIndex = 120;
+            txtEdad.TextAlign = HorizontalAlignment.Right;
             // 
             // lblEdad
             // 
@@ -126,6 +129,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 118;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNombre
             // 
@@ -142,6 +146,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(232, 23);
             txtId.TabIndex = 116;
+            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // lblId
             // 
@@ -194,7 +199,7 @@
             tblCategoria.Location = new Point(365, 87);
             tblCategoria.Name = "tblCategoria";
             tblCategoria.ReadOnly = true;
-            tblCategoria.RightToLeft = RightToLeft.No;
+            tblCategoria.RightToLeft = RightToLeft.Yes;
             tblCategoria.Size = new Size(645, 326);
             tblCategoria.TabIndex = 111;
             // 

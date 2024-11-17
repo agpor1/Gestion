@@ -266,6 +266,7 @@
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(232, 23);
             txtCedula.TabIndex = 18;
+            txtCedula.TextAlign = HorizontalAlignment.Right;
             // 
             // txtNombre
             // 
@@ -273,6 +274,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 20;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNombre
             // 
@@ -289,6 +291,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(232, 23);
             txtApellido.TabIndex = 22;
+            txtApellido.TextAlign = HorizontalAlignment.Right;
             // 
             // lblApellido
             // 
@@ -305,6 +308,7 @@
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(232, 23);
             txtContrasena.TabIndex = 24;
+            txtContrasena.TextAlign = HorizontalAlignment.Right;
             // 
             // lblContrasena
             // 
@@ -361,6 +365,7 @@
             txtNac.Name = "txtNac";
             txtNac.Size = new Size(232, 23);
             txtNac.TabIndex = 32;
+            txtNac.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNacionalidad
             // 
@@ -377,6 +382,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(232, 23);
             txtEmail.TabIndex = 30;
+            txtEmail.TextAlign = HorizontalAlignment.Right;
             // 
             // lblEmail
             // 
@@ -393,6 +399,7 @@
             txtSegundoName.Name = "txtSegundoName";
             txtSegundoName.Size = new Size(232, 23);
             txtSegundoName.TabIndex = 36;
+            txtSegundoName.TextAlign = HorizontalAlignment.Right;
             // 
             // lblSegundoNombre
             // 
@@ -409,6 +416,7 @@
             txtSegundoApellido.Name = "txtSegundoApellido";
             txtSegundoApellido.Size = new Size(232, 23);
             txtSegundoApellido.TabIndex = 38;
+            txtSegundoApellido.TextAlign = HorizontalAlignment.Right;
             // 
             // lblSegundoApellido
             // 

@@ -79,11 +79,11 @@
             lblBienvenida.BackColor = Color.White;
             lblBienvenida.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBienvenida.ForeColor = SystemColors.MenuHighlight;
-            lblBienvenida.Location = new Point(420, 113);
+            lblBienvenida.Location = new Point(398, 113);
             lblBienvenida.Name = "lblBienvenida";
-            lblBienvenida.Size = new Size(282, 56);
+            lblBienvenida.Size = new Size(322, 56);
             lblBienvenida.TabIndex = 38;
-            lblBienvenida.Text = "Bienvenido";
+            lblBienvenida.Text = "Bienvenido/a";
             // 
             // pictureBox2
             // 

@@ -131,7 +131,7 @@
             tblRank.Location = new Point(323, 80);
             tblRank.Name = "tblRank";
             tblRank.ReadOnly = true;
-            tblRank.RightToLeft = RightToLeft.No;
+            tblRank.RightToLeft = RightToLeft.Yes;
             tblRank.Size = new Size(342, 519);
             tblRank.TabIndex = 157;
             // 

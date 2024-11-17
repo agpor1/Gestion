@@ -144,6 +144,7 @@
             txtPeso.Name = "txtPeso";
             txtPeso.Size = new Size(232, 23);
             txtPeso.TabIndex = 40;
+            txtPeso.TextAlign = HorizontalAlignment.Right;
             // 
             // lblPeso
             // 
@@ -160,6 +161,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(232, 23);
             txtApellido.TabIndex = 38;
+            txtApellido.TextAlign = HorizontalAlignment.Right;
             // 
             // lblApellido
             // 
@@ -176,6 +178,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 23);
             txtNombre.TabIndex = 36;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // lblNombre
             // 
@@ -192,6 +195,7 @@
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(232, 23);
             txtCedula.TabIndex = 34;
+            txtCedula.TextAlign = HorizontalAlignment.Right;
             // 
             // lblCedula
             // 
@@ -257,6 +261,7 @@
             txtCarnetF.Name = "txtCarnetF";
             txtCarnetF.Size = new Size(232, 23);
             txtCarnetF.TabIndex = 51;
+            txtCarnetF.TextAlign = HorizontalAlignment.Right;
             // 
             // lblCarnetF
             // 
@@ -273,6 +278,7 @@
             txtPais.Name = "txtPais";
             txtPais.Size = new Size(232, 23);
             txtPais.TabIndex = 47;
+            txtPais.TextAlign = HorizontalAlignment.Right;
             // 
             // lblPais
             // 
@@ -289,6 +295,7 @@
             txtSexo.Name = "txtSexo";
             txtSexo.Size = new Size(232, 23);
             txtSexo.TabIndex = 45;
+            txtSexo.TextAlign = HorizontalAlignment.Right;
             // 
             // lblSexo
             // 
@@ -340,6 +347,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(110, 23);
             txtBuscar.TabIndex = 107;
+            txtBuscar.TextAlign = HorizontalAlignment.Right;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // dtFecha
