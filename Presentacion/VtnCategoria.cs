@@ -189,7 +189,6 @@ namespace Presentacion
         {
             lblPeso.Text = Lenguajes.Peso;
             lblEdad.Text = Lenguajes.Edad;
-            btnAtras.Text = Lenguajes.Atras;
             lblNombre.Text = Lenguajes.Nombre;
             lblSexo.Text = Lenguajes.Sexo;
             btnGuardar.Text = Lenguajes.Guardar;

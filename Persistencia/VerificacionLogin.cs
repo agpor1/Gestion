@@ -44,15 +44,5 @@ namespace Persistencia
                         return false;
                 }
         }
-
-
-        public void permiso()
-        {
-            if (LoginUsuarioCache.Rol == Cargos.Administrador)
-            {
-
-            }
-           
-        }
     }
 }

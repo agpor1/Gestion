@@ -14,19 +14,6 @@ namespace Dominio
         public bool LoginUsuario(string Nombre, string Contrasena) {
             return LoginUsuario(Nombre, Contrasena);
         }
-
-
-    //seguridad y permisos
-        public void permiso()
-        {
-            //if (clsEusuario.Rol == Cargos.Administrador)
-            //{
-
-            //}
-            
-        }
-
-
     }
 
 }

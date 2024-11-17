@@ -181,12 +181,10 @@ namespace Presentacion
         {
             if (LoginUsuarioCache.Rol == Cargos.Estandar)
             {
-
-            }
-
-            if (LoginUsuarioCache.Rol == Cargos.Administrador)
-            {
-
+                btnUsuarios.Visible = false;
+                btnTorneo.Visible = false;
+                btnDojos.Visible = false;
+                btnEscuela.Visible = false;
             }
         }
         private void CambiarIdioma(string idioma)

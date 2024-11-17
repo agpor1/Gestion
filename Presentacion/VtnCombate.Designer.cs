@@ -29,46 +29,47 @@
         private void InitializeComponent()
         {
             panelBarraTitulo = new Panel();
-            button1 = new Button();
+            btnLimpiar = new Button();
+            btnInsertar = new Button();
             label3 = new Label();
-            textBox16 = new TextBox();
+            txtNombre = new TextBox();
             btnRestaurar = new PictureBox();
             btnMaximizar = new PictureBox();
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
-            txtCedula = new TextBox();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
+            txt1I = new TextBox();
+            txt2I = new TextBox();
+            txt3I = new TextBox();
+            txt4I = new TextBox();
+            txt5I = new TextBox();
+            txt6I = new TextBox();
+            txt7I = new TextBox();
+            txt8I = new TextBox();
+            txt8D = new TextBox();
+            txt7D = new TextBox();
+            txt6D = new TextBox();
+            txt5D = new TextBox();
+            txt4D = new TextBox();
+            txt3D = new TextBox();
+            txt2D = new TextBox();
+            txt1D = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label4 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
-            comboBox5 = new ComboBox();
-            comboBox6 = new ComboBox();
-            comboBox7 = new ComboBox();
-            comboBox8 = new ComboBox();
-            comboBox9 = new ComboBox();
-            comboBox10 = new ComboBox();
-            comboBox11 = new ComboBox();
-            comboBox12 = new ComboBox();
-            comboBox13 = new ComboBox();
-            comboBox14 = new ComboBox();
+            cmbSemi1I = new ComboBox();
+            cmbSemi1D = new ComboBox();
+            cmbSemi2D = new ComboBox();
+            cmbSemi2I = new ComboBox();
+            cmbFinal1 = new ComboBox();
+            cmbFinal2 = new ComboBox();
+            cmbOctavos2I = new ComboBox();
+            cmbOctavos1I = new ComboBox();
+            cmbOctavos3I = new ComboBox();
+            cmbOctavos4I = new ComboBox();
+            cmbOctavos4D = new ComboBox();
+            cmbOctavos3D = new ComboBox();
+            cmbOctavos2D = new ComboBox();
+            cmbOctavos1D = new ComboBox();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
@@ -78,10 +79,11 @@
             // 
             // panelBarraTitulo
             // 
-            panelBarraTitulo.BackColor = Color.FromArgb(37, 47, 66);
-            panelBarraTitulo.Controls.Add(button1);
+            panelBarraTitulo.BackColor = Color.Sienna;
+            panelBarraTitulo.Controls.Add(btnLimpiar);
+            panelBarraTitulo.Controls.Add(btnInsertar);
             panelBarraTitulo.Controls.Add(label3);
-            panelBarraTitulo.Controls.Add(textBox16);
+            panelBarraTitulo.Controls.Add(txtNombre);
             panelBarraTitulo.Controls.Add(btnRestaurar);
             panelBarraTitulo.Controls.Add(btnMaximizar);
             panelBarraTitulo.Controls.Add(btnMinimiza);
@@ -89,34 +91,45 @@
             panelBarraTitulo.Dock = DockStyle.Top;
             panelBarraTitulo.Location = new Point(0, 0);
             panelBarraTitulo.Name = "panelBarraTitulo";
-            panelBarraTitulo.Size = new Size(1237, 67);
+            panelBarraTitulo.Size = new Size(1237, 86);
             panelBarraTitulo.TabIndex = 156;
             // 
-            // button1
+            // btnLimpiar
             // 
-            button1.Location = new Point(275, 23);
-            button1.Name = "button1";
-            button1.Size = new Size(58, 21);
-            button1.TabIndex = 217;
-            button1.Text = "Insertar";
-            button1.UseVisualStyleBackColor = true;
+            btnLimpiar.Location = new Point(1167, 60);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(58, 21);
+            btnLimpiar.TabIndex = 218;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // btnInsertar
+            // 
+            btnInsertar.Location = new Point(271, 62);
+            btnInsertar.Name = "btnInsertar";
+            btnInsertar.Size = new Size(58, 21);
+            btnInsertar.TabIndex = 217;
+            btnInsertar.Text = "Insertar";
+            btnInsertar.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(34, 24);
+            label3.Location = new Point(30, 63);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 216;
             label3.Text = "Nombre";
             // 
-            // textBox16
+            // txtNombre
             // 
-            textBox16.Location = new Point(91, 21);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(165, 23);
-            textBox16.TabIndex = 215;
+            txtNombre.Location = new Point(87, 60);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(165, 23);
+            txtNombre.TabIndex = 215;
+            txtNombre.TextAlign = HorizontalAlignment.Right;
             // 
             // btnRestaurar
             // 
@@ -163,123 +176,155 @@
             btnCerrar.TabIndex = 12;
             btnCerrar.TabStop = false;
             // 
-            // txtCedula
+            // txt1I
             // 
-            txtCedula.Location = new Point(34, 92);
-            txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(165, 23);
-            txtCedula.TabIndex = 157;
+            txt1I.Location = new Point(34, 131);
+            txt1I.Name = "txt1I";
+            txt1I.ReadOnly = true;
+            txt1I.Size = new Size(165, 23);
+            txt1I.TabIndex = 157;
+            txt1I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox1
+            // txt2I
             // 
-            textBox1.Location = new Point(34, 149);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(165, 23);
-            textBox1.TabIndex = 158;
+            txt2I.Location = new Point(34, 188);
+            txt2I.Name = "txt2I";
+            txt2I.ReadOnly = true;
+            txt2I.Size = new Size(165, 23);
+            txt2I.TabIndex = 158;
+            txt2I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox3
+            // txt3I
             // 
-            textBox3.Location = new Point(34, 220);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(165, 23);
-            textBox3.TabIndex = 159;
+            txt3I.Location = new Point(34, 259);
+            txt3I.Name = "txt3I";
+            txt3I.ReadOnly = true;
+            txt3I.Size = new Size(165, 23);
+            txt3I.TabIndex = 159;
+            txt3I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox2
+            // txt4I
             // 
-            textBox2.Location = new Point(34, 277);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(165, 23);
-            textBox2.TabIndex = 160;
+            txt4I.Location = new Point(34, 316);
+            txt4I.Name = "txt4I";
+            txt4I.ReadOnly = true;
+            txt4I.Size = new Size(165, 23);
+            txt4I.TabIndex = 160;
+            txt4I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox7
+            // txt5I
             // 
-            textBox7.Location = new Point(34, 347);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(165, 23);
-            textBox7.TabIndex = 161;
+            txt5I.Location = new Point(34, 386);
+            txt5I.Name = "txt5I";
+            txt5I.ReadOnly = true;
+            txt5I.Size = new Size(165, 23);
+            txt5I.TabIndex = 161;
+            txt5I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox6
+            // txt6I
             // 
-            textBox6.Location = new Point(34, 404);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(165, 23);
-            textBox6.TabIndex = 162;
+            txt6I.Location = new Point(34, 443);
+            txt6I.Name = "txt6I";
+            txt6I.ReadOnly = true;
+            txt6I.Size = new Size(165, 23);
+            txt6I.TabIndex = 162;
+            txt6I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox5
+            // txt7I
             // 
-            textBox5.Location = new Point(34, 475);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(165, 23);
-            textBox5.TabIndex = 163;
+            txt7I.Location = new Point(34, 514);
+            txt7I.Name = "txt7I";
+            txt7I.ReadOnly = true;
+            txt7I.Size = new Size(165, 23);
+            txt7I.TabIndex = 163;
+            txt7I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox4
+            // txt8I
             // 
-            textBox4.Location = new Point(34, 532);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(165, 23);
-            textBox4.TabIndex = 164;
+            txt8I.Location = new Point(34, 571);
+            txt8I.Name = "txt8I";
+            txt8I.ReadOnly = true;
+            txt8I.Size = new Size(165, 23);
+            txt8I.TabIndex = 164;
+            txt8I.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox8
+            // txt8D
             // 
-            textBox8.Location = new Point(1033, 532);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(165, 23);
-            textBox8.TabIndex = 195;
+            txt8D.Location = new Point(1033, 571);
+            txt8D.Name = "txt8D";
+            txt8D.ReadOnly = true;
+            txt8D.Size = new Size(165, 23);
+            txt8D.TabIndex = 195;
+            txt8D.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox9
+            // txt7D
             // 
-            textBox9.Location = new Point(1033, 475);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(165, 23);
-            textBox9.TabIndex = 194;
+            txt7D.Location = new Point(1033, 514);
+            txt7D.Name = "txt7D";
+            txt7D.ReadOnly = true;
+            txt7D.Size = new Size(165, 23);
+            txt7D.TabIndex = 194;
+            txt7D.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox10
+            // txt6D
             // 
-            textBox10.Location = new Point(1033, 404);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(165, 23);
-            textBox10.TabIndex = 193;
+            txt6D.Location = new Point(1033, 443);
+            txt6D.Name = "txt6D";
+            txt6D.ReadOnly = true;
+            txt6D.Size = new Size(165, 23);
+            txt6D.TabIndex = 193;
+            txt6D.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox11
+            // txt5D
             // 
-            textBox11.Location = new Point(1033, 347);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(165, 23);
-            textBox11.TabIndex = 192;
+            txt5D.Location = new Point(1033, 386);
+            txt5D.Name = "txt5D";
+            txt5D.ReadOnly = true;
+            txt5D.Size = new Size(165, 23);
+            txt5D.TabIndex = 192;
+            txt5D.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox12
+            // txt4D
             // 
-            textBox12.Location = new Point(1033, 277);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(165, 23);
-            textBox12.TabIndex = 191;
+            txt4D.Location = new Point(1033, 316);
+            txt4D.Name = "txt4D";
+            txt4D.ReadOnly = true;
+            txt4D.Size = new Size(165, 23);
+            txt4D.TabIndex = 191;
+            txt4D.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox13
+            // txt3D
             // 
-            textBox13.Location = new Point(1033, 220);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(165, 23);
-            textBox13.TabIndex = 190;
+            txt3D.Location = new Point(1033, 259);
+            txt3D.Name = "txt3D";
+            txt3D.ReadOnly = true;
+            txt3D.Size = new Size(165, 23);
+            txt3D.TabIndex = 190;
+            txt3D.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox14
+            // txt2D
             // 
-            textBox14.Location = new Point(1033, 149);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(165, 23);
-            textBox14.TabIndex = 189;
+            txt2D.Location = new Point(1033, 188);
+            txt2D.Name = "txt2D";
+            txt2D.ReadOnly = true;
+            txt2D.Size = new Size(165, 23);
+            txt2D.TabIndex = 189;
+            txt2D.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox15
+            // txt1D
             // 
-            textBox15.Location = new Point(1033, 92);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(165, 23);
-            textBox15.TabIndex = 188;
+            txt1D.Location = new Point(1033, 131);
+            txt1D.Name = "txt1D";
+            txt1D.ReadOnly = true;
+            txt1D.Size = new Size(165, 23);
+            txt1D.TabIndex = 188;
+            txt1D.TextAlign = HorizontalAlignment.Right;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(557, 220);
+            label1.Location = new Point(557, 259);
             label1.Name = "label1";
             label1.Size = new Size(154, 65);
             label1.TabIndex = 196;
@@ -289,7 +334,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(590, 135);
+            label2.Location = new Point(590, 174);
             label2.Name = "label2";
             label2.Size = new Size(90, 37);
             label2.TabIndex = 197;
@@ -299,163 +344,177 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 20F);
-            label4.Location = new Point(590, 404);
+            label4.Location = new Point(590, 443);
             label4.Name = "label4";
             label4.Size = new Size(90, 37);
             label4.TabIndex = 199;
             label4.Text = "SEMIS";
             // 
-            // comboBox1
+            // cmbSemi1I
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(435, 180);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(138, 23);
-            comboBox1.TabIndex = 200;
+            cmbSemi1I.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSemi1I.FormattingEnabled = true;
+            cmbSemi1I.Location = new Point(435, 219);
+            cmbSemi1I.Name = "cmbSemi1I";
+            cmbSemi1I.Size = new Size(138, 23);
+            cmbSemi1I.TabIndex = 200;
             // 
-            // comboBox2
+            // cmbSemi1D
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(692, 180);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(138, 23);
-            comboBox2.TabIndex = 201;
+            cmbSemi1D.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSemi1D.FormattingEnabled = true;
+            cmbSemi1D.Location = new Point(692, 219);
+            cmbSemi1D.Name = "cmbSemi1D";
+            cmbSemi1D.Size = new Size(138, 23);
+            cmbSemi1D.TabIndex = 201;
             // 
-            // comboBox3
+            // cmbSemi2D
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(692, 441);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(138, 23);
-            comboBox3.TabIndex = 202;
+            cmbSemi2D.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSemi2D.FormattingEnabled = true;
+            cmbSemi2D.Location = new Point(692, 480);
+            cmbSemi2D.Name = "cmbSemi2D";
+            cmbSemi2D.Size = new Size(138, 23);
+            cmbSemi2D.TabIndex = 202;
             // 
-            // comboBox4
+            // cmbSemi2I
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(435, 441);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(138, 23);
-            comboBox4.TabIndex = 203;
+            cmbSemi2I.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSemi2I.FormattingEnabled = true;
+            cmbSemi2I.Location = new Point(435, 480);
+            cmbSemi2I.Name = "cmbSemi2I";
+            cmbSemi2I.Size = new Size(138, 23);
+            cmbSemi2I.TabIndex = 203;
             // 
-            // comboBox5
+            // cmbFinal1
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(467, 300);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(151, 23);
-            comboBox5.TabIndex = 204;
+            cmbFinal1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFinal1.FormattingEnabled = true;
+            cmbFinal1.Location = new Point(467, 339);
+            cmbFinal1.Name = "cmbFinal1";
+            cmbFinal1.Size = new Size(151, 23);
+            cmbFinal1.TabIndex = 204;
             // 
-            // comboBox6
+            // cmbFinal2
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(641, 300);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(151, 23);
-            comboBox6.TabIndex = 205;
+            cmbFinal2.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFinal2.FormattingEnabled = true;
+            cmbFinal2.Location = new Point(641, 339);
+            cmbFinal2.Name = "cmbFinal2";
+            cmbFinal2.Size = new Size(151, 23);
+            cmbFinal2.TabIndex = 205;
             // 
-            // comboBox7
+            // cmbOctavos2I
             // 
-            comboBox7.FormattingEnabled = true;
-            comboBox7.Location = new Point(229, 257);
-            comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(182, 23);
-            comboBox7.TabIndex = 206;
+            cmbOctavos2I.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos2I.FormattingEnabled = true;
+            cmbOctavos2I.Location = new Point(229, 296);
+            cmbOctavos2I.Name = "cmbOctavos2I";
+            cmbOctavos2I.Size = new Size(182, 23);
+            cmbOctavos2I.TabIndex = 206;
             // 
-            // comboBox8
+            // cmbOctavos1I
             // 
-            comboBox8.FormattingEnabled = true;
-            comboBox8.Location = new Point(229, 123);
-            comboBox8.Name = "comboBox8";
-            comboBox8.Size = new Size(182, 23);
-            comboBox8.TabIndex = 207;
+            cmbOctavos1I.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos1I.FormattingEnabled = true;
+            cmbOctavos1I.Location = new Point(229, 162);
+            cmbOctavos1I.Name = "cmbOctavos1I";
+            cmbOctavos1I.Size = new Size(182, 23);
+            cmbOctavos1I.TabIndex = 207;
             // 
-            // comboBox9
+            // cmbOctavos3I
             // 
-            comboBox9.FormattingEnabled = true;
-            comboBox9.Location = new Point(229, 379);
-            comboBox9.Name = "comboBox9";
-            comboBox9.Size = new Size(182, 23);
-            comboBox9.TabIndex = 209;
+            cmbOctavos3I.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos3I.FormattingEnabled = true;
+            cmbOctavos3I.Location = new Point(229, 418);
+            cmbOctavos3I.Name = "cmbOctavos3I";
+            cmbOctavos3I.Size = new Size(182, 23);
+            cmbOctavos3I.TabIndex = 209;
             // 
-            // comboBox10
+            // cmbOctavos4I
             // 
-            comboBox10.FormattingEnabled = true;
-            comboBox10.Location = new Point(229, 499);
-            comboBox10.Name = "comboBox10";
-            comboBox10.Size = new Size(182, 23);
-            comboBox10.TabIndex = 210;
+            cmbOctavos4I.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos4I.FormattingEnabled = true;
+            cmbOctavos4I.Location = new Point(229, 538);
+            cmbOctavos4I.Name = "cmbOctavos4I";
+            cmbOctavos4I.Size = new Size(182, 23);
+            cmbOctavos4I.TabIndex = 210;
             // 
-            // comboBox11
+            // cmbOctavos4D
             // 
-            comboBox11.FormattingEnabled = true;
-            comboBox11.Location = new Point(819, 499);
-            comboBox11.Name = "comboBox11";
-            comboBox11.Size = new Size(182, 23);
-            comboBox11.TabIndex = 211;
+            cmbOctavos4D.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos4D.FormattingEnabled = true;
+            cmbOctavos4D.Location = new Point(819, 538);
+            cmbOctavos4D.Name = "cmbOctavos4D";
+            cmbOctavos4D.Size = new Size(182, 23);
+            cmbOctavos4D.TabIndex = 211;
             // 
-            // comboBox12
+            // cmbOctavos3D
             // 
-            comboBox12.FormattingEnabled = true;
-            comboBox12.Location = new Point(819, 379);
-            comboBox12.Name = "comboBox12";
-            comboBox12.Size = new Size(182, 23);
-            comboBox12.TabIndex = 212;
+            cmbOctavos3D.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos3D.FormattingEnabled = true;
+            cmbOctavos3D.Location = new Point(819, 418);
+            cmbOctavos3D.Name = "cmbOctavos3D";
+            cmbOctavos3D.Size = new Size(182, 23);
+            cmbOctavos3D.TabIndex = 212;
             // 
-            // comboBox13
+            // cmbOctavos2D
             // 
-            comboBox13.FormattingEnabled = true;
-            comboBox13.Location = new Point(819, 246);
-            comboBox13.Name = "comboBox13";
-            comboBox13.Size = new Size(182, 23);
-            comboBox13.TabIndex = 213;
+            cmbOctavos2D.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos2D.FormattingEnabled = true;
+            cmbOctavos2D.Location = new Point(819, 285);
+            cmbOctavos2D.Name = "cmbOctavos2D";
+            cmbOctavos2D.Size = new Size(182, 23);
+            cmbOctavos2D.TabIndex = 213;
             // 
-            // comboBox14
+            // cmbOctavos1D
             // 
-            comboBox14.FormattingEnabled = true;
-            comboBox14.Location = new Point(819, 123);
-            comboBox14.Name = "comboBox14";
-            comboBox14.Size = new Size(182, 23);
-            comboBox14.TabIndex = 214;
+            cmbOctavos1D.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOctavos1D.FormattingEnabled = true;
+            cmbOctavos1D.Location = new Point(819, 162);
+            cmbOctavos1D.Name = "cmbOctavos1D";
+            cmbOctavos1D.Size = new Size(182, 23);
+            cmbOctavos1D.TabIndex = 214;
             // 
             // VtnCombate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.AppWorkspace;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(1237, 611);
-            Controls.Add(comboBox14);
-            Controls.Add(comboBox13);
-            Controls.Add(comboBox12);
-            Controls.Add(comboBox11);
-            Controls.Add(comboBox10);
-            Controls.Add(comboBox9);
-            Controls.Add(comboBox8);
-            Controls.Add(comboBox7);
-            Controls.Add(comboBox6);
-            Controls.Add(comboBox5);
-            Controls.Add(comboBox4);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbOctavos1D);
+            Controls.Add(cmbOctavos2D);
+            Controls.Add(cmbOctavos3D);
+            Controls.Add(cmbOctavos4D);
+            Controls.Add(cmbOctavos4I);
+            Controls.Add(cmbOctavos3I);
+            Controls.Add(cmbOctavos1I);
+            Controls.Add(cmbOctavos2I);
+            Controls.Add(cmbFinal2);
+            Controls.Add(cmbFinal1);
+            Controls.Add(cmbSemi2I);
+            Controls.Add(cmbSemi2D);
+            Controls.Add(cmbSemi1D);
+            Controls.Add(cmbSemi1I);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox8);
-            Controls.Add(textBox9);
-            Controls.Add(textBox10);
-            Controls.Add(textBox11);
-            Controls.Add(textBox12);
-            Controls.Add(textBox13);
-            Controls.Add(textBox14);
-            Controls.Add(textBox15);
-            Controls.Add(textBox4);
-            Controls.Add(textBox5);
-            Controls.Add(textBox6);
-            Controls.Add(textBox7);
-            Controls.Add(textBox2);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
-            Controls.Add(txtCedula);
+            Controls.Add(txt8D);
+            Controls.Add(txt7D);
+            Controls.Add(txt6D);
+            Controls.Add(txt5D);
+            Controls.Add(txt4D);
+            Controls.Add(txt3D);
+            Controls.Add(txt2D);
+            Controls.Add(txt1D);
+            Controls.Add(txt8I);
+            Controls.Add(txt7I);
+            Controls.Add(txt6I);
+            Controls.Add(txt5I);
+            Controls.Add(txt4I);
+            Controls.Add(txt3I);
+            Controls.Add(txt2I);
+            Controls.Add(txt1I);
             Controls.Add(panelBarraTitulo);
             Name = "VtnCombate";
             Text = "S";
@@ -476,41 +535,42 @@
         private PictureBox btnMaximizar;
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
-        private TextBox txtCedula;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private TextBox textBox15;
+        private TextBox txt1I;
+        private TextBox txt2I;
+        private TextBox txt3I;
+        private TextBox txt4I;
+        private TextBox txt5I;
+        private TextBox txt6I;
+        private TextBox txt7I;
+        private TextBox txt8I;
+        private TextBox txt8D;
+        private TextBox txt7D;
+        private TextBox txt6D;
+        private TextBox txt5D;
+        private TextBox txt4D;
+        private TextBox txt3D;
+        private TextBox txt2D;
+        private TextBox txt1D;
         private Label label1;
         private Label label2;
         private Label label4;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
-        private ComboBox comboBox4;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
-        private ComboBox comboBox7;
-        private ComboBox comboBox8;
-        private ComboBox comboBox9;
-        private ComboBox comboBox10;
-        private ComboBox comboBox11;
-        private ComboBox comboBox12;
-        private ComboBox comboBox13;
-        private ComboBox comboBox14;
-        private TextBox textBox16;
-        private Button button1;
+        private ComboBox cmbSemi1I;
+        private ComboBox cmbSemi1D;
+        private ComboBox cmbSemi2D;
+        private ComboBox cmbSemi2I;
+        private ComboBox cmbFinal1;
+        private ComboBox cmbFinal2;
+        private ComboBox cmbOctavos2I;
+        private ComboBox cmbOctavos1I;
+        private ComboBox cmbOctavos3I;
+        private ComboBox cmbOctavos4I;
+        private ComboBox cmbOctavos4D;
+        private ComboBox cmbOctavos3D;
+        private ComboBox cmbOctavos2D;
+        private ComboBox cmbOctavos1D;
+        private TextBox txtNombre;
+        private Button btnInsertar;
         private Label label3;
+        private Button btnLimpiar;
     }
 }

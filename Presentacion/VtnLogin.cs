@@ -125,6 +125,7 @@ namespace Presentacion
                 txtContraseña.Clear();
                 txtContraseña.UseSystemPasswordChar = false;
                 txtUsuario.Focus();
+                txtContraseña.UseSystemPasswordChar = !contrasenaVisible;
             }
 
         }

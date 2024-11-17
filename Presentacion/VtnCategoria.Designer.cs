@@ -49,7 +49,6 @@
             btnMaximizar = new PictureBox();
             btnMinimiza = new PictureBox();
             btnCerrar = new PictureBox();
-            btnAtras = new Button();
             lblFiltrar = new Label();
             cmbFiltro = new ComboBox();
             lblBuscar = new Label();
@@ -257,16 +256,6 @@
             btnCerrar.TabIndex = 12;
             btnCerrar.TabStop = false;
             // 
-            // btnAtras
-            // 
-            btnAtras.Location = new Point(9, 582);
-            btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(75, 23);
-            btnAtras.TabIndex = 109;
-            btnAtras.Text = "Atras";
-            btnAtras.UseVisualStyleBackColor = true;
-            btnAtras.Click += btnAtras_Click;
-            // 
             // lblFiltrar
             // 
             lblFiltrar.AutoSize = true;
@@ -337,7 +326,6 @@
             Controls.Add(btnEliminar);
             Controls.Add(tblCategoria);
             Controls.Add(panelBarraTitulo);
-            Controls.Add(btnAtras);
             Name = "VtnCategoria";
             Text = "VtnCategoria";
             Load += VtnCategoria_Load;
@@ -373,7 +361,6 @@
         private PictureBox btnMaximizar;
         private PictureBox btnMinimiza;
         private PictureBox btnCerrar;
-        private Button btnAtras;
         private Label lblFiltrar;
         private ComboBox cmbFiltro;
         private Label lblBuscar;

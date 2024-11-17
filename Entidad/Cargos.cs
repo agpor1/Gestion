@@ -9,7 +9,7 @@ namespace Entidad
     public struct Cargos
     {
         public const string Administrador = "Administrador";
-        public const string Estandar = "Sensei";
+        public const string Estandar = "Estandar";
    
     }
 }
