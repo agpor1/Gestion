@@ -79,11 +79,11 @@
             lblBienvenida.BackColor = Color.White;
             lblBienvenida.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBienvenida.ForeColor = SystemColors.MenuHighlight;
-            lblBienvenida.Location = new Point(398, 113);
+            lblBienvenida.Location = new Point(398, 157);
             lblBienvenida.Name = "lblBienvenida";
-            lblBienvenida.Size = new Size(322, 56);
+            lblBienvenida.Size = new Size(306, 56);
             lblBienvenida.TabIndex = 38;
-            lblBienvenida.Text = "Bienvenido/a";
+            lblBienvenida.Text = "Gestion Cuk";
             // 
             // pictureBox2
             // 
@@ -108,9 +108,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(651, 12);
+            pictureBox1.Location = new Point(627, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(86, 72);
+            pictureBox1.Size = new Size(110, 96);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 42;
             pictureBox1.TabStop = false;

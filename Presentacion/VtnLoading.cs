@@ -21,7 +21,7 @@ namespace Presentacion
         private void VtnLoading_Load(object sender, EventArgs e)
         {
             this.Opacity = 0;
-            timer1.Interval = 30; 
+            timer1.Interval = 30;
             progressBar1.Value = 0;
             timer1.Start();
         }
@@ -55,5 +55,7 @@ namespace Presentacion
                 this.Hide();
             }
         }
+
+        
     }
 }

@@ -84,6 +84,7 @@ namespace Presentacion
             if (objetoUsuario.verificarExistenciaUsuario(txtCedula.Text))
             {
                 MessageBox.Show("Este usuario ya existe.");
+                limpiarCampos();
                 return; // Sale del método si el usuario ya existe
             }
             try

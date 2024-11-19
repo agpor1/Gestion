@@ -171,7 +171,7 @@
             btnTorneo.ForeColor = SystemColors.ButtonHighlight;
             btnTorneo.Image = (Image)resources.GetObject("btnTorneo.Image");
             btnTorneo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTorneo.Location = new Point(0, 478);
+            btnTorneo.Location = new Point(-40, 478);
             btnTorneo.Name = "btnTorneo";
             btnTorneo.Size = new Size(203, 52);
             btnTorneo.TabIndex = 27;
@@ -190,7 +190,7 @@
             btnEscuela.ForeColor = SystemColors.ButtonHighlight;
             btnEscuela.Image = (Image)resources.GetObject("btnEscuela.Image");
             btnEscuela.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEscuela.Location = new Point(12, 407);
+            btnEscuela.Location = new Point(0, 407);
             btnEscuela.Name = "btnEscuela";
             btnEscuela.Size = new Size(142, 65);
             btnEscuela.TabIndex = 26;

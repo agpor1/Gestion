@@ -99,7 +99,7 @@ namespace Presentacion
                 MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
                 return; // Sale del método si hay algún campo vacío
             }
-            // Verificar si el usuario ya existe usando la capa de dominio
+            // Verificar si el usuario ya existe
             if (objetoAtletas.verificarExistenciaUsuario(txtCedula.Text))
             {
                 MessageBox.Show("Este usuario ya existe.");
