@@ -191,6 +191,13 @@ namespace Presentacion
             txt6I.Clear();
             txt7I.Clear();
             txt8I.Clear();
+            cmbFinal1.Text = "";
+            cmbFinal2.Text = "";
+            cmbSemi1D.Text = "";
+            cmbSemi1I.Text = "";
+            cmbSemi2D.Text = "";
+            cmbSemi2I.Text = "";
+            txtNombre.Clear();
         }
     }
 }
