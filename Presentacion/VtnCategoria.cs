@@ -38,6 +38,7 @@ namespace Presentacion
             ConfigurarControles();
             CambiarIdioma(GestorIdiomas.Idioma);
             this.Resize += VtnCategoria_Resize;
+            manejarPermisos();
         }
 
 
@@ -213,7 +214,26 @@ namespace Presentacion
             tblCategoria.DataSource = objetoCategoria.ListarCategoriaPorFiltro(valorBusqueda, tipoFiltro);
             tblCategoria.Refresh();
         }
-
+        private void manejarPermisos()
+        {
+            if (LoginUsuarioCache.Rol == Cargos.Estandar)
+            {
+                btnGuardar.Visible = false;
+                btnEliminar.Visible = false;
+                btnModificar.Visible = false;
+                btnRellenar.Visible = false;
+                txtId.Visible = false;
+                txtNombre.Visible = false;
+                txtSexo.Visible = false;
+                txtEdad.Visible = false;
+                txtPeso.Visible = false;
+                lblId.Visible = false;
+                lblNombre.Visible = false;
+                lblSexo.Visible = false;
+                lblEdad.Visible = false;
+                lblPeso.Visible = false;
+            }
+        }
 
     }
 }
