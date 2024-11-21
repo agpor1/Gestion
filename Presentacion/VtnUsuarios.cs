@@ -110,6 +110,14 @@ namespace Presentacion
             }
             try
             {
+                // Verificar si el usuario existe antes de modificar
+                bool usuarioExiste = objetoUsuario.verificarExistenciaUsuario(txtCedula.Text);
+
+                if (!usuarioExiste)
+                {
+                    MessageBox.Show("El usuario no existe.");
+                    return; // Sale del método si el usuario no existe
+                }
                 objetoUsuario.actualizarUsuario(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, cmbCargos.SelectedItem.ToString(), txtContrasena.Text);
                 MessageBox.Show("Se actualizo correctamente el usuario");
                 actualizar();
@@ -131,6 +139,15 @@ namespace Presentacion
             }
             try
             {
+                // Verificar si el usuario existe antes de eliminar
+                bool usuarioExiste = objetoUsuario.verificarExistenciaUsuario(txtCedula.Text);
+
+                if (!usuarioExiste)
+                {
+                    MessageBox.Show("El usuario no existe.");
+                    return; // Sale del método si el usuario no existe
+                }
+
                 objetoUsuario.eliminarUsuarios(txtCedula.Text, txtNombre.Text, txtSegundoName.Text, txtApellido.Text, txtSegundoApellido.Text, txtEmail.Text, txtNac.Text, txtContrasena.Text);
                 MessageBox.Show("Se elimino correctamente el usuario");
                 actualizar();
